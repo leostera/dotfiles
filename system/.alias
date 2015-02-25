@@ -1,0 +1,13 @@
+alias g="git"
+alias v="vim"
+
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="cd ~"
+
+alias reload="source ~/.zshrc"
+alias vimrc="vim ~/.vimrc"
+alias vundlerc="vim ~/.vim/vundle.vim"
+alias zshrc="vim ~/.zshrc && reload"
+alias dotfiles="cd ~/repos/dotfiles && v ."
