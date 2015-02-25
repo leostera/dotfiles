@@ -1,5 +1,8 @@
 #!/bin/sh
 
+# Tap 'em!
+brew tap tldr-pages/tldr
+
 # Brewable installs! 
 
 brew install coreutils
@@ -10,6 +13,7 @@ brew install grep --default-names
 brew install npm
 brew install python3
 brew install sbcl 			# Steel Bank Common Lisp
+brew install tldr
 brew install tmux
 brew install tree
 brew install vim
