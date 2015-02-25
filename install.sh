@@ -1,7 +1,7 @@
 #!/bin/sh
 
 function symlink {
-	ln -sfv "`pwd`/$1" $HOME
+    ln -sfv "`pwd`/$1" $HOME
 }
 
 # Symlinking time!
