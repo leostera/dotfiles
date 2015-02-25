@@ -1,50 +1,67 @@
 [user]
-	name = Leandro Ostera
-	email = me@leostera.com
+    name = Leandro Ostera
+    email = me@leostera.com
 
 [github]
-	user = leostera
+    user = leostera
 
 [core]
-	excludesfile = ~/.gitignore_global
-	editor = vim
-	filemode = false
-	trustctime = false
+    excludesfile = ~/.gitignore_global
+    editor = vim
+    filemode = false
+    trustctime = false
 
 [alias]
     A = add -A
-	ammend = commit --amend
-	c = commit
-	ca = commit -a
-	cam = commit -am
+    ammend = commit --amend
+    c = commit
+    ca = commit -a
+    cam = commit -am
     cm = commit -m
-	co = checkout
-	cod = checkout development
+    co = checkout
+    cod = checkout development
     com = checkout master
     d = diff
     dh = diff HEAD
     pod = push origin development
-	pom = push origin master
-	s = status
-	sl = shortlog
-	unstage = reset --hard HEAD
+    pom = push origin master
+    s = status
+    sl = shortlog
+    unstage = reset --hard HEAD
 
 [color]
-	ui = auto
+    ui = auto
+
+[color "branch"]
+    current = green
+    local = blue
+    remote = yellow
+
+[color "diff"]
+    new = green
+    old = red
+    frag = magenta
+    meta = blue
+
+[color "status"]
+    added = green bold
+    removed = red
+    changed = green
+    untracked = cyan
 
 [credential]
-	helper = osxkeychain
+    helper = osxkeychain
 
 [difftool]
-	prompt = false
+    prompt = false
 
 [mergetool]
-	prompt = false
+    prompt = false
 
 [push]
-	default = simple
+    default = simple
 
 [diff]
-	renames = copies
-	
-	
+    renames = copies
+
+
