@@ -12,18 +12,21 @@
 	trustctime = false
 
 [alias]
-	s = status
-	sl = shortlog
+	ammend = commit --amend
 	c = commit
 	ca = commit -a
 	cam = commit -am
-	ammend = commit --amend
+    cm = commit -m
 	co = checkout
 	cod = checkout development
-	com = checkout master
-	unstage = reset --hard HEAD
+    com = checkout master
+    d = diff
+    dh = diff HEAD
+    pod = push origin development
 	pom = push origin master
-	pod = push origin development
+	s = status
+	sl = shortlog
+	unstage = reset --hard HEAD
 
 [color]
 	ui = auto
