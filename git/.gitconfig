@@ -12,6 +12,7 @@
 	trustctime = false
 
 [alias]
+    A = add -A
 	ammend = commit --amend
 	c = commit
 	ca = commit -a
