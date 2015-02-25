@@ -1,0 +1,46 @@
+[user]
+	name = Leandro Ostera
+	email = me@leostera.com
+
+[github]
+	user = leostera
+
+[core]
+	excludesfile = ~/.gitignore_global
+	editor = vim
+	filemode = false
+	trustctime = false
+
+[alias]
+	s = status
+	sl = shortlog
+	c = commit
+	ca = commit -a
+	cam = commit -am
+	ammend = commit --amend
+	co = checkout
+	cod = checkout development
+	com = checkout master
+	unstage = reset --hard HEAD
+	pom = push origin master
+	pod = push origin development
+
+[color]
+	ui = auto
+
+[credential]
+	helper = osxkeychain
+
+[difftool]
+	prompt = false
+
+[mergetool]
+	prompt = false
+
+[push]
+	default = simple
+
+[diff]
+	renames = copies
+	
+	
