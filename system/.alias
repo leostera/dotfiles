@@ -1,5 +1,6 @@
 alias g="git"
 alias v="vim"
+alias srv="python -m SimpleHTTPServer"
 
 alias ..="cd .."
 alias ...="cd ../.."

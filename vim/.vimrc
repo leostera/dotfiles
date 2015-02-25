@@ -31,8 +31,10 @@ nnoremap <C-H> <C-W>h
 nnoremap <C-J> <C-W>j
 nnoremap <C-K> <C-W>k
 nnoremap <C-L> <C-W>l
+nnoremap <C--> <C-W><S-->
+nnoremap <C-=> <C-W>=
 
-nnoremap tt :tabn<cr>			"double T makes a new tab
+nnoremap tt :tabnew<cr>			"double T makes a new tab
 nnoremap th :tabp<cr>			"navigate tabs with H and L 
 nnoremap tl :tabn<cr>       	"navigate tabs with H and L 
 
@@ -67,5 +69,13 @@ let g:solarized_termcolors=256
 " Ctrl-P config
 
 let g:ctrlp_show_hidden=0
-let g:ctrl_max_files = 600
-let g:ctrl_max_depth = 6
+let g:ctrlp_max_files = 600
+let g:ctrlp_max_depth = 6
+let g:ctrlp_custom_ignore = {
+    \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|components)$',
+    \ 'file':   '\v[\/]\.(swp|bk|fas|lib|dll)$',
+    \ }
+
+" Syntastic config
+
+let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']

@@ -5,7 +5,8 @@ function symlink {
 }
 
 # Symlinking time!
-symlink git/.git{config,ignore_global}
+symlink git/.gitconfig
+symlink git/.gitignore_global
 symlink system/.alias
 symlink system/.env
 symlink system/.path
