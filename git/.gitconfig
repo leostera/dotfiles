@@ -14,9 +14,11 @@
 [alias]
     A = add -A
     ammend = commit --amend
+    b = branch
     c = commit
     ca = commit -a
     cam = commit -am
+    cb = checkout -b
     cm = commit -m
     co = checkout
     cod = checkout development
