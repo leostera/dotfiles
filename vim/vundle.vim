@@ -6,6 +6,7 @@ call vundle#begin()
 
 " Generic
 Plugin 'kien/ctrlp.vim'
+Plugin 'terryma/vim-multiple-cursors'
 
 " Git
 Plugin 'tpope/vim-fugitive'
