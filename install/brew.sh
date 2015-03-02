@@ -7,7 +7,7 @@ brew tap tldr-pages/tldr
 
 brew install coreutils
 brew install dockutil
-brew install git
+brew install git git-extras
 brew install gnu-sed --default-names
 brew install grep --default-names
 brew install npm
