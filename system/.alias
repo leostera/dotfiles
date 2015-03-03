@@ -16,3 +16,5 @@ alias dotfiles="cd ~/repos/dotfiles && v ."
 alias gitconf="vim ~/.gitconfig"
 
 alias pipit="pip install -r requirements.txt"
+
+alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
