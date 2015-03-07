@@ -8,6 +8,7 @@ alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
 alias l="ls -al"
+alias c="clear"
 
 alias reload="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
