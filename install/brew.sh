@@ -20,6 +20,7 @@ brew install tmux
 brew install tree
 brew install vim
 brew install wget
+brew install visionmedia-watch
 
 pip install --upgrade setuptools
 pip install --upgrade pip
