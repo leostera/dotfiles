@@ -15,9 +15,11 @@ Plugin 'airblade/vim-gitgutter'
 " Syntax
 Plugin 'scrooloose/syntastic'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'tpope/vim-markdown'
+Plugin 'othree/html5.vim'
+Plugin 'digitaltoad/vim-jade'
 
 " Other
-Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 
 call vundle#end()
