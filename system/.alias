@@ -1,7 +1,7 @@
 alias g="git"
 alias v="vim"
 alias vd="vim ."
-alias srv="python -m SimpleHTTPServer"
+alias st="st -nc --index index.html"
 
 alias ..="cd .."
 alias ...="cd ../.."
