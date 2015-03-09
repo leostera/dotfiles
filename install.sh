@@ -22,6 +22,7 @@ symlink vim/.vimrc
 source ./install/prepare.sh
 source ./install/zsh.sh
 source ./install/brew.sh
+source ./install/npm.sh
 source ./install/vundle.sh
 
 # OS X 
