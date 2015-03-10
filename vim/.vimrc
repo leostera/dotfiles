@@ -62,6 +62,9 @@ set smartcase
 
 " Colors 
 
+highlight OverLength ctermbg=red ctermfg=white 
+match OverLength /\%81v.\+/
+
 syntax on
 set cursorline
 let g:solarized_termcolors=256
