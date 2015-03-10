@@ -3,7 +3,7 @@
     email = me@leostera.com
 
 [github]
-    user = leostera
+    user = ostera
 
 [core]
     excludesfile = ~/.gitignore_global
