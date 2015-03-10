@@ -1,7 +1,7 @@
 alias g="git"
 alias v="vim"
 alias vd="vim ."
-alias st="st -nc --index index.html"
+alias st="st -nc"
 
 alias ..="cd .."
 alias ...="cd ../.."
