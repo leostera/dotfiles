@@ -75,7 +75,7 @@ let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 6
 let g:ctrlp_custom_ignore = {
-    \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|components)$',
+    \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|ebin|deps|components)$',
     \ 'file':   '\v[\/]\.(swp|bk|fas|lib|dll)$',
     \ }
 
