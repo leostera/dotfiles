@@ -23,7 +23,7 @@ nnoremap <leader>h :split<cr>		",h splits horizontally
 " Load Plugins
 
 if filereadable(expand("$HOME/.vim/vundle.vim"))
-	source $HOME/.vim/vundle.vim
+  source $HOME/.vim/vundle.vim
 endif
 
 " control+{h,j,k,l} to navigate between splits
@@ -75,10 +75,15 @@ let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 6
 let g:ctrlp_custom_ignore = {
-    \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|ebin|deps|components)$',
-    \ 'file':   '\v[\/]\.(swp|bk|fas|lib|dll)$',
-    \ }
+  \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|ebin|deps|components)$',
+  \ 'file':   '\v[\/]\.(swp|bk|fas|lib|dll)$',
+  \ }
 
 " Syntastic config
 
 let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
+
+" Airline config
+
+let g:airline_theme='solarized'
+let g:airline_solarized_bg='dark'
