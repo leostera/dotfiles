@@ -50,7 +50,7 @@ set softtabstop=4
 
 filetype plugin indent on
 
-set nowrap
+set wrap 
 
 " Searching
 
