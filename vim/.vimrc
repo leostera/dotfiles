@@ -52,6 +52,8 @@ filetype plugin indent on
 
 set wrap 
 
+nnoremap <leader>f gggqG<cr>   "auto break lines 
+
 " Searching
 
 set hlsearch
