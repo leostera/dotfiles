@@ -2,6 +2,7 @@ alias g="git"
 alias v="vim"
 alias vd="vim ."
 alias st="st -nc"
+alias srv="st"
 
 alias ..="cd .."
 alias ...="cd ../.."
