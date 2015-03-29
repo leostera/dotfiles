@@ -10,13 +10,18 @@ set autoread		"Reload files changed outside vim
 set wmh=0		    "Set minimum window height to 0, helps when stacking splits
 
 " Spell checking
-set spell
+set nospell
 
 " Key mappings
 
 let mapleader=","
+
+vnoremap . :norm.<cr> "allow for command repetition in visual mode
+
 nnoremap <leader>s :set spell!<cr>
+
 nnoremap <leader><space> :noh<cr>	",<space> clears search highlightning
+
 nnoremap <tab> :bnext<cr>		"Next buffer with TAB
 nnoremap <s-tab> :bprevious<cr>		"Previous buffer with Shift+TAB
 nnoremap <leader><leader> <C-^>		"Toggle last two buffers
