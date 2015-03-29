@@ -16,6 +16,8 @@ set nospell
 
 let mapleader=","
 
+inoremap jk <esc> "ain't nobody got time fo' <ESC>
+
 vnoremap . :norm.<cr> "allow for command repetition in visual mode
 
 nnoremap <leader>s :set spell!<cr>
