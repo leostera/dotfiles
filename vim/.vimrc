@@ -3,11 +3,15 @@
 set nocompatible
 set number		    "Line numbers me likey
 set backspace=2     "Make backspace work like most other apps
-set history=10000	"Shitload of history for :cmdline
+set history=10000	"Shit load of history for :cmdline
 set showcmd		    "Show me incomplete commands down bottom
 set visualbell		"Please, no sounds
 set autoread		"Reload files changed outside vim
 set wmh=0		    "Set minimum window height to 0, helps when stacking splits
+
+" Spell checking
+
+set spell
 
 " Key mappings
 
