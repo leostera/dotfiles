@@ -43,10 +43,10 @@ nnoremap tl :tabn<cr>       	"navigate tabs with H and L
 set autoindent
 set smartindent
 set smarttab
-set tabstop=4
+set tabstop=2
 set expandtab
-set shiftwidth=4
-set softtabstop=4
+set shiftwidth=2
+set softtabstop=2
 
 filetype plugin indent on
 

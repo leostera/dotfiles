@@ -1,6 +1,6 @@
 [user]
     name = Leandro Ostera
-    email = me@leostera.com
+    email = leandro@ostera.io 
 
 [github]
     user = ostera
@@ -65,5 +65,4 @@
 
 [diff]
     renames = copies
-
 
