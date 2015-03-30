@@ -13,6 +13,7 @@ symlink system/.path
 symlink system/.prompt
 symlink system/.zshrc
 symlink system/.sbclrc
+symlink system/.tmuxrc
 
 mkdir -p $HOME/.vim
 ln -sfv "`pwd`/vim/vundle.vim" $HOME/.vim
