@@ -1,4 +1,0 @@
-setw -g mode-keys vi
-
-unbind r
-bind r source-file ~/.tmuxrc; display "Reloaded"
