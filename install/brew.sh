@@ -6,6 +6,7 @@ brew tap tldr-pages/tldr
 # Brewable installs! 
 
 brew install aircrack-ng
+brew install asciinema
 brew install coreutils
 brew install dockutil
 brew install git git-extras
