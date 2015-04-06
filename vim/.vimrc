@@ -16,13 +16,15 @@ set nospell
 
 let mapleader=","
 
-inoremap jk <esc> "ain't nobody got time fo' <ESC>
+inoremap jk <esc><esc>
 
-vnoremap . :norm.<cr> "allow for command repetition in visual mode
+"allow for command repetition in visual mode
+vnoremap . :norm.<cr>
 
 nnoremap <leader>s :set spell!<cr>
 
-nnoremap <leader><space> :noh<cr>	",<space> clears search highlightning
+",<space> clears search highlightning
+nnoremap <leader><space> :noh<cr>	
 
 nnoremap <tab> :bnext<cr>		"Next buffer with TAB
 nnoremap <s-tab> :bprevious<cr>		"Previous buffer with Shift+TAB
