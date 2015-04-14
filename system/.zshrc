@@ -8,3 +8,5 @@ sourcelink $HOME/.alias
 sourcelink $HOME/.prompt
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+
+$(boot2docker shellinit)
