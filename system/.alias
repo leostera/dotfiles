@@ -26,3 +26,5 @@ alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 
 alias rb="ruby"
 alias py="python"
+
+alias dockip="boot2docker ip"
