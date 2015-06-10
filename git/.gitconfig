@@ -15,6 +15,7 @@
     A = add -A
     ammend = commit --amend
     b = branch
+    br = branch -r
     c = commit
     ca = commit -a
     cam = commit -am
