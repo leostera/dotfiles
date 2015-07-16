@@ -16,6 +16,7 @@ brew install npm
 brew install python python3
 brew install ruby
 brew install sbcl 			# Steel Bank Common Lisp
+brew install erlang rebar
 brew install tldr
 brew install tmux
 brew install tree
