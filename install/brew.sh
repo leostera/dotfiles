@@ -5,6 +5,7 @@ brew tap tldr-pages/tldr
 
 # Brewable installs! 
 
+brew install ack
 brew install aircrack-ng
 brew install asciinema
 brew install coreutils
