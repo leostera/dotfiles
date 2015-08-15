@@ -15,10 +15,12 @@ Plugin 'airblade/vim-gitgutter'
 
 " Syntax
 Plugin 'scrooloose/syntastic'
-Plugin 'altercation/vim-colors-solarized'
 Plugin 'tpope/vim-markdown'
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-jade'
+
+" Theme
+Plugin 'flazz/vim-colorschemes'
 
 " Other
 Plugin 'mattn/emmet-vim'
