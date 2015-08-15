@@ -83,6 +83,7 @@ match OverLength /\%81v.\+/
 syntax on
 set cursorline
 let g:solarized_termcolors=256
+colorscheme peachpuff
 
 " Ctrl-P config
 
@@ -90,7 +91,7 @@ let g:ctrlp_show_hidden=0
 let g:ctrlp_max_files = 600
 let g:ctrlp_max_depth = 6
 let g:ctrlp_custom_ignore = {
-  \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|ebin|deps|components)$',
+  \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|ebin|deps)$',
   \ 'file':   '\v[\/]\.(swo|beam|swp|bk|fas|lib|dll)$',
   \ }
 
