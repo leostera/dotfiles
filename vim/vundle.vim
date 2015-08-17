@@ -18,6 +18,8 @@ Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
 Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-jade'
+Plugin 'pangloss/vim-javascript'
+Plugin 'mxw/vim-jsx'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'

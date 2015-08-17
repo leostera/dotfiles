@@ -84,6 +84,7 @@ syntax on
 set cursorline
 let g:solarized_termcolors=256
 colorscheme peachpuff
+let g:jsx_ext_required = 0
 
 " Ctrl-P config
 
@@ -101,5 +102,5 @@ let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
 
 " Airline config
 
-let g:airline_theme='solarized'
+let g:airline_theme='molokai'
 let g:airline_solarized_bg='dark'
