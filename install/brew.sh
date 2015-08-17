@@ -28,3 +28,6 @@ brew install wget
 
 pip install --upgrade setuptools
 pip install --upgrade pip
+
+# what the fuck is this doing here, put it somewhere else
+git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
