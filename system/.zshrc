@@ -14,3 +14,5 @@ export NVM_DIR=~/.nvm
 
 export NODE_PATH=./lib/:./modules/
 export NODE_ENV=LOCAL
+
+clear
