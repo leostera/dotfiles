@@ -18,6 +18,7 @@ let mapleader=","
 
 inoremap jk <esc><esc>
 nnoremap q :q<cr>
+nnoremap wq :wq<cr>
 
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
