@@ -4,16 +4,10 @@ function symlink {
     ln -sfv "`pwd`/$1" $HOME
 }
 
-# Symlinking time!
-symlink git/.gitconfig
-symlink git/.gitignore_global
-symlink system/.alias
-symlink system/.env
-symlink system/.path
-symlink system/.prompt
-symlink system/.zshrc
-symlink system/.sbclrc
-symlink system/.tmux.conf
+# Symlinking all dotfiles!
+for dotfile in ./*/.*; do
+  symlink $dotfile;
+done
 
 mkdir -p $HOME/.vim
 ln -sfv "`pwd`/vim/vundle.vim" $HOME/.vim
