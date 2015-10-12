@@ -18,7 +18,7 @@ let mapleader=","
 
 inoremap jk <esc><esc>
 nnoremap q :q<cr>
-nnoremap wq :wq<cr>
+nnoremap W :wq<cr>
 
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
@@ -104,5 +104,5 @@ let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
 
 " Airline config
 
-let g:airline_theme='molokai'
+let g:airline_theme='solarized'
 let g:airline_solarized_bg='dark'
