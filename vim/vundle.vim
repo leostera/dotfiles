@@ -7,6 +7,7 @@ call vundle#begin()
 " Generic
 Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
+
 Plugin 'bling/vim-airline'
 
 " Git
@@ -20,12 +21,13 @@ Plugin 'othree/html5.vim'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
+Plugin 'mattn/emmet-vim'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
 
-" Other
-Plugin 'mattn/emmet-vim'
+" Tmux
+Plugin 'tmux-plugins/vim-tmux'
 
 call vundle#end()
 
