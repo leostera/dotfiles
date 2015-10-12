@@ -5,6 +5,7 @@ alias v="vim"
 alias vd="vim ."
 
 alias d="docker"
+alias dm="docker-machine"
 
 alias m="make"
 
