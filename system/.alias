@@ -1,37 +1,48 @@
 alias g="git"
+alias clone="g clone"
+
 alias v="vim"
 alias vd="vim ."
-alias srv="python -m SimpleHTTPServer"
+
+alias d="docker"
+
+alias m="make"
+
+alias j="jobs"
+alias f="fg"
+alias b="bg"
+alias t="tmux"
 
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="cd ~"
+alias repos="cd ~/repos"
 
 alias l="ls -al"
-alias t="tree -L 1"
-alias t1="tree -L 1"
-alias tt="tree -L 2"
-alias t2="tree -L 2"
-alias t3="tree -L 3"
-alias t4="tree -L 4"
-alias t5="tree -L 5"
-alias t6="tree -L 6"
+
+for level in {1..9}; do
+  tree="tree -a -L ${level}";
+  t=$(repeat ${level} echo -n "t");
+  eval "alias ${t}='${tree}'";
+  eval "alias t${level}='${tree}'";
+done
 
 alias reload="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias vundlerc="vim ~/.vim/vundle.vim"
-alias zshrc="vim ~/.zshrc && reload"
-alias dotfiles="cd ~/repos/dotfiles && v ."
+alias zshrc="vim ~/.zshrc ; reload"
+alias dotfiles="cd ~/repos/dotfiles ; v ."
 alias gitconf="vim ~/.gitconfig"
 
 alias pipit="pip install -r requirements.txt"
+alias srv="python -m SimpleHTTPServer"
+alias py="python"
 
 alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 
 alias rb="ruby"
-alias py="python"
 
-alias dockip="boot2docker ip"
-alias d="docker"
-alias m="make"
+for release in {16..19}; do
+  eval "alias ${release}=${HOME}/.kerl/r${release}/activate";
+done
