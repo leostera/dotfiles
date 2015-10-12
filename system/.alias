@@ -24,7 +24,7 @@ alias l="ls -l"
 alias la="ls -al"
 
 for level in {1..9}; do
-  tree="tree -L ${level}";
+  tree="tree -C -L ${level}";
   t=$(repeat ${level} echo -n "t");
   eval "alias ${t}='${tree}'";
   eval "alias t${level}='${tree}'";
