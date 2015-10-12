@@ -12,7 +12,7 @@ alias m="make"
 alias j="jobs"
 alias f="fg"
 alias b="bg"
-alias t="tmux"
+alias tm="tmux"
 
 alias ..="cd .."
 alias ...="cd ../.."
@@ -20,10 +20,11 @@ alias ....="cd ../../.."
 alias ~="cd ~"
 alias repos="cd ~/repos"
 
-alias l="ls -al"
+alias l="ls -l"
+alias la="ls -al"
 
 for level in {1..9}; do
-  tree="tree -a -L ${level}";
+  tree="tree -L ${level}";
   t=$(repeat ${level} echo -n "t");
   eval "alias ${t}='${tree}'";
   eval "alias t${level}='${tree}'";
