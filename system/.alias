@@ -34,7 +34,7 @@ alias reload="source ~/.zshrc"
 alias vimrc="vim ~/.vimrc"
 alias vundlerc="vim ~/.vim/vundle.vim"
 alias zshrc="vim ~/.zshrc ; reload"
-alias dotfiles="cd ~/repos/dotfiles ; v ."
+alias dotfiles="cd ~/repos/dotfiles"
 alias gitconf="vim ~/.gitconfig"
 
 alias pipit="pip install -r requirements.txt"
