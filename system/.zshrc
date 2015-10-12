@@ -2,17 +2,13 @@ function sourcelink {
     source `readlink $1`
 }
 
-sourcelink $HOME/.env
-sourcelink $HOME/.path
-sourcelink $HOME/.alias
-sourcelink $HOME/.prompt
+for dotfile in 'env' 'path' 'alias' 'prompt'; do
+  sourcelink "${HOME}/.${dotfile}";
+done
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-
 export NVM_DIR=~/.nvm
-#source $(brew --prefix nvm)/nvm.sh
-
 export NODE_PATH=./lib/:./modules/
 export NODE_ENV=LOCAL
 
-clear
+fpath="${HOMEBREW_PREFIX}/share/zsh-completions $fpath"
