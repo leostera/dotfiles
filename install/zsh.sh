@@ -1,6 +1,6 @@
 #!/bin/sh
 
-brew install zsh zsh-completions z
+brew install zsh zsh-completions z zsh-history-substring-search
 
 mkdir -p ~/.zsh
 
