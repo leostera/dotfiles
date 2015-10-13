@@ -1,3 +1,5 @@
+alias q="exit"
+
 alias g="git"
 alias clone="g clone"
 
