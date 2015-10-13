@@ -1,6 +1,7 @@
 alias q="exit"
 
 alias g="git"
+alias gs="g s"
 alias clone="g clone"
 
 alias v="vim"
