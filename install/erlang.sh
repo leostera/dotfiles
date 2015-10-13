@@ -1,6 +1,9 @@
 #!/bin/sh
 
-git clone https://github.com/yrashk/kerl ~/.kerl --depth 1
+rm -rf ~/.kerl
+git clone https://github.com/yrashk/kerl ~/.kerl
+
+~/.kerl/kerl update releases
 
 for rel in '18.1 18' '17.5 17' 'R16B03 16'; do
   tmp=(${(s. .)rel});
@@ -11,3 +14,5 @@ for rel in '18.1 18' '17.5 17' 'R16B03 16'; do
   ~/.kerl/kerl build ${release} ${build};
   ~/.kerl/kerl install ${build} ~/.kerl/erlangs/r${build};
 done
+
+~/.kerl/kerl cleanup
