@@ -4,7 +4,7 @@ brew install zsh zsh-completions z zsh-history-substring-search
 
 mkdir -p ~/.zsh
 
-git clone git://github.com/zsh-users/zsh-syntax-highlighting.git ~/.zsh/zsh-syntax-highlightning
+cd ~/.zsh && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 ZSH = `which zsh`
 

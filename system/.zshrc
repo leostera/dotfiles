@@ -19,4 +19,4 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
-source ~/.zsh/zsh-syntax-highlightning/zsh-syntax-highlighting.zsh
+. ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
