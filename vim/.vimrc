@@ -17,8 +17,8 @@ set nospell
 let mapleader=","
 
 inoremap jk <esc><esc>
-nnoremap q :q<cr>
-nnoremap W :wq<cr>
+nnoremap Q :q!<cr>
+nnoremap W :wq!<cr>
 
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
