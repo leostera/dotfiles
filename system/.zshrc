@@ -15,8 +15,12 @@ export NVM_DIR=~/.nvm
 export NODE_PATH=./lib/:./modules/
 export NODE_ENV=LOCAL
 
+export HISTSIZE=1000000
+export SAVEHIST=1000000
+export HISTFILE=~/.zhistory
+
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
-source ~/.zsh/zsh-syntax-highlightning/zsh-syntax-highlighting.zsh
+. ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
