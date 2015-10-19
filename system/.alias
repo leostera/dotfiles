@@ -49,5 +49,7 @@ alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 alias rb="ruby"
 
 for release in {16..19}; do
-  eval "alias r${release}='. ${HOME}/.kerl/erlang/r${release}/activate'";
+  p="${HOME}/.kerl/erlang/r${release}";
+  eval "alias r${release}='. ${p}/activate'";
+  eval "export ERL${release}=${p}";
 done
