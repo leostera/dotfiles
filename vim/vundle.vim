@@ -5,6 +5,7 @@ set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 " Generic
+Plugin 'junegunn/fzf.vim'
 Plugin 'kien/ctrlp.vim'
 Plugin 'terryma/vim-multiple-cursors'
 

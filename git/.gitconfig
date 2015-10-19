@@ -1,6 +1,6 @@
 [user]
     name = Leandro Ostera
-    email = leandro@ostera.io 
+    email = leandro.ostera@klarna.com 
 
 [github]
     user = ostera
@@ -26,8 +26,10 @@
     com = checkout master
     d = diff
     dh = diff HEAD
+    l = log
     pod = push origin development
     pom = push origin master
+    rl = reflog
     s = status
     sl = shortlog
     unstage = reset --hard HEAD
