@@ -32,8 +32,8 @@ nnoremap <tab> :bnext<cr>		"Next buffer with TAB
 nnoremap <s-tab> :bprevious<cr>		"Previous buffer with Shift+TAB
 nnoremap <leader><leader> <C-^>		"Toggle last two buffers
 
-nnoremap <leader>v :vsplit<cr>	",v splits vertically
-nnoremap <leader>h :split<cr>		",h splits horizontally
+nnoremap <leader>v :vsp<cr>	",v splits vertically
+nnoremap <leader>h :sp<cr>		",h splits horizontally
 
 " Load Plugins
 
@@ -89,7 +89,7 @@ colorscheme peachpuff
 let g:jsx_ext_required = 0
 
 set rtp+=/usr/local/opt/fzf
-map <leader><tab> :FZF<cr>
+map <leader><tab> :FZF -x<cr>
 
 " Ctrl-P config
 
@@ -107,5 +107,4 @@ let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
 
 " Airline config
 
-let g:airline_theme='solarized'
-let g:airline_solarized_bg='dark'
+let g:airline_theme='luna'

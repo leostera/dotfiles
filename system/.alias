@@ -26,6 +26,10 @@ alias repos="cd ~/repos"
 alias l="ls -l"
 alias la="ls -al"
 
+alias va="vagrant"
+alias vup="vagrant up"
+alias vsh="vagarnt ssh"
+
 for level in {1..9}; do
   tree="tree -C -L ${level}";
   t=$(repeat ${level} echo -n "t");
