@@ -28,7 +28,7 @@ alias la="ls -al"
 
 alias va="vagrant"
 alias vup="vagrant up"
-alias vsh="vagarnt ssh"
+alias vsh="vagrant ssh"
 
 for level in {1..9}; do
   tree="tree -C -L ${level}";
