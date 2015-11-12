@@ -26,4 +26,4 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
-. ${HOME}/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /Users/leandro.ostera/.zsh/zsh-syntax-highlightning/zsh-syntax-highlighting.zsh
