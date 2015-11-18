@@ -10,8 +10,6 @@ done
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/repos/gitrdun/bin" # klarna git utils
-export PATH="$PATH:$HOME/repos/naked-chef" # naked path 
 
 export NVM_DIR=~/.nvm
 export NODE_PATH=./lib/:./modules/
@@ -26,4 +24,4 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
-. /Users/leandro.ostera/.zsh/zsh-syntax-highlightning/zsh-syntax-highlighting.zsh
+. /Users/leostera/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
