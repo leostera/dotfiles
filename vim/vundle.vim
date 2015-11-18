@@ -23,6 +23,7 @@ Plugin 'digitaltoad/vim-jade'
 Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
+Plugin 'ekalinin/Dockerfile.vim'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
