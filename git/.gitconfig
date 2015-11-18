@@ -1,6 +1,6 @@
 [user]
     name = Leandro Ostera
-    email = leandro.ostera@klarna.com 
+    email = leandro@ostera.io 
 
 [github]
     user = ostera
@@ -28,7 +28,7 @@
     d1 = diff HEAD^1
     dh = diff HEAD
     dm = diff master
-    l = log
+    l = log --pretty=oneline --graph --abbrev-commit
     pall = push --all
     pod = push origin development
     pom = push origin master
