@@ -32,6 +32,8 @@
     pall = push --all
     pod = push origin development
     pom = push origin master
+    pou = push -u origin
+    po = push origin
     ra = rebase --abort
     rc = rebase --continue
     rl = reflog
