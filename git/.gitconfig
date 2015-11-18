@@ -19,19 +19,25 @@
     c = commit
     ca = commit -a
     cam = commit -am
-    cb = checkout -b
     cm = commit -m
     co = checkout
+    cob = checkout -b
     cod = checkout development
     com = checkout master
     d = diff
+    d1 = diff HEAD^1
     dh = diff HEAD
+    dm = diff master
     l = log
+    pall = push --all
     pod = push origin development
     pom = push origin master
+    ra = rebase --abort
+    rc = rebase --continue
     rl = reflog
     s = status
     sl = shortlog
+    t = tag
     unstage = reset --hard HEAD
 
 [color]
