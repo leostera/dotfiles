@@ -29,7 +29,7 @@
     dh = diff HEAD
     dm = diff master
     l = log --pretty=oneline --graph --abbrev-commit
-    pall = push --all
+    pall = pull --all
     pod = push origin development
     pom = push origin master
     pou = push -u origin
