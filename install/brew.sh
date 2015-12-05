@@ -10,10 +10,11 @@ brew install aircrack-ng
 brew install asciinema
 brew install coreutils
 brew install dockutil
+brew install fzf
 brew install git git-extras
 brew install gnu-sed --default-names
-brew install grep --default-names
 brew install go
+brew install grep --default-names
 brew install nmap
 brew install npm
 brew install python python3
