@@ -9,6 +9,12 @@ alias vd="vim ."
 
 alias d="docker"
 alias dm="docker-machine"
+alias dco="docker-compose"
+alias dup="docker-compose up"
+
+function dockme {
+  eval $(dm env dev)
+}
 
 alias m="make"
 
@@ -23,8 +29,8 @@ alias ....="cd ../../.."
 alias ~="cd ~"
 alias repos="cd ~/repos"
 
-alias l="ls -l"
-alias la="ls -al"
+alias l="ls -l --color"
+alias la="ls -al --color"
 
 alias va="vagrant"
 alias vup="vagrant up"

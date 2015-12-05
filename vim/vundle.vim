@@ -24,6 +24,8 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'mxw/vim-jsx'
 Plugin 'mattn/emmet-vim'
 Plugin 'ekalinin/Dockerfile.vim'
+Plugin 'elixir-lang/vim-elixir'
+Plugin 'ntpeters/vim-better-whitespace'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
