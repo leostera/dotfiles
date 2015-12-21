@@ -40,6 +40,7 @@
     s = status
     sl = shortlog
     t = tag
+    tl = tag --sort "v:refname"
     unstage = reset --hard HEAD
 
 [color]
