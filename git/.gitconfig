@@ -30,11 +30,10 @@
     dm = diff master
     l = log --pretty=oneline --graph --abbrev-commit --color
     lo = log --color --stat
+    p = push
     pall = pull --all
     pod = push origin development
     pom = push origin master
-    pou = push -u origin
-    po = push origin
     ra = rebase --abort
     rc = rebase --continue
     rl = reflog
