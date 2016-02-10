@@ -1,6 +1,6 @@
 [user]
     name = Leandro Ostera
-    email = leandro@ostera.io
+    email = leandro.ostera@klarna.com
 
 [github]
     user = ostera
@@ -28,7 +28,7 @@
     d1 = diff HEAD^1
     dh = diff HEAD
     dm = diff master
-    l = log --pretty=oneline --graph --abbrev-commit --color
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
     lo = log --color --stat
     p = push
     pall = pull --all
