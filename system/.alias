@@ -16,12 +16,12 @@ function dockme {
   eval $(dm env dev)
 }
 
+alias h="\history -i 0"
 alias m="make"
 
-alias j="jobs"
-alias f="fg"
-alias b="bg"
+alias f="fzf"
 alias tm="tmux"
+alias tma="tmux attach"
 
 alias ..="cd .."
 alias ...="cd ../.."
