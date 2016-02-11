@@ -10,8 +10,6 @@ done
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:$HOME/repos/fredp/gitrdun/bin" # klarna git utils
-export PATH="$PATH:$HOME/repos/esup/naked-chef" # naked path 
 
 export NVM_DIR=~/.nvm
 export NODE_PATH=./lib/:./modules/
