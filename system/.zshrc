@@ -12,8 +12,6 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/sbin"
 
 export NVM_DIR=~/.nvm
-export PATH="$PATH:$HOME/repos/gitrdun/bin" # klarna git utils
-export PATH="$HOME/repos/naked-chef:$PATH" # naked path 
 
 export NODE_PATH=./lib/:./modules/
 export NODE_ENV=LOCAL
@@ -30,5 +28,3 @@ autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
 . $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-r16
