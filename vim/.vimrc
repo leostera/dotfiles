@@ -49,9 +49,11 @@ nnoremap <C-L> <C-W>l
 nnoremap <C--> <C-W><S-->
 nnoremap <C-=> <C-W>=
 
-nnoremap tt :tabnew<cr>     "double T makes a new tab
-nnoremap th :tabp<cr>       "navigate tabs with H and L
-nnoremap tl :tabn<cr>       "navigate tabs with H and L
+" double T makes a new tab
+nnoremap tt :tabnew<cr>
+" navigate tabs with H and L
+nnoremap th :tabp<cr>
+nnoremap tl :tabn<cr>
 
 " Indentation
 
