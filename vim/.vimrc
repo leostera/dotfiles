@@ -84,8 +84,9 @@ match OverLength /\%81v.\+/
 
 syntax on
 set cursorline
+set background=dark
+colorscheme solarized
 let g:solarized_termcolors=256
-colorscheme peachpuff
 let g:jsx_ext_required = 0
 
 set rtp+=/usr/local/opt/fzf

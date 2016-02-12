@@ -25,4 +25,4 @@ ln -sfv "`pwd`/vim/vundle.vim" $HOME/.vim
   #source ./osx/defaults.sh
 #fi
 
-source $HOME/.zshrc
+#source $HOME/.zshrc
