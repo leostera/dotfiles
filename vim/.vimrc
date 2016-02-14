@@ -87,7 +87,7 @@ match OverLength /\%81v.\+/
 syntax on
 set cursorline
 set background=dark
-colorscheme solarized
+colorscheme peachpuff
 let g:solarized_termcolors=256
 let g:jsx_ext_required = 0
 
