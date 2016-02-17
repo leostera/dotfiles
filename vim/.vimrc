@@ -109,5 +109,3 @@ let g:ctrlp_custom_ignore = {
 let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
 
 " Airline config
-
-let g:airline_theme='luna'
