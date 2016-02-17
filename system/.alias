@@ -20,6 +20,7 @@ alias h="\history -i 0"
 alias m="make"
 
 alias f="fzf"
+alias tmux="TERM=screen-256color tmux -2"
 alias tm="tmux"
 alias tma="tmux attach"
 
