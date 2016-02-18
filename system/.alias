@@ -16,7 +16,7 @@ function dockme {
   eval $(dm env dev)
 }
 
-alias h="\history -i 0"
+alias h="\history -i 0 | f"
 alias m="make"
 
 alias f="fzf"
