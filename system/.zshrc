@@ -10,6 +10,7 @@ done
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/sbin"
+export PATH="$PATH:/Users/leandro.ostera/repos/fredp/gitrdun/bin"
 
 export NVM_DIR=~/.nvm
 
