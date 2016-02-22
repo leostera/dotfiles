@@ -28,12 +28,20 @@ nnoremap <leader>s :set spell!<cr>
 ",<space> clears search highlightning
 nnoremap <leader><space> :noh<cr>
 
-nnoremap <tab> :bnext<cr>          "Next buffer with TAB
-nnoremap <s-tab> :bprevious<cr>    "Previous buffer with Shift+TAB
-nnoremap <leader><leader> <C-^>    "Toggle last two buffers
+"Next buffer with TAB
+nnoremap <tab> :bnext<cr>
 
-nnoremap <leader>v :vsp<cr>   ",v splits vertically
-nnoremap <leader>h :sp<cr>    ",h splits horizontally
+"Previous buffer with Shift+TAB
+nnoremap <s-tab> :bprevious<cr>
+
+"Toggle last two buffers
+nnoremap <leader><leader> <C-^>
+
+",v splits vertically
+nnoremap <leader>v :vsp<cr>
+
+",h splits horizontally
+nnoremap <leader>h :sp<cr>
 
 " Load Plugins
 
