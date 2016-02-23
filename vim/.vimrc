@@ -100,16 +100,6 @@ let g:jsx_ext_required = 0
 set rtp+=/usr/local/opt/fzf
 map <leader><tab> :FZF -x<cr>
 
-" Ctrl-P config
-
-let g:ctrlp_show_hidden=0
-let g:ctrlp_max_files = 6000
-" let g:ctrlp_max_depth = 6
-let g:ctrlp_custom_ignore = {
-  \ 'dir':    '\v[\/](\.git|\.hg|\.svn|build|node_modules|)$',
-  \ 'file':   '\v[\/]\.(swo|beam|swp|bk|fas|lib|dll)$',
-  \ }
-
 " Syntastic config
 
 let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
