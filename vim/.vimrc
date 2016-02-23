@@ -9,6 +9,9 @@ set visualbell     "Please, no sounds
 set autoread       "Reload files changed outside vim
 set wmh=0          "Set minimum window height to 0, helps when stacking splits
 
+set undofile "automatically save and restore undo history
+set undodir=~/.vim/undos
+
 " Spell checking
 set nospell
 
@@ -24,6 +27,7 @@ noremap Q <Nop>
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
 
+" Toggle spelling"
 nnoremap <leader>s :set spell!<cr>
 
 ",<space> clears search highlightning
