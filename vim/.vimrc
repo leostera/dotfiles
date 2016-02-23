@@ -18,6 +18,9 @@ let mapleader=","
 
 inoremap jk <esc><esc>
 
+" never go into Ex mode
+noremap Q <Nop>
+
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
 
