@@ -13,7 +13,7 @@
 
 [alias]
     A = add -A
-    ammend = commit --amend
+    amend = commit --amend
     b = branch
     br = branch -r
     c = commit
