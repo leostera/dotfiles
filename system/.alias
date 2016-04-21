@@ -3,6 +3,8 @@ alias q="exit"
 alias g="git"
 alias gs="g s"
 alias clone="g clone"
+alias init="g init"
+alias shallow="g clone --depth 1"
 
 alias v="vim"
 alias vd="vim ."
