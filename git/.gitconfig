@@ -36,6 +36,7 @@
     pom = push origin master
     ra = rebase --abort
     rc = rebase --continue
+    rao = remote add origin
     rl = reflog
     s = status
     sl = shortlog
