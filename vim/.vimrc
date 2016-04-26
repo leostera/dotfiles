@@ -12,6 +12,8 @@ set wmh=0          "Set minimum window height to 0, helps when stacking splits
 set undofile "automatically save and restore undo history
 set undodir=~/.vim/undos
 
+set clipboard=unnamed
+
 " Spell checking
 set nospell
 
