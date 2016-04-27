@@ -32,10 +32,9 @@ alias ....="cd ../../.."
 alias ~="pushd ~"
 alias repos="pushd ~/repos"
 
-alias l="ls -l --color"
-alias la="ls -al --color"
+alias l="ls -lh --color"
+alias la="ls -lha --color"
 
-alias va="vagrant"
 alias vup="vagrant up"
 alias vsh="vagrant ssh"
 
