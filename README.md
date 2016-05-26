@@ -1,2 +1,2 @@
-# Leandro Ostera Dotfiles
+# dotfiles
 > Just a collection of configs, nothing special
