@@ -12,6 +12,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
+Plugin 'kyuhi/vim-emoji-complete'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
