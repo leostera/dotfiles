@@ -14,6 +14,15 @@ alias dm="docker-machine"
 alias dco="docker-compose"
 alias dup="docker-compose up"
 
+function ww {
+  while true; do
+    eval $* > /var/tmp/$1;
+    clear;
+    cat /var/tmp/$1;
+    sleep 1;
+  done
+}
+
 function dockip {
   dm ip dev
 }
