@@ -15,12 +15,14 @@ alias dco="docker-compose"
 alias dup="docker-compose up"
 
 function ww {
+  readonly OUTPUT_FILE="/var/tmp/$(pwd | sed 's / _ g')_$1"
   while true; do
-    eval $* > /var/tmp/$1;
+    eval $* > $OUTPUT_FILE;
     clear;
-    cat /var/tmp/$1;
+    cat $OUTPUT_FILE;
     sleep 1;
   done
+  rm $OUTPUT_FILE
 }
 
 function dockip {
