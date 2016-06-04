@@ -15,7 +15,7 @@ alias dco="docker-compose"
 alias dup="docker-compose up"
 
 function ww {
-  readonly OUTPUT_FILE="/var/tmp/$(pwd | sed 's / _ g')-$1"
+  readonly OUTPUT_FILE="/var/tmp/ww_files/$(pwd | sed 's / _ g')-$1"
   while true; do
     eval $* > $OUTPUT_FILE;
     clear;
