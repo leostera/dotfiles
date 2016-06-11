@@ -1,6 +1,7 @@
 [user]
     name = Leandro Ostera
     email = leandro@ostera.io
+    signingkey = 4803758C
 
 [github]
     user = ostera
@@ -13,13 +14,13 @@
 
 [alias]
     A = add -A
-    amend = commit --amend
+    amend = commit -S --amend
     b = branch
     br = branch -r
-    c = commit
-    ca = commit -a
-    cam = commit -am
-    cm = commit -m
+    c = commit -S
+    ca = commit -S -a
+    cam = commit -S -am
+    cm = commit -S -m
     co = checkout
     cob = checkout -b
     cod = checkout development
@@ -28,7 +29,7 @@
     d1 = diff HEAD^1
     dh = diff HEAD
     dm = diff master
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an>%Creset' --abbrev-commit
+    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an> (%G?)%Creset' --abbrev-commit
     lo = log --color --stat
     p = push
     pall = pull --all
@@ -40,7 +41,7 @@
     rl = reflog
     s = status
     sl = shortlog
-    t = tag
+    t = tag -s
     tl = tag --sort "v:refname"
     unstage = reset --hard HEAD
 
