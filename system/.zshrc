@@ -14,6 +14,8 @@ export PATH="$PATH:/Users/leandro.ostera/repos/fredp/gitrdun/bin"
 
 export NVM_DIR=~/.nvm
 
+export GOPATH=~/.go
+
 export NODE_PATH=./lib/:./modules/
 export NODE_ENV=LOCAL
 source /usr/local/opt/nvm/nvm.sh
