@@ -12,22 +12,8 @@ alias vd="vim ."
 
 alias d="docker"
 alias dm="docker-machine"
-alias dco="docker-compose"
-alias dup="docker-compose up"
 
-function ww {
-  readonly OUTPUT_FILE="/var/tmp/ww_files/$(pwd | sed 's / _ g')-$1"
-  while true; do
-    eval $* > $OUTPUT_FILE;
-    clear;
-    cat $OUTPUT_FILE;
-    sleep 1;
-  done
-}
-
-function dockip {
-  dm ip dev
-}
+alias dockip="dm ip dev"
 
 function dockme {
   eval $(dm env dev)
