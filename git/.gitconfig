@@ -18,7 +18,6 @@
     b = branch
     br = branch -r
     c = commit -S
-    ca = commit -S -a
     cam = commit -S -am
     cm = commit -S -m
     co = checkout
@@ -29,6 +28,7 @@
     d1 = diff HEAD^1
     dh = diff HEAD
     dm = diff master
+    fall = fetch --all
     l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an> (%G?)%Creset' --abbrev-commit
     lo = log --color --stat
     p = push
