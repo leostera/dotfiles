@@ -29,8 +29,11 @@ noremap Q <Nop>
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
 
-" Toggle spelling"
+" Toggle spelling
 nnoremap <leader>s :set spell!<cr>
+
+" Toggle numbers
+nnoremap <leader>1 :set number!<cr>
 
 ",<space> clears search highlightning
 nnoremap <leader><space> :noh<cr>
@@ -94,18 +97,20 @@ set smartcase
 
 " Colors
 
-highlight OverLength ctermbg=red ctermfg=white
-match OverLength /\%81v.\+/
-
 syntax on
+colorscheme pencil
 set cursorline
 set background=dark
-colorscheme peachpuff
 let g:solarized_termcolors=256
 let g:jsx_ext_required = 0
 
 set rtp+=/usr/local/opt/fzf
 map <leader><tab> :FZF -x<cr>
+
+set colorcolumn=81
+highlight OverLength ctermbg=red ctermfg=white
+match OverLength /\%81v.\+/
+
 
 " Syntastic config
 
