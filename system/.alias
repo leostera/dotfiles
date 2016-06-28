@@ -46,16 +46,17 @@ for level in {1..9}; do
   eval "alias t${level}='${tree}'";
 done
 
+alias dotfiles="pushd ~/repos/dotfiles"
+alias gitconf="vim ~/.gitconfig"
 alias reload="source ~/.zshrc"
+alias tmuxrc="vim ~/.tmux.conf"
 alias vimrc="vim ~/.vimrc"
 alias vundlerc="vim ~/.vim/vundle.vim"
 alias zshrc="vim ~/.zshrc ; reload"
-alias dotfiles="pushd ~/repos/dotfiles"
-alias gitconf="vim ~/.gitconfig"
 
 alias pipit="pip install -r requirements.txt"
-alias srv="python -m SimpleHTTPServer"
 alias py="python"
+alias srv="python -m SimpleHTTPServer"
 
 alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 
