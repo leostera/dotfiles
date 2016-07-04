@@ -30,6 +30,7 @@ Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'leafgarland/typescript-vim'
+Plugin 'flowtype/vim-flow'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
