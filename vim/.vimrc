@@ -114,6 +114,7 @@ match OverLength /\%81v.\+/
 
 " Syntastic config
 
-let g:syntastic_html_tidy_ignore_errors=[' propietary attribute "ng- "v-']
+let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
+let g:syntastic_javascript_checkers = ['eslint']
 
 " Airline config
