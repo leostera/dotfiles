@@ -15,6 +15,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
 " Syntax
+Plugin 'kchmck/vim-coffee-script'
 Plugin 'digitaltoad/vim-jade'
 Plugin 'ekalinin/Dockerfile.vim'
 Plugin 'elixir-lang/vim-elixir'
