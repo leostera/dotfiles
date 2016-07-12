@@ -12,7 +12,9 @@ set wmh=0          "Set minimum window height to 0, helps when stacking splits
 set undofile "automatically save and restore undo history
 set undodir=~/.vim/undos
 
-set clipboard=unnamed
+if $TMUX == ""
+  set clipboard+=unnamed
+endif
 
 " Spell checking
 set nospell
@@ -115,6 +117,17 @@ match OverLength /\%81v.\+/
 " Syntastic config
 
 let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
+
+let g:jsx_ext_required = 0
 let g:syntastic_javascript_checkers = ['eslint']
+
+" Override eslint with local version where necessary.
+let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
+if matchstr(local_eslint, "^\/\\w") == ''
+  let local_eslint = getcwd() . "/" . local_eslint
+endif
+if executable(local_eslint)
+  let g:syntastic_javascript_eslint_exec = local_eslint
+endif
 
 " Airline config
