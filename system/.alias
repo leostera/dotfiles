@@ -62,6 +62,11 @@ alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 
 alias rb="ruby"
 
+function rbi {
+  eval "$(rbenv init -)"
+  rbenv rehash
+}
+
 for release in {16..19}; do
   p="${HOME}/.kerl/erlang/r${release}";
   eval "alias r${release}='. ${p}/activate'";
