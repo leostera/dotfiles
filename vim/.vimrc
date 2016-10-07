@@ -23,7 +23,7 @@ set nospell
 
 let mapleader=","
 
-inoremap jk <esc><esc>
+inoremap jk <esc><esc>:w<cr> 
 
 " never go into Ex mode
 noremap Q <Nop>
@@ -131,3 +131,6 @@ if executable(local_eslint)
 endif
 
 " Airline config
+
+" SLIMV Config
+let g:slime_target = "tmux"
