@@ -33,6 +33,7 @@ Plugin 'wlangstroth/vim-racket'
 " Editing
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'jpalardy/vim-slime'
+Plugin 'craigemery/vim-autotag'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
