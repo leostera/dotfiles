@@ -28,6 +28,11 @@ Plugin 'othree/html5.vim'
 Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
+Plugin 'wlangstroth/vim-racket'
+
+" Editing
+Plugin 'kien/rainbow_parentheses.vim'
+Plugin 'jpalardy/vim-slime'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
