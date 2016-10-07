@@ -3,12 +3,13 @@
 # Tap 'em!
 brew tap tldr-pages/tldr
 
-# Brewable installs! 
+# Brewable installs!
 
 brew install ack
 brew install aircrack-ng
 brew install asciinema
 brew install coreutils
+brew install ctags
 brew install dockutil
 brew install fzf
 brew install git git-extras
@@ -19,12 +20,10 @@ brew install nmap
 brew install npm
 brew install python python3
 brew install ruby
-brew install sbcl 			# Steel Bank Common Lisp
 brew install tldr
 brew install tmux
 brew install tree
 brew install vim
-brew install visionmedia-watch
 brew install wget
 
 pip install --upgrade setuptools
