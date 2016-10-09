@@ -1,14 +1,17 @@
 set nocompatible
 filetype off
 
-autocmd BufWrite vundle.vim :PluginInstall
+autocmd BufWritePost vundle.vim :PluginInstall
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
 " Generic
 Plugin 'junegunn/fzf.vim'
+
+" Tmux
 Plugin 'benmills/vimux'
+Plugin 'tmux-plugins/vim-tmux'
 
 " Status line
 Plugin 'itchyny/lightline.vim'
