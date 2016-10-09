@@ -6,6 +6,7 @@ call vundle#begin()
 
 " Generic
 Plugin 'junegunn/fzf.vim'
+Plugin 'benmills/vimux'
 
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
