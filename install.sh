@@ -18,11 +18,11 @@ ln -sfv "`pwd`/vim/vundle.vim" $HOME/.vim
 #source ./install/npm.sh
 #source ./install/vundle.sh
 
-# OS X 
+# macOS
 #if [[ `uname` == "Darwin" ]]; then
   #source ./install/brew.sh
   #source ./install/brew-cask.sh
-  #source ./osx/defaults.sh
+  #source ./macOS/defaults.sh
 #fi
 
 #source $HOME/.zshrc
