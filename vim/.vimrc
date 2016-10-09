@@ -32,6 +32,7 @@ noremap Q <Nop>
 " Git bindings
 nnoremap <leader>gc :Gcommit<cr>
 nnoremap <leader>gb :Gblame<cr>
+nnoremap <leader>gw :Gw<cr>
 
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
