@@ -145,3 +145,20 @@ let g:lightline = {
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
+
+
+function! VimuxSlime()
+  call VimuxSendText(@v)
+  call VimuxSendKeys("Enter")
+endfunction
+
+" If text is elected, save it in the v buffer and send that buffer it to tmux
+vmap <leader>e "vy :call VimuxSlime()<CR>
+
+" Select current paragraph and send it to tmux
+nmap <leader>vs vip<LocalLeader>vs<CR>
+
+autocmd FileType racket call VimuxRunCommand("racket")
+autocmd FileType ruby call VimuxRunCommand("irb")
+
+" autocmd BufWritePost {.,}tmux*.conf -- send keys to reload tmux
