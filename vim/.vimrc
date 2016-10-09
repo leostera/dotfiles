@@ -1,8 +1,6 @@
 " General
 set nocompatible
 
-autocmd BufWritePre .vimrc :source ~/.vimrc 
-
 set encoding=utf-8
 set t_Co=256
 set number         "Line numbers me likey
@@ -147,6 +145,3 @@ let g:lightline = {
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
-
-" SLIMV Config
-let g:slime_target = "tmux"
