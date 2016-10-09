@@ -1,5 +1,6 @@
 " General
 
+set encoding=utf-8
 set nocompatible
 set number         "Line numbers me likey
 set backspace=2    "Make backspace work like most other apps
@@ -23,10 +24,14 @@ set nospell
 
 let mapleader=","
 
-inoremap jk <esc><esc>:w<cr> 
+inoremap jk <esc><esc>:w<cr>
 
 " never go into Ex mode
 noremap Q <Nop>
+
+" Git bindings
+nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gb :Gblame<cr>
 
 "allow for command repetition in visual mode
 vnoremap . :norm.<cr>
@@ -53,7 +58,7 @@ nnoremap <leader><leader> <C-^>
 nnoremap <leader>v :vsp<cr>
 
 ",h splits horizontally
-nnoremap <leader>h :sp<cr>
+nnoremap <leader>h :split<cr>
 
 " Load Plugins
 
@@ -103,7 +108,6 @@ syntax on
 colorscheme pencil
 set cursorline
 set background=dark
-let g:solarized_termcolors=256
 let g:jsx_ext_required = 0
 
 set rtp+=/usr/local/opt/fzf
