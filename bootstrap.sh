@@ -9,14 +9,13 @@ for dotfile in */.*; do
   symlink $dotfile;
 done
 
-mkdir -p $HOME/.vim
-ln -sfv "`pwd`/vim/vundle.vim" $HOME/.vim
+ln -sfv `pwd`/vim $HOME/.vim
 
 # Install time!
 #source ./install/prepare.sh
 #source ./install/zsh.sh
+source ./install/vundle.sh
 #source ./install/npm.sh
-#source ./install/vundle.sh
 
 # macOS
 #if [[ `uname` == "Darwin" ]]; then

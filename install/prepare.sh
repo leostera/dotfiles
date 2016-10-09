@@ -7,7 +7,7 @@ ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/
 brew tap caskroom/cask
 brew install brew-cask
 brew tap caskroom/versions
+brew install homebrew/completions/brew-cask-completion
 
 brew update
-brew upgrade
 brew doctor

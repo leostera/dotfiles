@@ -1,9 +1,8 @@
 #!/usr/bin
 
 npm -g i \
+  nvm \
   babel \
   browserify \
-  jade \
-  react-native-cli \
   st \
   uglify-js
