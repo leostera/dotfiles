@@ -1,7 +1,10 @@
 " General
+set nocompatible
+
+autocmd BufWritePre .vimrc :source ~/.vimrc 
 
 set encoding=utf-8
-set nocompatible
+set t_Co=256
 set number         "Line numbers me likey
 set backspace=2    "Make backspace work like most other apps
 set history=10000  "Shit load of history for :cmdline
@@ -30,7 +33,7 @@ inoremap jk <esc><esc>:w<cr>
 noremap Q <Nop>
 
 " Git bindings
-nnoremap <leader>gc :Gcommit<cr>
+nnoremap <leader>gc :Gcommit -S<cr>
 nnoremap <leader>gb :Gblame<cr>
 nnoremap <leader>gw :Gw<cr>
 
@@ -135,7 +138,15 @@ if executable(local_eslint)
   let g:syntastic_javascript_eslint_exec = local_eslint
 endif
 
-" Airline config
+" Staturs line config
+let g:lightline = {
+  \ 'colorscheme': 'wombat',
+  \ 'component': {
+  \   'readonly': '%{&readonly?"⭤":""}',
+  \ },
+  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
+  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ }
 
 " SLIMV Config
 let g:slime_target = "tmux"
