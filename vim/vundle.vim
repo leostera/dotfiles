@@ -8,8 +8,8 @@ call vundle#begin()
 Plugin 'junegunn/fzf.vim'
 Plugin 'benmills/vimux'
 
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+" Status line
+Plugin 'itchyny/lightline.vim'
 
 " Git
 Plugin 'tpope/vim-fugitive'
