@@ -1,7 +1,12 @@
 set nocompatible
 filetype off
 
-autocmd BufWritePost vundle.vim :PluginInstall
+function! InstallVundlePlugins ()
+  :source ~/.vimrc
+  :PluginInstall
+endfunction
+
+autocmd! BufWritePost vundle.vim :call InstallVundlePlugins()
 
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
