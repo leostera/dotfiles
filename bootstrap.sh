@@ -13,7 +13,7 @@ ln -sfv `pwd`/vim $HOME/.vim
 
 # Install time!
 #source ./install/prepare.sh
-#source ./install/zsh.sh
+source ./install/zsh.sh
 source ./install/vundle.sh
 #source ./install/npm.sh
 

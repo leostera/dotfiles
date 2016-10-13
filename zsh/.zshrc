@@ -13,7 +13,8 @@ fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
-. $HOME/.zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+. /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # added by travis gem
 [ -f /Users/leostera/.travis/travis.sh ] && source /Users/leostera/.travis/travis.sh

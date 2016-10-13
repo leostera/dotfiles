@@ -1,10 +1,14 @@
 #!/bin/sh
 
-brew install zsh zsh-completions z zsh-history-substring-search
+brew install \
+  z \
+  zsh \
+  zsh-completions \
+  zsh-autosuggestions \
+  zsh-syntax-highlighting \
+  zsh-history-substring-search
 
 mkdir -p ~/.zsh
-
-cd ~/.zsh && git clone https://github.com/zsh-users/zsh-syntax-highlighting.git
 
 ZSH = `which zsh`
 
