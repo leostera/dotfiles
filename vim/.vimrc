@@ -10,6 +10,7 @@ set showcmd        "Show me incomplete commands down bottom
 set visualbell     "Please, no sounds
 set autoread       "Reload files changed outside vim
 set wmh=0          "Set minimum window height to 0, helps when stacking splits
+set laststatus=2   "Always show the bar
 
 set undofile "automatically save and restore undo history
 set undodir=~/.vim/undos
