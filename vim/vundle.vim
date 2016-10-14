@@ -37,6 +37,7 @@ Plugin 'pangloss/vim-javascript'
 Plugin 'scrooloose/syntastic'
 Plugin 'tpope/vim-markdown'
 Plugin 'wlangstroth/vim-racket'
+Plugin 'keith/swift.vim'
 
   " JS
   Plugin 'flowtype/vim-flow'
