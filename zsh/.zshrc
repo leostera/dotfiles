@@ -18,3 +18,5 @@ autoload -U compinit; compinit
 
 # added by travis gem
 [ -f /Users/leostera/.travis/travis.sh ] && source /Users/leostera/.travis/travis.sh
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
