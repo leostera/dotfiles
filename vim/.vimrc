@@ -126,16 +126,7 @@ match OverLength /\%81v.\+/
 let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
 
 let g:jsx_ext_required = 0
-let g:syntastic_javascript_checkers = ['eslint']
-
-" Override eslint with local version where necessary.
-let local_eslint = finddir('node_modules', '.;') . '/.bin/eslint'
-if matchstr(local_eslint, "^\/\\w") == ''
-  let local_eslint = getcwd() . "/" . local_eslint
-endif
-if executable(local_eslint)
-  let g:syntastic_javascript_eslint_exec = local_eslint
-endif
+let g:javascript_plugin_flow = 1
 
 " Staturs line config
 let g:lightline = {
@@ -163,3 +154,6 @@ autocmd FileType racket call VimuxRunCommand("racket")
 autocmd FileType ruby call VimuxRunCommand("irb")
 
 " autocmd BufWritePost {.,}tmux*.conf -- send keys to reload tmux
+"
+set exrc
+set secure
