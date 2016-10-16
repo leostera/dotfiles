@@ -10,6 +10,7 @@ for dotfile in */.*; do
 done
 
 ln -sfv `pwd`/vim $HOME/.vim
+ln -sfv `pwd`/tmux/scripts $HOME/.tmux/scripts
 
 # Install time!
 #source ./install/prepare.sh
