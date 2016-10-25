@@ -43,7 +43,8 @@
     sl = shortlog
     t = tag -s
     tl = tag --sort "v:refname"
-    unstage = reset --hard HEAD
+    unstage = reset --soft HEAD
+    purge = reset --hard HEAD
 
 [color]
     ui = auto
