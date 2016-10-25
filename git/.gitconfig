@@ -25,7 +25,11 @@
     cod = checkout development
     com = checkout master
     d = diff
-    d1 = diff HEAD^1
+    d1 = diff HEAD~1
+    d2 = diff HEAD~2
+    d3 = diff HEAD~3
+    d4 = diff HEAD~4
+    d5 = diff HEAD~5
     dh = diff HEAD
     dm = diff master
     fall = fetch --all
@@ -35,16 +39,16 @@
     pall = pull --all
     pod = push origin development
     pom = push origin master
+    purge = reset --hard HEAD
     ra = rebase --abort
-    rc = rebase --continue
     rao = remote add origin
+    rc = rebase --continue
     rl = reflog
     s = status
     sl = shortlog
     t = tag -s
     tl = tag --sort "v:refname"
     unstage = reset --soft HEAD
-    purge = reset --hard HEAD
 
 [color]
     ui = auto
