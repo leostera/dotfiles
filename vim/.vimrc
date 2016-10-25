@@ -83,6 +83,17 @@ nnoremap tt :tabnew<cr>
 nnoremap th :tabp<cr>
 nnoremap tl :tabn<cr>
 
+nnoremap t1 1gt
+nnoremap t2 2gt
+nnoremap t3 3gt
+nnoremap t4 4gt
+nnoremap t5 5gt
+nnoremap t6 6gt
+nnoremap t7 7gt
+nnoremap t8 8gt
+nnoremap t9 9gt
+nnoremap t0 :tablast<cr>
+
 " Indentation
 
 set autoindent
@@ -127,6 +138,8 @@ let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
 
 let g:jsx_ext_required = 0
 let g:javascript_plugin_flow = 1
+
+let g:syntastic_enable_racket_checker = 0
 
 " Staturs line config
 let g:lightline = {
