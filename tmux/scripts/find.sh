@@ -2,7 +2,7 @@
 
 readonly SELECTION=$(
   tmux list-window -a \
-    -F "#{session_name}:#{window_index} #{window_name} #{pane_current_path}" \
+    -F "#{session_name}:#{window_index} #{pane_current_command} #{pane_current_path}" \
   | column -t \
   | fzf
 )
