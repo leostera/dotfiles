@@ -49,7 +49,8 @@ Plugin 'hail2u/vim-css3-syntax'
 " Editing
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/rainbow_parentheses.vim'
-Plugin 'craigemery/vim-autotag'
+Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'majutsushi/tagbar'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
