@@ -15,6 +15,8 @@ set laststatus=2   "Always show the bar
 set undofile "automatically save and restore undo history
 set undodir=~/.vim/undos
 
+set tags^=~/.vim/tags
+
 if $TMUX == ""
   set clipboard+=unnamed
 endif
@@ -164,9 +166,8 @@ vmap <leader>e "vy :call VimuxSlime()<CR>
 nmap <leader>vs vip<LocalLeader>vs<CR>
 
 autocmd FileType racket call VimuxRunCommand("racket")
-autocmd FileType ruby call VimuxRunCommand("irb")
+autocmd FileType ruby   call VimuxRunCommand("irb")
+autocmd FileType erlang set tags+=~/repos/otp/tags
 
-" autocmd BufWritePost {.,}tmux*.conf -- send keys to reload tmux
-"
 set exrc
 set secure

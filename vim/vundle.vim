@@ -46,6 +46,9 @@ Plugin 'hail2u/vim-css3-syntax'
   " HTML
   Plugin 'mattn/emmet-vim'
 
+  " Erlang
+  Plugin 'vim-erlang/vim-erlang-tags'
+
 " Editing
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/rainbow_parentheses.vim'

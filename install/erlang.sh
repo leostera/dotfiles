@@ -16,3 +16,9 @@ for rel in '18.1 18' '17.5 17' 'R16B03 16'; do
 done
 
 ~/.kerl/kerl cleanup
+
+git clone git@github.com:erlang/otp.git ~/repos/otp
+pushd ~/repos/otp
+  vim +ErlangTags
+  sed -i 's@\.\/@'"$HOME"'\/repos\/otp\/.\/@' tags
+popd
