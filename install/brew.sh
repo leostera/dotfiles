@@ -27,5 +27,7 @@ brew install \
   vim \
   wget
 
+brew install --HEAD universal-ctags/universal-ctags/universal-ctags
+
 pip install --upgrade setuptools
 pip install --upgrade pip
