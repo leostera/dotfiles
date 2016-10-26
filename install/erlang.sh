@@ -19,6 +19,6 @@ done
 
 git clone git@github.com:erlang/otp.git ~/repos/otp
 pushd ~/repos/otp
-  vim +ErlangTags
+  vim +ErlangTags +qall
   sed -i 's@\.\/@'"$HOME"'\/repos\/otp\/.\/@' tags
 popd
