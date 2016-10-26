@@ -7,8 +7,6 @@ for dotfile in 'env' 'path' 'alias' 'prompt'; do
   . "${HOME}/.${dotfile}";
 done
 
-source /usr/local/opt/nvm/nvm.sh
-
 fpath=(/usr/local/share/zsh-completions $fpath)
 autoload -U compinit; compinit
 
