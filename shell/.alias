@@ -4,7 +4,7 @@ alias g="git"
 alias gs="g s"
 alias clone="g clone"
 alias init="g init"
-alias shallow="g clone --depth 1"
+alias shallow="clone --depth 1"
 
 function github-clone {
   clone git@github.com:$1/$2.git $HOME/repos/$1/$2
@@ -12,17 +12,9 @@ function github-clone {
 
 alias v="vim"
 alias vf="v \$(f)"
-alias vd="vim ."
+alias v.="vim ."
 
 alias d="docker"
-alias dm="docker-machine"
-
-alias dockip="dm ip dev"
-
-function dockme {
-  eval $(dm env dev)
-}
-
 alias h="\history -i 0 | f"
 alias m="make"
 
@@ -40,9 +32,6 @@ alias repos="pushd ~/repos"
 alias l="ls -lh --color"
 alias la="ls -lha --color"
 
-alias vup="vagrant up"
-alias vsh="vagrant ssh"
-
 for level in {1..9}; do
   tree="tree -C -L ${level}";
   t=$(repeat ${level} echo -n "t");
@@ -50,7 +39,7 @@ for level in {1..9}; do
   eval "alias t${level}='${tree}'";
 done
 
-alias dotfiles="pushd ~/repos/dotfiles"
+alias dotfiles="pushd ~/repos/ostera/dotfiles"
 alias gitconf="vim ~/.gitconfig"
 alias reload="source ~/.zshrc"
 alias tmuxrc="vim ~/.tmux.conf"
