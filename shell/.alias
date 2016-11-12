@@ -7,7 +7,9 @@ alias init="g init"
 alias shallow="clone --depth 1"
 
 function github-clone {
-  clone git@github.com:$1/$2.git $HOME/repos/$1/$2
+  TO=$HOME/repos/$1/$2
+  clone git@github.com:$1/$2.git $TO
+  pushd $TO
 }
 
 alias v="vim"
