@@ -16,6 +16,8 @@ alias v="vim"
 alias vf="v \$(f)"
 alias v.="vim ."
 
+alias k="kubectl"
+alias mk="minikube"
 alias d="docker"
 alias h="\history -i 0 | f"
 alias m="make"
