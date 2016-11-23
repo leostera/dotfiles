@@ -21,6 +21,8 @@ alias mk="minikube"
 alias d="docker"
 alias h="\history -i 0 | f"
 alias m="make"
+alias y="yarn"
+alias ym="y && m"
 
 alias f="fzf"
 alias tmux="TERM=screen-256color tmux -2"
