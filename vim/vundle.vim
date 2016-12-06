@@ -50,6 +50,7 @@ Plugin 'hail2u/vim-css3-syntax'
   Plugin 'vim-erlang/vim-erlang-tags'
 
 " Editing
+Plugin 'Raimondi/delimitMate'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ludovicchabant/vim-gutentags'
