@@ -49,6 +49,9 @@ Plugin 'hail2u/vim-css3-syntax'
   " Erlang
   Plugin 'vim-erlang/vim-erlang-tags'
 
+  " Scala/Java
+  Plugin 'derekwyatt/vim-scala'
+
 " Editing
 Plugin 'Raimondi/delimitMate'
 Plugin 'ntpeters/vim-better-whitespace'
