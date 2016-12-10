@@ -68,6 +68,7 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'ntpeters/vim-better-whitespace'
 Plugin 'kien/rainbow_parentheses.vim'
 Plugin 'ludovicchabant/vim-gutentags'
+Plugin 'tpope/vim-surround'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
