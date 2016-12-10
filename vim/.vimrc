@@ -173,8 +173,9 @@ set exrc
 set secure
 
 let _hostname = substitute(hostname(), ".lan", "", "")
-let _hostfile = "$HOME/.vim/"._hostname.".vim"
+let _hostfile = expand("$HOME/.vim/"._hostname.".vim")
 
-if filereadable(expand(_hostfile))
-  source _hostfile
+if filereadable(_hostfile)
+  exec "source "._hostfile
 endif
+
