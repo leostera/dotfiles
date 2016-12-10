@@ -171,3 +171,10 @@ autocmd FileType erlang set tags+=~/repos/otp/tags
 
 set exrc
 set secure
+
+let _hostname = substitute(hostname(), ".lan", "", "")
+let _hostfile = "$HOME/.vim/"._hostname.".vim"
+
+if filereadable(expand(_hostfile))
+  source _hostfile
+endif
