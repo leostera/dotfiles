@@ -11,7 +11,7 @@ autocmd! BufWritePost vundle.vim :call InstallVundlePlugins()
 set rtp+=~/.vim/bundle/vundle
 call vundle#begin()
 
-" Generic
+" Search
 Plugin 'junegunn/fzf.vim'
 
 " Tmux
@@ -25,32 +25,42 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
-" Languages
-Plugin 'digitaltoad/vim-jade'
-Plugin 'ekalinin/Dockerfile.vim'
-Plugin 'elixir-lang/vim-elixir'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'leafgarland/typescript-vim'
-Plugin 'mxw/vim-jsx'
-Plugin 'othree/html5.vim'
-Plugin 'pangloss/vim-javascript'
-Plugin 'scrooloose/syntastic'
-Plugin 'tpope/vim-markdown'
-Plugin 'wlangstroth/vim-racket'
-Plugin 'keith/swift.vim'
-Plugin 'hail2u/vim-css3-syntax'
+" Languages {
+
+  Plugin 'scrooloose/syntastic'
+  Plugin 'ekalinin/Dockerfile.vim'
+  Plugin 'keith/swift.vim'
+  Plugin 'tpope/vim-markdown'
+  Plugin 'wlangstroth/vim-racket'
 
   " JS
   Plugin 'flowtype/vim-flow'
+  Plugin 'mxw/vim-jsx'
+  Plugin 'pangloss/vim-javascript'
+
+  " JS Dialects
+  Plugin 'leafgarland/typescript-vim'
+  Plugin 'kchmck/vim-coffee-script'
 
   " HTML
+  Plugin 'hail2u/vim-css3-syntax'
+  Plugin 'othree/html5.vim'
   Plugin 'mattn/emmet-vim'
+  Plugin 'digitaltoad/vim-jade'
 
   " Erlang
   Plugin 'vim-erlang/vim-erlang-tags'
 
-  " Scala/Java
+  " Elixir
+  Plugin 'elixir-lang/vim-elixir'
+
+  " Scala
   Plugin 'derekwyatt/vim-scala'
+
+  " Java
+  Plugin 'artur-shaik/vim-javacomplete2'
+
+" }
 
 " Editing
 Plugin 'Raimondi/delimitMate'
