@@ -27,6 +27,7 @@ Plugin 'airblade/vim-gitgutter'
 
 " Languages {
 
+  Plugin 'vim-scripts/applescript.vim'
   Plugin 'scrooloose/syntastic'
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'keith/swift.vim'
