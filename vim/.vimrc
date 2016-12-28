@@ -168,6 +168,7 @@ nmap <leader>vs vip<LocalLeader>vs<CR>
 autocmd FileType racket call VimuxRunCommand("racket")
 autocmd FileType ruby   call VimuxRunCommand("irb")
 autocmd FileType erlang set tags+=~/repos/otp/tags
+autocmd FileType rust   set tags+=~/.cargo/registry/src/tags
 
 set exrc
 set secure
@@ -179,3 +180,6 @@ if filereadable(_hostfile)
   exec "source "._hostfile
 endif
 
+set hidden
+let g:racer_cmd = "$HOME/.cargo/bin/racer"
+let $RUST_SRC_PATH="$HOME/repos/rust-lang/rust/src"

@@ -33,6 +33,8 @@ Plugin 'airblade/vim-gitgutter'
   Plugin 'keith/swift.vim'
   Plugin 'tpope/vim-markdown'
   Plugin 'wlangstroth/vim-racket'
+  Plugin 'rust-lang/rust.vim'
+  Plugin 'racer-rust/vim-racer'
 
   " JS
   Plugin 'flowtype/vim-flow'
