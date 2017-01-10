@@ -12,6 +12,18 @@ function github-clone {
   pushd $TO
 }
 
+function car {
+  cut -d $1 -f 1
+}
+
+function cdr {
+  cut -d $1 -f 2-
+}
+
+function co {
+  g co `g b | f | awk '{ print $1 }' | cdr /`
+}
+
 alias v="vim"
 alias vf="v \$(f)"
 alias v.="vim ."
