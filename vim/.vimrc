@@ -124,7 +124,6 @@ syntax on
 colorscheme pencil
 set cursorline
 set background=dark
-let g:jsx_ext_required = 0
 
 set rtp+=/usr/local/opt/fzf
 map <leader><tab> :FZF -x<cr>
@@ -139,7 +138,6 @@ match OverLength /\%81v.\+/
 let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
 
 let g:jsx_ext_required = 0
-let g:javascript_plugin_flow = 1
 
 let g:syntastic_enable_racket_checker = 0
 
@@ -168,6 +166,7 @@ nmap <leader>vs vip<LocalLeader>vs<CR>
 autocmd FileType racket call VimuxRunCommand("racket")
 autocmd FileType ruby   call VimuxRunCommand("irb")
 autocmd FileType erlang set tags+=~/repos/otp/tags
+autocmd FileType rust   set tags+=~/repos/rust-lang/rust/tags
 autocmd FileType rust   set tags+=~/.cargo/registry/src/tags
 
 set exrc
