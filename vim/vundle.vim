@@ -21,6 +21,9 @@ Plugin 'tmux-plugins/vim-tmux'
 " Status line
 Plugin 'itchyny/lightline.vim'
 
+" Zen mode
+Plugin 'junegunn/goyo.vim'
+
 " Git
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'

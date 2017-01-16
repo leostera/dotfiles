@@ -65,6 +65,8 @@ nnoremap <leader>v :vsp<cr>
 ",h splits horizontally
 nnoremap <leader>h :split<cr>
 
+nnoremap <leader>z :Goyo<cr>
+
 " Load Plugins
 
 if filereadable(expand("$HOME/.vim/vundle.vim"))
