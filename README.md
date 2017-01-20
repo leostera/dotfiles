@@ -1,2 +1,2 @@
-# 💠 `~/.*`
+# 💾 `~/.*`
 > Dotfiles! Muddafucka!
