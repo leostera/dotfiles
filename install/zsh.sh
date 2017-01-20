@@ -10,7 +10,7 @@ brew install \
 
 mkdir -p ~/.zsh
 
-ZSH = `which zsh`
+readonly ZSH=`which zsh`
 
 echo "$ZSH" | sudo tee -a /etc/shells
 
