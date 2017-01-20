@@ -16,7 +16,7 @@ brew install \
   git git-extras \
   gnu-sed --default-names \
   go \
-  grep --default-names \
+  ripgrep \
   nmap \
   npm \
   python python3 \
