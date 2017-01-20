@@ -1,6 +1,6 @@
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
+export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$PATH:$GOPATH/bin" # Add Go binaries
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="$PATH:/usr/local/sbin"
-export PATH="$PATH:/Users/leandro.ostera/repos/fredp/gitrdun/bin"
-export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
+export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
