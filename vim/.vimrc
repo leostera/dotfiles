@@ -159,7 +159,7 @@ function! VimuxSlime()
   call VimuxSendKeys("Enter")
 endfunction
 
-" If text is elected, save it in the v buffer and send that buffer it to tmux
+" If text is selected, save it in the v buffer and send that buffer it to tmux
 vmap <leader>e "vy :call VimuxSlime()<CR>
 
 " Select current paragraph and send it to tmux
