@@ -44,6 +44,7 @@
     rao = remote add origin
     rc = rebase --continue
     rl = reflog
+    rom = rebase origin/master
     s = status
     sl = shortlog
     t = tag -s
