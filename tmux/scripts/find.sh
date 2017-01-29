@@ -11,6 +11,8 @@ cat ~/.z | cut -d'|' -f 1 | sort | uniq | sed 's/^/-:- - - /' >> $SEARCH_OPTIONS
 # For some reason readonly _eats_ the last exit status
 SEARCH_RESULTS=$(
   cat $SEARCH_OPTIONS \
+  | sort \
+  | uniq \
   | column -t \
   | fzf --print-query
 )
