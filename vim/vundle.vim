@@ -31,7 +31,7 @@ Plugin 'airblade/vim-gitgutter'
 " Languages {
 
   Plugin 'vim-scripts/applescript.vim'
-  Plugin 'scrooloose/syntastic'
+  Plugin 'w0rp/ale'
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'keith/swift.vim'
   Plugin 'tpope/vim-markdown'

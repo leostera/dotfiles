@@ -17,9 +17,8 @@ set undodir=~/.vim/undos
 
 set tags^=~/.vim/tags
 
-if $TMUX == ""
-  set clipboard+=unnamed
-endif
+set path+=**
+set wildmenu
 
 " Spell checking
 set nospell
@@ -135,13 +134,9 @@ highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
 
-" Syntastic config
+" Ale config
 
-let g:syntastic_html_tidy_ignore_errors = ['propietary attribute "ng- "v-']
-
-let g:jsx_ext_required = 0
-
-let g:syntastic_enable_racket_checker = 0
+let &runtimepath.=',~/.vim/bundle/ale'
 
 " Staturs line config
 let g:lightline = {
