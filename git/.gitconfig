@@ -38,7 +38,7 @@
     p = push
     pall = pull --all
     pod = push origin development
-    pom = push origin master
+    pom = push origin master --tags
     purge = reset --hard HEAD
     ra = rebase --abort
     rao = remote add origin
