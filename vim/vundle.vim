@@ -40,7 +40,6 @@ Plugin 'airblade/vim-gitgutter'
   Plugin 'racer-rust/vim-racer'
 
   " JS
-  Plugin 'flowtype/vim-flow'
   Plugin 'mxw/vim-jsx'
   Plugin 'pangloss/vim-javascript'
 
