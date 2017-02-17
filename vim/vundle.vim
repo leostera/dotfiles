@@ -59,6 +59,9 @@ Plugin 'airblade/vim-gitgutter'
   " Elixir
   Plugin 'elixir-lang/vim-elixir'
 
+  " Idris
+  Plugin 'idris-hackers/idris-vim'
+
   " Scala
   Plugin 'derekwyatt/vim-scala'
 
