@@ -15,3 +15,7 @@ autoload -U compinit; compinit
 . /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+if [[ -z $TMUX ]]; then
+  pgrep tmux && tma || tm
+fi
