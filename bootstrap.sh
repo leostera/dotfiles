@@ -24,5 +24,4 @@ if [[ `uname` == "Darwin" ]]; then
   source ./macOS/defaults.sh
 fi
 
-source $HOME/.zshrc
 echo "Open a new tab to be home :)"
