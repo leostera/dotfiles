@@ -21,7 +21,7 @@ brew install \
   htop \
   hub \
   nmap \
-  npm \
+  node \
   python python3 \
   ripgrep \
   ruby \
@@ -30,6 +30,7 @@ brew install \
   tree \
   vim \
   wget
+  yarn \
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
