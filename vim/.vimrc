@@ -128,6 +128,9 @@ set background=dark
 
 set rtp+=/usr/local/opt/fzf
 map <leader><tab> :FZF -x<cr>
+map <leader>f :Find<cr>
+map <leader>* :Find <C-r><C-w><cr>
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --glob "!*cache/*" --color "always" '.shellescape(<q-args>).'| tr -d "\017"', 1, <bang>0)
 
 set colorcolumn=81
 highlight OverLength ctermbg=red ctermfg=white
