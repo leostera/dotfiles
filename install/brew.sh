@@ -16,6 +16,7 @@ brew install \
   git git-extras \
   gnu-sed --default-names \
   go \
+  htop \
   hub \
   nmap \
   npm \
