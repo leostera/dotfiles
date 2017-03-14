@@ -2,9 +2,9 @@
 
 sudo -v
 
-sudo scutil --set ComputerName "leostera"
-sudo scutil --set HostName "leostera"
-sudo scutil --set LocalHostName "leostera"
+sudo scutil --set ComputerName "muffintosh"
+sudo scutil --set HostName "muffintosh"
+sudo scutil --set LocalHostName "muffintosh"
 
 # Disable audio feedback when volume is changed
 write com.apple.sound.beep.feedback -bool false
@@ -30,11 +30,10 @@ defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 
-### 
+###
 #  Screen
 ###
 
 # Save screenshots to Pictures/Screenshots
 mkdir -p ~/Desktop/Screenshots
 defaults write com.apple.screencapture location -string "$HOME/Desktop/Screenshots"
-

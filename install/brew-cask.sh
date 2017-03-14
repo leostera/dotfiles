@@ -5,7 +5,6 @@ brew cask install \
   google-chrome \
   iterm2 \
   monotype-skyfonts \
-  parallels-desktop \
   sketch \
   spotify \
   steam \
