@@ -30,7 +30,7 @@ Hi. These are my dotfiles. They work fairly simply:
 
 2. The `vim` and `tmux` folders will be linked entirely to `~` since they have some other things (like the `tmux/scripts` I use for my status bar).
 
-Then there's the install scripts that just run some `brew installs`.
+3. Then there's the install scripts that just run some `brew installs`.
 
 Not much more.
 
