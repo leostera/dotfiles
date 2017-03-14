@@ -12,7 +12,7 @@
 * Ridiculously simple design (read below)
 * Other goodies
 
-[0] This alone is so fucking useful that I don't never again have to remember the indexed positions of my session/window/pane combos. I like my computer doing the boring parts for me.
+[0] This alone is so useful: I don't need to remember the indexed positions of my session/window/pane combos, just type a few characters and be there.
 
 ## How They Work
 
