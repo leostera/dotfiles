@@ -16,10 +16,11 @@ brew install \
   git git-extras \
   gnu-sed --default-names \
   go \
-  ripgrep \
+  hub \
   nmap \
   npm \
   python python3 \
+  ripgrep \
   ruby \
   tldr \
   tmux \
