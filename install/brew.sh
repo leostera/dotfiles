@@ -13,9 +13,9 @@ brew install \
   ctags \
   dockutil \
   fzf \
+  gist \
   git \
   git-extras \
-  gist \
   gnu-sed --default-names \
   go \
   htop \
