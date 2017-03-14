@@ -3,7 +3,7 @@
 
 Hi. These are my dotfiles. They work fairly simply:
 
-Everything starting with a `.` will be symlinked to `~`. That includes:
+1. Everything starting with a `.` will be symlinked to `~`. That includes:
 
 
 ```
@@ -28,7 +28,7 @@ Everything starting with a `.` will be symlinked to `~`. That includes:
     `-- .zshrc
 ```
 
-The `vim` and `tmux` folders will be linked entirely to `~` since they have some other things (like the `tmux/scripts` I use for my status bar).
+2. The `vim` and `tmux` folders will be linked entirely to `~` since they have some other things (like the `tmux/scripts` I use for my status bar).
 
 Then there's the install scripts that just run some `brew installs`.
 
