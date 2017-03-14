@@ -6,9 +6,7 @@ brew tap tldr-pages/tldr
 # Brewable installs!
 
 brew install \
-  ack \
   aircrack-ng \
-  asciinema \
   coreutils \
   ctags \
   dockutil \
@@ -17,20 +15,19 @@ brew install \
   git \
   git-extras \
   gnu-sed --default-names \
-  go \
   htop \
   hub \
   nmap \
   node \
-  python python3 \
+  python \
   ripgrep \
   ruby \
   tldr \
   tmux \
   tree \
   vim \
-  wget
-  yarn \
+  wget \
+  yarn
 
 brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
