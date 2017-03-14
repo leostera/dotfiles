@@ -8,9 +8,9 @@
 * Fuzzy Search and Jump between:
     * tmux sessions/windows [0]
     * recent locations that don't have a window
-* tmux+vim awesomesauce
-* Ridiculously simple design (read below)
-* Other goodies
+* tmux+vim+fzf awesomesauce for file and content searching within vim, and vim controlled tmux panes.
+
+That's pretty much all I need.
 
 [0] This alone is so useful: I don't need to remember the indexed positions of my session/window/pane combos, just type a few characters and be there.
 
