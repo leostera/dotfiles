@@ -49,6 +49,8 @@ They work fairly simply:
 
 3. Then there's the install scripts that just run some `brew installs`.
 
-Not much more.
+Not much more. Keep it simple. Fork away!
 
-Keep it simple. Fork away!
+## License
+
+See [LICENSE](https://github.com/ostera/zazen/blob/master/LICENSE).
