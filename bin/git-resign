@@ -5,7 +5,7 @@ readonly FROM=$1
 git rebase -i $FROM
 
 while [ `git status | rg "interactive rebase in progress" | wc -l` -gt 0 ]; do
-  git commit -S --amend --no-edit
+  git commit -n -S --amend --no-edit >/dev/null
   git rc
 done
 
