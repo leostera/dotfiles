@@ -163,6 +163,9 @@ vmap <leader>e "vy :call VimuxSlime()<CR>
 " Select current paragraph and send it to tmux
 nmap <leader>vs vip<LocalLeader>vs<CR>
 
+" JSON always nice looking
+autocmd FileType json :% ! jq . " pipe the shit out of it through jq
+
 " Lisps
 autocmd FileType racket  call VimuxRunCommand("racket")
 autocmd FileType chicken call VimuxRunCommand("csi")
