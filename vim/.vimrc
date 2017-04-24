@@ -164,7 +164,7 @@ vmap <leader>e "vy :call VimuxSlime()<CR>
 nmap <leader>vs vip<LocalLeader>vs<CR>
 
 " JSON always nice looking
-autocmd FileType json :% ! jq . " pipe the shit out of it through jq
+autocmd FileType json :% ! jq .
 
 " Lisps
 autocmd FileType racket  call VimuxRunCommand("racket")
