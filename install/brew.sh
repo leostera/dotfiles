@@ -30,5 +30,8 @@ brew install \
   wget \
   yarn
 
+brew upgrade \
+  gnupg
+
 pip install --upgrade setuptools
 pip install --upgrade pip
