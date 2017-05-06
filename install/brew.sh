@@ -27,6 +27,7 @@ brew install \
   tree \
   universal-ctags/universal-ctags/universal-ctags --HEAD \
   vim \
+  weechat \
   wget \
   yarn
 
