@@ -8,7 +8,6 @@ brew tap tldr-pages/tldr
 brew install \
   aircrack-ng \
   coreutils \
-  ctags \
   dockutil \
   fzf \
   gettext \
@@ -26,11 +25,10 @@ brew install \
   tldr \
   tmux \
   tree \
+  universal-ctags/universal-ctags/universal-ctags --HEAD \
   vim \
   wget \
   yarn
-
-brew install --HEAD universal-ctags/universal-ctags/universal-ctags
 
 pip install --upgrade setuptools
 pip install --upgrade pip
