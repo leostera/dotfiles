@@ -10,6 +10,8 @@
 	<true/>
 	<key>AllowClipboardAccess</key>
 	<false/>
+	<key>AlternateMouseScroll</key>
+	<true/>
 	<key>AnimateDimming</key>
 	<false/>
 	<key>AppleAntiAliasingThreshold</key>
@@ -751,7 +753,7 @@
 	<key>NSFontPanelPreviewHeight</key>
 	<real>100</real>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/repos/dotfiles/iterm2</string>
+	<string>~/Pictures</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 459}</string>
 	<key>NSQuotedKeystrokeBinding</key>
@@ -794,14 +796,18 @@
 	<string>884 200 463 395 0 0 1680 1050 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>200 564 606 456 0 0 1680 1028 </string>
+	<key>NSWindow Frame SUAutomaticUpdateAlert</key>
+	<string>532 640 616 174 0 0 1680 1027 </string>
 	<key>NSWindow Frame SessionsPreferences</key>
-	<string>269 139 606 456 0 0 1680 1050 </string>
+	<string>489 230 606 456 0 0 2560 1440 </string>
 	<key>NSWindow Frame SharedPreferences</key>
-	<string>1260 615 918 495 0 0 2560 1417 </string>
+	<string>631 359 918 498 0 0 1680 1050 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>766 134 1214 822 0 0 2560 1417 </string>
+	<string>0 206 570 424 0 0 2560 1417 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>1157 430 865 987 0 0 2560 1417 </string>
+	<string>640 553 570 402 0 0 1680 1027 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>254 55 570 402 0 0 1680 1027 </string>
 	<key>New Bookmarks</key>
 	<array>
 		<dict>
@@ -3099,7 +3105,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2016-12-12T02:28:26Z</date>
+	<date>2017-04-03T22:56:57Z</date>
 	<key>SavePasteHistory</key>
 	<true/>
 	<key>Secure Input</key>
@@ -3157,7 +3163,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>3.0.12</string>
+	<string>3.0.15</string>
 	<key>kCPFavoritesUserDefaultsKey</key>
 	<array>
 		<data>
