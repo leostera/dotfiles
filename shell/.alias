@@ -9,6 +9,7 @@ alias shallow="clone --depth 1"
 alias v="vim"
 alias vf="v \$(f)"
 alias v.="vim ."
+alias ctags-here="ctags -o tags"
 
 alias k="kubectl"
 alias mk="minikube"
