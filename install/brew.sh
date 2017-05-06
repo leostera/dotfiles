@@ -11,6 +11,7 @@ brew install \
   ctags \
   dockutil \
   fzf \
+  gettext \
   gist \
   git \
   git-extras \
