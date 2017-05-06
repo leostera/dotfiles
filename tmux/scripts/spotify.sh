@@ -1,5 +1,9 @@
 #!/bin/bash
 
+if [[ $(window-width) -lt 100 ]]; then
+  exit
+fi
+
 readonly IS_SPOTIFY_RUNNING=$(
   ps ax \
     | grep "Spotify.app/Contents/MacOS/Spotify" \
