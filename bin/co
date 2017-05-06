@@ -1,0 +1,2 @@
+#!/bin/zsh
+g co `g b -r | f | awk '{ print $1 }' | cdr /`

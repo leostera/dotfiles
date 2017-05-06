@@ -6,24 +6,6 @@ alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
 
-function github-clone {
-  TO=$HOME/repos/$1/$2
-  clone git@github.com:$1/$2.git $TO
-  pushd $TO
-}
-
-function car {
-  cut -d $1 -f 1
-}
-
-function cdr {
-  cut -d $1 -f 2-
-}
-
-function co {
-  g co `g b -r | f | awk '{ print $1 }' | cdr /`
-}
-
 alias v="vim"
 alias vf="v \$(f)"
 alias v.="vim ."
@@ -73,11 +55,6 @@ alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
 
 alias rb="ruby"
 alias rk="racket"
-
-function rbi {
-  eval "$(rbenv init -)"
-  rbenv rehash
-}
 
 for release in {16..19}; do
   p="${HOME}/.kerl/erlang/r${release}";
