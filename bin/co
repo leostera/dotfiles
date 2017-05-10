@@ -1,2 +1,3 @@
-#!/bin/zsh
-g co `g b -r | f | awk '{ print $1 }' | cdr /`
+#!/usr/local/bin/zsh
+
+git co `git b -r | fzf | awk '{ print $1 }' | cdr /`
