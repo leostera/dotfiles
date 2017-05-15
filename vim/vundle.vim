@@ -35,9 +35,14 @@ Plugin 'airblade/vim-gitgutter'
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'keith/swift.vim'
   Plugin 'tpope/vim-markdown'
-  Plugin 'wlangstroth/vim-racket'
+
+  " Rust
   Plugin 'rust-lang/rust.vim'
   Plugin 'racer-rust/vim-racer'
+
+  " Lisps
+  Plugin 'wlangstroth/vim-racket'
+  Plugin 'fasiha/pollen.vim'
 
   " JS
   Plugin 'mxw/vim-jsx'
