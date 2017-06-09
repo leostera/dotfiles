@@ -52,7 +52,7 @@ alias pipit="pip install -r requirements.txt"
 alias py="python"
 alias srv="python -m SimpleHTTPServer"
 
-alias swank="sbcl --load ~/.vim/slime/start-swank.lisp"
+alias opam-init="eval `opam config env`"
 
 alias rb="ruby"
 alias rk="racket"
