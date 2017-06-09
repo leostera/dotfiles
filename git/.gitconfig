@@ -39,13 +39,15 @@
     pall = pull --all
     pod = push origin development
     pom = push origin master --tags
+    pomfu = push origin master --tags --force --set-upstream
     purge = reset --hard HEAD
     ra = rebase --abort
     rao = remote add origin
     rc = rebase --continue
     rl = reflog
     rom = rebase origin/master
-    s = status
+    s = status -s
+    ss = status
     sl = shortlog
     t = tag -s
     tl = tag --sort "v:refname"
