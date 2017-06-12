@@ -52,8 +52,6 @@ alias pipit="pip install -r requirements.txt"
 alias py="python"
 alias srv="python -m SimpleHTTPServer"
 
-alias opam-init="eval `opam config env`"
-
 alias rb="ruby"
 alias rk="racket"
 

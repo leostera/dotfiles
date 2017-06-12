@@ -6,15 +6,16 @@ brew tap tldr-pages/tldr
 # Brewable installs!
 
 brew install \
-  aircrack-ng \
   coreutils \
   dockutil \
   fzf \
+  gettext \
   gettext \
   gist \
   git \
   git-extras \
   gnu-sed --default-names \
+  gnupg \
   htop \
   hub \
   nmap \
@@ -25,14 +26,10 @@ brew install \
   tldr \
   tmux \
   tree \
-  universal-ctags/universal-ctags/universal-ctags --HEAD \
   vim \
   weechat \
   wget \
   yarn
 
-brew upgrade \
-  gnupg
-
-pip install --upgrade setuptools
-pip install --upgrade pip
+brew install \
+  universal-ctags/universal-ctags/universal-ctags --HEAD

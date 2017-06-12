@@ -2,3 +2,5 @@
 vim/bundle
 vim/vim
 vim/.netrwhist
+tmux/tmux
+tmux/.search_options
