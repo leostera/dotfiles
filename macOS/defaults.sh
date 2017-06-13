@@ -7,7 +7,7 @@ sudo scutil --set HostName "muffintosh"
 sudo scutil --set LocalHostName "muffintosh"
 
 # Disable audio feedback when volume is changed
-write com.apple.sound.beep.feedback -bool false
+defaults write com.apple.sound.beep.feedback -bool false
 
 # Show battery percentage
 defaults write com.apple.menuextra.battery -bool true
