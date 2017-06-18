@@ -14,6 +14,4 @@ readonly ZSH=`which zsh`
 
 echo "$ZSH" | sudo tee -a /etc/shells
 
-$ZSH -c "compaudit | xargs chmod x-g"
-
 chsh -s $ZSH

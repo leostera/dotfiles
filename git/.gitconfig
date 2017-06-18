@@ -6,6 +6,9 @@
 [github]
     user = ostera
 
+[gpg]
+    program = /usr/local/bin/gpg
+
 [core]
     excludesfile = ~/.gitignore_global
     editor = vim
@@ -52,6 +55,9 @@
     t = tag -s
     tl = tag --sort "v:refname"
     unstage = reset --soft HEAD
+
+[commit]
+    gpgsign = true
 
 [color]
     ui = auto
