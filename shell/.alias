@@ -1,7 +1,7 @@
 alias q="exit"
 
 alias g="git"
-alias gs="g s"
+alias status="g status"
 alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
