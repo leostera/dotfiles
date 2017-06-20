@@ -14,6 +14,8 @@ autoload -U compinit; compinit
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 . /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 
+bindkey '^ ' autosuggest-accept
+
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 if [[ -z $TMUX ]]; then
