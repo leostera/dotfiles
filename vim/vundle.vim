@@ -28,10 +28,12 @@ Plugin 'junegunn/goyo.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
 
+" Syntax checker
+Plugin 'w0rp/ale'
+
 " Languages {
 
   Plugin 'vim-scripts/applescript.vim'
-  Plugin 'w0rp/ale'
   Plugin 'ekalinin/Dockerfile.vim'
   Plugin 'keith/swift.vim'
   Plugin 'tpope/vim-markdown'

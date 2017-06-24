@@ -138,8 +138,10 @@ match OverLength /\%81v.\+/
 
 
 " Ale config
-
+filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
+filetype plugin on
+
 
 " Staturs line config
 let g:lightline = {
