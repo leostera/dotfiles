@@ -22,5 +22,6 @@ if [[ -z $TMUX ]]; then
   pgrep tmux && tma || tm
 fi
 
-# OPAM configuration
-. /Users/leostera/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true
+opam-init
+
+bindkey -e
