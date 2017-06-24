@@ -122,7 +122,7 @@ set smartcase
 " Colors
 
 syntax on
-colorscheme pencil
+colorscheme molokai
 set cursorline
 set background=dark
 
@@ -140,6 +140,7 @@ match OverLength /\%81v.\+/
 " Ale config
 filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_column_always = 1
 filetype plugin on
 
 
