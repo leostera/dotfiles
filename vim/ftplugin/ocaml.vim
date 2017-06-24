@@ -28,3 +28,7 @@ for tool in s:opam_packages
     call s:opam_configuration[tool]()
   endif
 endfor
+
+let g:merlin = {
+  \ 'merlin_home': system("which ocamlmerlin")
+\ }

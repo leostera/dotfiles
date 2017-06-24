@@ -154,7 +154,6 @@ let g:lightline = {
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
 
-
 function! VimuxSlime()
   call VimuxSendText(@v)
   call VimuxSendKeys("Enter")
@@ -168,17 +167,6 @@ nmap <leader>vs vip<LocalLeader>vs<CR>
 
 " JSON always nice looking
 autocmd FileType json :% ! jq .
-
-" Lisps
-autocmd FileType racket  call VimuxRunCommand("racket")
-autocmd FileType chicken call VimuxRunCommand("csi")
-autocmd FileType scheme  call VimuxRunCommand("csi")
-
-" Others
-autocmd FileType ruby   call VimuxRunCommand("irb")
-autocmd FileType python call VimuxRunCommand("py")
-
-autocmd FileType erlang set tags+=~/repos/otp/tags
 
 set exrc
 set secure
