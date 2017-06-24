@@ -176,8 +176,6 @@ autocmd FileType ruby   call VimuxRunCommand("irb")
 autocmd FileType python call VimuxRunCommand("py")
 
 autocmd FileType erlang set tags+=~/repos/otp/tags
-autocmd FileType rust   set tags+=~/repos/rust-lang/rust/tags
-autocmd FileType rust   set tags+=~/.cargo/registry/src/tags
 
 set exrc
 set secure
@@ -190,5 +188,3 @@ if filereadable(_hostfile)
 endif
 
 set hidden
-let g:racer_cmd = "$HOME/.cargo/bin/racer"
-let $RUST_SRC_PATH="$HOME/repos/rust-lang/rust/src"
