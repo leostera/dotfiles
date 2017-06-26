@@ -13,7 +13,7 @@ sudo hostname ${HOSTNAME}
 defaults write com.apple.sound.beep.feedback -bool false
 
 # Show battery percentage
-defaults write com.apple.menuextra.battery ShowPercent NO
+defaults write com.apple.menuextra.battery ShowPercent -bool true
 
 # Disable the "Are you sure oyu want to open this application?" dialog
 defaults write com.apple.LaunchServices LSQuarantine -bool false
