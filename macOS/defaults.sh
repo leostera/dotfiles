@@ -2,9 +2,12 @@
 
 sudo -v
 
-sudo scutil --set ComputerName "muffintosh"
-sudo scutil --set HostName "muffintosh"
-sudo scutil --set LocalHostName "muffintosh"
+readonly HOSTNAME="muffintosh"
+
+sudo scutil --set ComputerName ${HOSTNAME}
+sudo scutil --set HostName ${HOSTNAME}
+sudo scutil --set LocalHostName ${HOSTNAME}
+sudo hostname ${HOSTNAME}
 
 # Disable audio feedback when volume is changed
 defaults write com.apple.sound.beep.feedback -bool false
@@ -27,6 +30,7 @@ defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
 # Trackpad: enable tap to click
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
 defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
 

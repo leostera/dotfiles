@@ -1,7 +1,7 @@
 alias q="exit"
 
 alias g="git"
-alias gs="g s"
+alias status="g status"
 alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
@@ -55,7 +55,7 @@ alias srv="python -m SimpleHTTPServer"
 alias rb="ruby"
 alias rk="racket"
 
-for release in {16..19}; do
+for release in {18..21}; do
   p="${HOME}/.kerl/erlang/r${release}";
   eval "alias r${release}='. ${p}/activate'";
   eval "export ERL${release}=${p}";

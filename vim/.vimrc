@@ -122,7 +122,7 @@ set smartcase
 " Colors
 
 syntax on
-colorscheme pencil
+colorscheme molokai
 set cursorline
 set background=dark
 
@@ -138,8 +138,11 @@ match OverLength /\%81v.\+/
 
 
 " Ale config
-
+filetype off
 let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_column_always = 1
+filetype plugin on
+
 
 " Staturs line config
 let g:lightline = {
@@ -150,7 +153,6 @@ let g:lightline = {
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
-
 
 function! VimuxSlime()
   call VimuxSendText(@v)
@@ -166,19 +168,6 @@ nmap <leader>vs vip<LocalLeader>vs<CR>
 " JSON always nice looking
 autocmd FileType json :% ! jq .
 
-" Lisps
-autocmd FileType racket  call VimuxRunCommand("racket")
-autocmd FileType chicken call VimuxRunCommand("csi")
-autocmd FileType scheme  call VimuxRunCommand("csi")
-
-" Others
-autocmd FileType ruby   call VimuxRunCommand("irb")
-autocmd FileType python call VimuxRunCommand("py")
-
-autocmd FileType erlang set tags+=~/repos/otp/tags
-autocmd FileType rust   set tags+=~/repos/rust-lang/rust/tags
-autocmd FileType rust   set tags+=~/.cargo/registry/src/tags
-
 set exrc
 set secure
 
@@ -190,5 +179,3 @@ if filereadable(_hostfile)
 endif
 
 set hidden
-let g:racer_cmd = "$HOME/.cargo/bin/racer"
-let $RUST_SRC_PATH="$HOME/repos/rust-lang/rust/src"
