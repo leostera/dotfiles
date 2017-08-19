@@ -24,6 +24,7 @@ alias tmux="TERM=screen-256color tmux -2"
 alias tm="tmux"
 alias tma="tmux attach"
 
+alias c=" cd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
