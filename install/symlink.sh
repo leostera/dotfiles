@@ -6,7 +6,9 @@ function symlink {
 
 # Symlinking all dotfiles!
 for dotfile in */.*; do
-  symlink $dotfile;
+  if [[ -f $dotfile ]]; then
+    symlink $dotfile;
+  fi
 done
 
 ln -sfv `pwd`/vim   $HOME/.vim
