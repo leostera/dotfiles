@@ -14,4 +14,6 @@ if [[ `uname` == "Darwin" ]]; then
   source ./misc/gpg.sh
 fi
 
+source ./install/opam.sh
+
 echo "Open a new tab to be home :)"
