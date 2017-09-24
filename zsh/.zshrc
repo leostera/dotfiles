@@ -20,7 +20,5 @@ if [[ -z $TMUX ]]; then
   pgrep tmux && tma || tm
 fi
 
-opam-init
-
 bindkey -e
 bindkey '^ ' autosuggest-accept
