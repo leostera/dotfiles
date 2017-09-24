@@ -16,4 +16,4 @@ fi
 
 source ./install/opam.sh
 
-echo "Open a new tab to be home :)"
+echo "Open a new tab and run `pwd`/post-install.sh"
