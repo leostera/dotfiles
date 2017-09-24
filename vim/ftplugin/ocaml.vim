@@ -30,5 +30,10 @@ for tool in s:opam_packages
 endfor
 
 let g:merlin = {
-  \ 'merlin_home': system("which ocamlmerlin")
-\ }
+      \ 'merlin_home': s:opam_share_dir . '/merlin/vim'
+      \ }
+
+execute "set omnifunc=merlin#Complete"
+
+" show all errors on file save
+autocmd BufWritePre *.ml call merlin#Errors()
