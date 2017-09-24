@@ -1,5 +1,5 @@
 #!/usr/local/bin/zsh
 
-TO=$HOME/repos/$1/$2
+TO=$HOME/repos/github.com/$1/$2
 git clone git@github.com:$1/$2.git $TO
 pushd $TO
