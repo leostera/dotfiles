@@ -1,8 +1,7 @@
-export PATH="$PATH:$HOME/repos/ostera/dotfiles/bin"
+export PATH="$PATH:$HOME/repos/github.com/ostera/dotfiles/bin"
+
 export PATH="$PATH:$HOME/.cargo/bin"
-export PATH="$PATH:$GOPATH/bin" # Add Go binaries
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+export PATH="$PATH:$GOPATH/bin"
+export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
-export PATH="$PATH:/usr/local/Cellar/node/7.7.2/bin/"
-export PATH="$PATH:/Applications/Racket v6.9/bin/"
