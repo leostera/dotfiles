@@ -21,10 +21,9 @@ alias ym="y && m"
 
 alias f="fzf"
 alias tmux="TERM=screen-256color tmux -2"
-alias tm="tmux"
 alias tma="tmux attach"
 
-alias c=" cd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
+alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -41,7 +40,7 @@ for level in {1..9}; do
   eval "alias t${level}='${tree}'";
 done
 
-alias dotfiles="pushd ~/repos/ostera/dotfiles"
+alias dotfiles="pushd ~/repos/github.com/ostera/dotfiles"
 alias gitconf="vim ~/.gitconfig"
 alias reload="source ~/.zshrc"
 alias tmuxrc="vim ~/.tmux.conf"
