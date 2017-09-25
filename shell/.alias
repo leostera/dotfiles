@@ -1,4 +1,5 @@
 alias q="exit"
+alias mmv="noglob zmv -W"
 
 alias g="git"
 alias status="g status"

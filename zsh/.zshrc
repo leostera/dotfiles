@@ -3,12 +3,13 @@ function sourcelink {
   source $p;
 }
 
+fpath=(/usr/local/share/zsh-completions $fpath)
+autoload -U compinit; compinit
+autoload -U zmv
+
 for dotfile in 'env' 'path' 'alias' 'prompt'; do
   . "${HOME}/.${dotfile}";
 done
-
-fpath=(/usr/local/share/zsh-completions $fpath)
-autoload -U compinit; compinit
 
 . /usr/local/etc/profile.d/z.sh
 . /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
