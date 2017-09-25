@@ -45,6 +45,7 @@ Plugin 'w0rp/ale'
   " Lisps
   Plugin 'wlangstroth/vim-racket'
   Plugin 'fasiha/pollen.vim'
+  Plugin 'MicahElliott/vrod'
 
   " JS
   Plugin 'mxw/vim-jsx'
