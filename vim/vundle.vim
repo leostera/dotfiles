@@ -76,6 +76,9 @@ Plugin 'w0rp/ale'
   " Java
   Plugin 'artur-shaik/vim-javacomplete2'
 
+  " ReasonML
+  Plugin 'reasonml-editor/vim-reason'
+
 " }
 
 " Editing
