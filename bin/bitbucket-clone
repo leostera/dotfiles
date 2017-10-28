@@ -1,0 +1,5 @@
+#!/usr/local/bin/zsh
+
+TO=$HOME/repos/bitbucket.org/$1/$2
+git clone https://bitbucket.org/$1/$2.git $TO
+pushd $TO
