@@ -58,6 +58,7 @@
     s = status -s
     sl = shortlog
     ss = status
+    autosquash = rebase -i --autosquash
     t = tag -s
     tl = tag --sort "v:refname"
     unstage = reset --soft HEAD
