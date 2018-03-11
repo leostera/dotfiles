@@ -159,6 +159,8 @@ let g:lightline = {
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
   \ }
 
+let g:markdown_fenced_languages = ['js=javascript']
+
 function! VimuxSlime()
   call VimuxSendText(@v)
   call VimuxSendKeys("Enter")
