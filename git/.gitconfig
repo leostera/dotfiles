@@ -52,7 +52,7 @@
     ra = rebase --abort
     rao = remote add origin
     rc = rebase --continue
-    rl = reflog
+    rl = reflog --date=iso --decorate
     rom = rebase origin/master
     s = status -s
     sl = shortlog
