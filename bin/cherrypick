@@ -1,6 +1,6 @@
 #!/usr/local/bin/zsh
 
-readonly BRANCH=$(git b | fzf --ansi | awk -F' ' '{ print $1 }')
+readonly BRANCH=$(git branch | fzf --ansi | awk -F' ' '{ print $1 }')
 
 readonly HASH=$(
   git l -B ${BRANCH} \

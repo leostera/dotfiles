@@ -18,8 +18,7 @@
 [alias]
     A = add -A
     amend = commit -S --amend
-    b = branch
-    br = branch -r
+    b = branch -rv
     c = commit -S
     cam = commit -S -am
     cm = commit -S -m
