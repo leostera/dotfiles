@@ -38,6 +38,10 @@ Plugin 'w0rp/ale'
   Plugin 'keith/swift.vim'
   Plugin 'tpope/vim-markdown'
 
+  " Bazel
+  Plugin 'bazelbuild/vim-ft-bzl'
+  Plugin 'durandj/bazel.vim'
+
   " Rust
   Plugin 'rust-lang/rust.vim'
   Plugin 'racer-rust/vim-racer'
@@ -45,7 +49,6 @@ Plugin 'w0rp/ale'
   " Lisps
   Plugin 'wlangstroth/vim-racket'
   Plugin 'fasiha/pollen.vim'
-  Plugin 'MicahElliott/vrod'
 
   " JS
   Plugin 'mxw/vim-jsx'
@@ -76,8 +79,11 @@ Plugin 'w0rp/ale'
   " Java
   Plugin 'artur-shaik/vim-javacomplete2'
 
-  " ReasonML
-  Plugin 'reasonml-editor/vim-reason'
+  " GraphQL
+  Plugin 'jparise/vim-graphql'
+
+  " TOML
+  Plugin 'cespare/vim-toml'
 
 " }
 
@@ -90,6 +96,7 @@ Plugin 'tpope/vim-surround'
 
 " Theme
 Plugin 'flazz/vim-colorschemes'
+Plugin 'felixhummel/setcolors.vim'
 
 call vundle#end()
 
