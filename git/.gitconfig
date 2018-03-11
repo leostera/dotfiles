@@ -27,6 +27,9 @@
     cob = checkout -b
     cod = checkout development
     com = checkout master
+    cp = cherry-pick
+    cpc = cherry-pick --continue
+    cpa = cherry-pick --abort
     d = diff
     d1 = diff HEAD~1
     d2 = diff HEAD~2
