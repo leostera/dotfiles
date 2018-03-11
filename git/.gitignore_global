@@ -6,4 +6,6 @@ node_modules
 TODO
 .TODO
 .sass-cache
-tags*
+tags
+tags.lock
+tags.temp
