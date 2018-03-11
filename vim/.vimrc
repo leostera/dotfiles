@@ -153,7 +153,7 @@ let g:ale_javascript_prettier_use_local_config = 1
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'component': {
-  \   'readonly': '%{&readonly?"⭤":""}',
+  \   'readonly': '%{&readonly?"RO":""}',
   \ },
   \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
   \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
