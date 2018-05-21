@@ -58,6 +58,9 @@ Plugin 'w0rp/ale'
   Plugin 'leafgarland/typescript-vim'
   Plugin 'kchmck/vim-coffee-script'
 
+  " ReasonML
+  Bundle 'reasonml-editor/vim-reason'
+
   " HTML
   Plugin 'hail2u/vim-css3-syntax'
   Plugin 'othree/html5.vim'
