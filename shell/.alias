@@ -21,7 +21,7 @@ alias y="yarn"
 alias ym="y && m"
 
 alias f="fzf"
-alias tmux="TERM=screen-256color tmux -2"
+alias tmux="TERM=xterm-256color tmux -2"
 alias tma="tmux attach"
 
 alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"

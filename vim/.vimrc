@@ -124,6 +124,7 @@ set smartcase
 
 " Colors
 
+set termguicolors
 syntax on
 colorscheme molokai
 set cursorline
