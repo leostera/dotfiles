@@ -9,5 +9,7 @@ let g:merlin = {
 
 execute "set omnifunc=merlin#Complete"
 
-" show all errors on file save
-autocmd BufWritePre *.ml call merlin#Errors()
+nnoremap <leader>c :MerlinDestruct<cr>
+
+" reformat on file save
+autocmd BufWritePre *.re call DoReasonPrettyPrint()
