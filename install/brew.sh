@@ -34,3 +34,5 @@ brew install \
 
 brew install \
   universal-ctags/universal-ctags/universal-ctags --HEAD
+
+/usr/local/Cellar/fzf/install
