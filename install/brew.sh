@@ -6,6 +6,7 @@ brew tap tldr-pages/tldr
 # Brewable installs!
 
 brew install \
+  bazel \
   coreutils \
   dockutil \
   fzf \
