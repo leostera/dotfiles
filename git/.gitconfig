@@ -104,3 +104,5 @@
 [diff]
     renames = copies
 
+[help]
+	autocorrect = 1

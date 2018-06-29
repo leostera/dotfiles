@@ -1,7 +1,9 @@
 export PATH="$PATH:$HOME/repos/github.com/ostera/dotfiles/bin"
-
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$GOPATH/bin"
 export PATH="$PATH:$HOME/.rvm/bin"
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH" # gnu flavoured utils
 export PATH="/usr/local/opt/gnupg/libexec/gpgbin:$PATH"
+export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
+
+export MANPATH="/usr/local/opt/gnu-tar/libexec/gnuman:$MANPATH"
