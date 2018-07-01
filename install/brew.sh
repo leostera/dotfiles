@@ -8,29 +8,21 @@ brew tap tldr-pages/tldr
 brew install \
   bazel \
   coreutils \
-  dockutil \
   fzf \
-  gettext \
   gettext \
   gist \
   git \
   git-extras \
   gnu-sed --default-names \
-  gnupg \
+  gnu-tar --default-names \
+  gpg \
   htop \
-  hub \
-  nmap \
-  node \
-  python \
-  ripgrep \
-  ruby \
+  rg \
   tldr \
   tmux \
   tree \
   vim \
-  weechat \
-  wget \
-  yarn
+  wget
 
 brew install \
   universal-ctags/universal-ctags/universal-ctags --HEAD
