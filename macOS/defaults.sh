@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
-sudo -v
+# Close all open System Preferences panes
+osascript -e 'tell application "System Preferences" to quit'
 
 readonly HOSTNAME="muffintosh"
 
@@ -23,6 +24,41 @@ defaults write com.apple.CrashReporter DialogType -string "none"
 
 # Check for software updates daily
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
+
+# Expand save panel
+defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true
+
+# Expand print panel
+defaults write NSGlobalDomain PMPrintingExpandedStateForPrint -bool true
+
+# Empty Trash securely by default
+defaults write com.apple.finder EmptyTrashSecurely -bool true
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+# Prevent Photos from opening automatically when devices are plugged in
+defaults -currentHost write com.apple.ImageCapture disableHotPlug -bool true
+
+###
+#  Finder
+###
+
+# Show all files
+defaults write com.apple.Finder AppleShowAllFiles -bool true
+
+# Show file extensions
+defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+
+# Show status bar
+defaults write com.apple.finder ShowStatusBar -bool true
+
+# Show path bar
+defaults write com.apple.finder ShowPathbar -bool true
+
+# Show ~/Library
+chflags nohidden ~/Library
+
 
 ###
 #  Input
