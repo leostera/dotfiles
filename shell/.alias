@@ -49,12 +49,7 @@ alias vimrc="vim ~/.vimrc"
 alias vundlerc="vim ~/.vim/vundle.vim"
 alias zshrc="vim ~/.zshrc ; reload"
 
-alias pipit="pip install -r requirements.txt"
-alias py="python"
 alias srv="python -m SimpleHTTPServer"
-
-alias rb="ruby"
-alias rk="racket"
 
 for release in {18..21}; do
   p="${HOME}/.kerl/erlang/r${release}";
