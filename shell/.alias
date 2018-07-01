@@ -1,3 +1,7 @@
+repo() {
+  pushd $(github-clone $*)
+}
+
 alias q="exit"
 alias mmv="noglob zmv -W"
 

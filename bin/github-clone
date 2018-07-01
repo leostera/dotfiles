@@ -1,5 +1,17 @@
 #!/usr/local/bin/zsh
 
-TO=$HOME/repos/github.com/$1/$2
-git clone git@github.com:$1/$2.git $TO
-pushd $TO
+if [ -z "$2" ];
+then
+  REPO=$1
+else
+  REPO=$1/$2
+fi
+
+TO=$HOME/repos/github.com/$REPO
+
+if [ ! -f $TO/.git/HEAD ];
+then
+  git clone git@github.com:$REPO.git $TO
+fi;
+
+echo $TO;
