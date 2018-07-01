@@ -13,4 +13,3 @@ done
 
 ln -sfv `pwd`/vim   $HOME/.vim
 ln -sfv `pwd`/tmux  $HOME/.tmux
-ln -sfv `pwd`/stack $HOME/.stack
