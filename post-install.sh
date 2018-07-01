@@ -1,7 +1,5 @@
 #!/usr/local/bin/zsh
 
-/usr/local/Cellar/fzf/0.16.8_1/install
-
-eval compaudit | xargs chmod g-w
+find /usr/local/Cellar/fzf -name "install" -exec {} \;
 
 echo "Welcome Home λ"
