@@ -1,5 +1,8 @@
 #!/bin/sh
 
+echo "Bootstrapping will require sudo! Temporarily authenticating you now..."
+sudo -v
+
 # Install time!
 source ./install/symlink.sh
 source ./install/prepare.sh
