@@ -1,5 +1,7 @@
 #!/usr/bin/env sh
 
-git clone https://github.com/ostera/dotfiles ~/repos/ostera/dotfiles
-cd ~/repos/ostera/dotfiles
-./bootstrap.sh
+DOTFILES=~/repos/github.com/ostera/dotfiles
+
+git clone https://github.com/ostera/dotfiles ${DOTFILES}
+cd ${DOTFILES}
+[ -f "bootstrap.sh" ] && ./bootstrap.sh
