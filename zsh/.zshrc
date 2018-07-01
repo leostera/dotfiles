@@ -19,3 +19,6 @@ bindkey -e
 bindkey '^ ' autosuggest-accept
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# Add all keys to keychain silently
+ssh-add -q -K -A 2>/dev/null
