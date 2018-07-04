@@ -31,6 +31,9 @@ Plugin 'airblade/vim-gitgutter'
 " Syntax checker
 Plugin 'w0rp/ale'
 
+" Reformattter
+Plugin 'Chiel92/vim-autoformat'
+
 " Languages {
 
   Plugin 'vim-scripts/applescript.vim'
@@ -61,12 +64,6 @@ Plugin 'w0rp/ale'
   " ReasonML
   Bundle 'reasonml-editor/vim-reason'
 
-  " HTML
-  Plugin 'hail2u/vim-css3-syntax'
-  Plugin 'othree/html5.vim'
-  Plugin 'mattn/emmet-vim'
-  Plugin 'digitaltoad/vim-jade'
-
   " Erlang
   Plugin 'vim-erlang/vim-erlang-tags'
 
@@ -78,9 +75,6 @@ Plugin 'w0rp/ale'
 
   " Scala
   Plugin 'derekwyatt/vim-scala'
-
-  " Java
-  Plugin 'artur-shaik/vim-javacomplete2'
 
   " GraphQL
   Plugin 'jparise/vim-graphql'
