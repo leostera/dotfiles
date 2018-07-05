@@ -1,11 +1,13 @@
 #!/bin/sh
 
 brew cask install \
+  discord \
   firefox \
   google-chrome \
   iterm2 \
-  skyfonts \
   sketch \
+  skyfonts \
+  slack \
   spotify \
   steam \
   the-unarchiver \
