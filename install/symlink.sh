@@ -13,3 +13,8 @@ done
 
 ln -sfv `pwd`/vim   $HOME/.vim
 ln -sfv `pwd`/tmux  $HOME/.tmux
+
+for configF in ./config/*; do
+  ln -sfv "`pwd`/$configF" $HOME/.config/
+done
+
