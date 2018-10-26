@@ -2,7 +2,11 @@
 ._*
 .DS_Store
 node_modules
-*.sw*
+*.swa
+*.swb
+*.swc
+*.swd
+*.swp
 TODO
 .TODO
 .sass-cache
