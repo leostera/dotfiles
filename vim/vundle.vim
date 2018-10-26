@@ -81,6 +81,12 @@ Plugin 'Chiel92/vim-autoformat'
 
   " TOML
   Plugin 'cespare/vim-toml'
+  
+  " TLA+
+  Plugin 'hwayne/tla.vim'
+
+  " WASM
+  Plugin 'rhysd/vim-wasm'
 
 " }
 
