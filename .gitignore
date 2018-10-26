@@ -2,6 +2,7 @@
 vim/bundle
 vim/vim
 vim/.netrwhist
+vim/undos
 tmux/tmux
 tmux/.search_options
 stack
