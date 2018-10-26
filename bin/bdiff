@@ -1,0 +1,6 @@
+#!/bin/bash
+
+readonly FST=$1
+readonly SND=$2
+
+colordiff <(xxd $FST) <(xxd $SND)
