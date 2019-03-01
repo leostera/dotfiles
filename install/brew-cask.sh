@@ -11,4 +11,5 @@ brew cask install \
   spotify \
   steam \
   the-unarchiver \
+  telegram \
   vlc
