@@ -1,6 +1,7 @@
 #!/bin/sh
 
-# Install Vundle
-mkdir -p ~/.vim/bundle && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+# Install Plug
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 vim +PluginInstall +PluginUpdate +qall
