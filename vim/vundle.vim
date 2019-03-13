@@ -87,6 +87,12 @@ Plugin 'Chiel92/vim-autoformat'
 
   " WASM
   Plugin 'rhysd/vim-wasm'
+  
+  " Terraform
+  Plugin 'hashivim/vim-terraform'
+
+  " Jenkinsfile
+  Plugin 'martinda/Jenkinsfile-vim-syntax'
 
 " }
 
