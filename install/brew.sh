@@ -6,15 +6,14 @@ brew tap tldr-pages/tldr
 # Brewable installs!
 
 brew install \
-  bazel \
   coreutils \
   fzf \
   gettext \
   gist \
   git \
   git-extras \
-  gnu-sed --default-names \
-  gnu-tar --default-names \
+  gnu-sed \
+  gnu-tar \
   gpg \
   htop \
   rg \
@@ -26,5 +25,6 @@ brew install \
 
 brew install \
   universal-ctags/universal-ctags/universal-ctags --HEAD
-
-/usr/local/Cellar/fzf/install
+  
+FZF_VERSION=$(fzf --version | awk -F' ' '{ print $1 }')
+/usr/local/Cellar/fzf/${FZF_VERSION}/install
