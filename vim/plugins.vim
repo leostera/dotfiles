@@ -98,6 +98,12 @@ Plug 'Chiel92/vim-autoformat'
   " Jenkinsfile
   Plug 'martinda/Jenkinsfile-vim-syntax'
 
+  " LaTeX
+  Plug 'lervag/vimtex'
+
+  " Nix
+  Plug 'LnL7/vim-nix'
+
 " }
 
 " Editing

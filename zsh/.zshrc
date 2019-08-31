@@ -19,6 +19,7 @@ bindkey -e
 bindkey '^ ' autosuggest-accept
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+[ -f ~/.nix-profile/etc/profile.d/nix.sh ] && source /Users/ostera/.nix-profile/etc/profile.d/nix.sh
 
 # Add all keys to keychain silently
 ssh-add -q -K -A 2>/dev/null
