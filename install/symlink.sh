@@ -11,6 +11,7 @@ for dotfile in */.*; do
   fi
 done
 
+ln -sfv `pwd`/kitty $HOME/.config/kitty
 ln -sfv `pwd`/vim   $HOME/.vim
 ln -sfv `pwd`/tmux  $HOME/.tmux
 
