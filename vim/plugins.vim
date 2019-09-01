@@ -3,7 +3,9 @@ filetype off
 
 function! Install ()
   :source ~/.vimrc
+  :PlugUpgrade
   :PlugInstall
+  :PlugClean
 endfunction
 
 autocmd! BufWritePost plugins.vim :call Install()
@@ -33,10 +35,12 @@ Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
 
 " Syntax checker
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale'
 
 " Reformattter
 Plug 'Chiel92/vim-autoformat'
+
+" Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 
 " Languages {
 
@@ -70,9 +74,13 @@ Plug 'Chiel92/vim-autoformat'
 
   " Erlang
   Plug 'vim-erlang/vim-erlang-tags'
+  Plug 'vim-erlang/vim-erlang-runtime'
+  Plug 'vim-erlang/vim-erlang-omnicomplete'
+  Plug 'vim-erlang/vim-erlang-compiler'
 
   " Elixir
-  Plug 'elixir-lang/vim-elixir'
+  Plug 'elixir-editors/vim-elixir'
+  Plug 'slashmili/alchemist.vim'
 
   " Idris
   Plug 'idris-hackers/idris-vim'
@@ -85,13 +93,13 @@ Plug 'Chiel92/vim-autoformat'
 
   " TOML
   Plug 'cespare/vim-toml'
-  
+
   " TLA+
   Plug 'hwayne/tla.vim'
 
   " WASM
   Plug 'rhysd/vim-wasm'
-  
+
   " Terraform
   Plug 'hashivim/vim-terraform'
 
@@ -103,6 +111,9 @@ Plug 'Chiel92/vim-autoformat'
 
   " Nix
   Plug 'LnL7/vim-nix'
+
+  " RDF/N3/Turtle
+  Plug 'vim-scripts/n3.vim'
 
 " }
 

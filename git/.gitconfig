@@ -1,7 +1,7 @@
 [user]
     name = Leandro Ostera
-    email = leandro@ostera.io
-    signingkey = 9364FBDBF3C07965526414678772D79785FD0D43
+    email = ostera@doorling.se
+    signingkey = ED25E5217F52DD4C28E2AAA2F544AA39BA0A486B
 
 [github]
     user = ostera

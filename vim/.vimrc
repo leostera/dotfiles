@@ -149,16 +149,16 @@ match OverLength /\%81v.\+/
 
 
 " Ale config
-filetype off
-let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_sign_column_always = 1
-let g:ale_fix_on_save = 1
-filetype plugin on
-
-let g:ale_fixers = {
-\   'javascript': ['prettier'],
-\}
-let g:ale_javascript_prettier_use_local_config = 1
+" filetype off
+" let &runtimepath.=',~/.vim/bundle/ale'
+" let g:ale_sign_column_always = 1
+" let g:ale_fix_on_save = 1
+" filetype plugin on
+" 
+" let g:ale_fixers = {
+" \   'javascript': ['prettier'],
+" \}
+" let g:ale_javascript_prettier_use_local_config = 1
 
 " Staturs line config
 let g:lightline = {
@@ -197,3 +197,12 @@ if filereadable(_hostfile)
 endif
 
 set hidden
+
+" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
+let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
+exec "set rtp^=" . g:opamshare . "/merlin/vim"
+
+let g:merlin = {
+  \ 'ocamlmerlin_path': expand('$OPAM_SWITCH_PREFIX/bin/ocamlmerlin'),
+  \ }
+" ## end of OPAM user-setup addition for vim / base ## keep this line

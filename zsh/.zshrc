@@ -23,3 +23,6 @@ bindkey '^ ' autosuggest-accept
 
 # Add all keys to keychain silently
 ssh-add -q -K -A 2>/dev/null
+
+# opam configuration
+test -r /Users/ostera/.opam/opam-init/init.zsh && . /Users/ostera/.opam/opam-init/init.zsh > /dev/null 2> /dev/null || true

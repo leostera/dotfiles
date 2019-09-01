@@ -11,7 +11,12 @@ TO=$HOME/repos/github.com/$REPO
 
 if [ ! -f $TO/.git/HEAD ];
 then
-  git clone git@github.com:$REPO.git $TO
+  if [ -z "${USE_HTTP}" ];
+  then
+    git clone git@github.com:$REPO.git $TO
+  else
+    git clone https://github.com/$REPO $TO
+  fi
 fi;
 
 echo $TO;
