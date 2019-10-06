@@ -147,19 +147,6 @@ set colorcolumn=81
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
-
-" Ale config
-" filetype off
-" let &runtimepath.=',~/.vim/bundle/ale'
-" let g:ale_sign_column_always = 1
-" let g:ale_fix_on_save = 1
-" filetype plugin on
-" 
-" let g:ale_fixers = {
-" \   'javascript': ['prettier'],
-" \}
-" let g:ale_javascript_prettier_use_local_config = 1
-
 " Staturs line config
 let g:lightline = {
   \ 'colorscheme': 'wombat',
@@ -171,17 +158,6 @@ let g:lightline = {
   \ }
 
 let g:markdown_fenced_languages = ['js=javascript']
-
-function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
-endfunction
-
-" If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <leader>e "vy :call VimuxSlime()<CR>
-
-" Select current paragraph and send it to tmux
-nmap <leader>vs vip<LocalLeader>vs<CR>
 
 " JSON always nice looking
 autocmd FileType json :% ! jq .
@@ -197,12 +173,3 @@ if filereadable(_hostfile)
 endif
 
 set hidden
-
-" ## added by OPAM user-setup for vim / base ## 93ee63e278bdfc07d1139a748ed3fff2 ## you can edit, but keep this line
-let g:opamshare = substitute(system('opam config var share'),'\n$','','''')
-exec "set rtp^=" . g:opamshare . "/merlin/vim"
-
-let g:merlin = {
-  \ 'ocamlmerlin_path': expand('$OPAM_SWITCH_PREFIX/bin/ocamlmerlin'),
-  \ }
-" ## end of OPAM user-setup addition for vim / base ## keep this line

@@ -41,6 +41,8 @@ Plug 'airblade/vim-gitgutter'
 Plug 'Chiel92/vim-autoformat'
 
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
+Plug 'lifepillar/vim-mucomplete'
+
 
 " Languages {
 
@@ -114,6 +116,9 @@ Plug 'Chiel92/vim-autoformat'
 
   " RDF/N3/Turtle
   Plug 'vim-scripts/n3.vim'
+
+  " Alloy
+  Plug 'whybin/alloy.vim'
 
 " }
 
