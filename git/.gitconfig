@@ -1,14 +1,13 @@
 [user]
     name = Leandro Ostera
     email = leandro@ostera.io
-    signingkey = 9364FBDBF3C07965526414678772D79785FD0D43
-
+    signingkey = 3A5B8CA378AE473D83532AB5164AFF20E1035D1F
 
 [github]
     user = ostera
 
 [gpg]
-    program = /usr/local/bin/gpg
+    program = /usr/bin/gpg
 
 [core]
     excludesfile = ~/.gitignore_global
@@ -26,7 +25,7 @@
     co = checkout
     cob = checkout -b
     cod = checkout development
-    com = checkout master
+    com = checkout main
     cp = cherry-pick
     cpa = cherry-pick --abort
     cpc = cherry-pick --continue
@@ -37,7 +36,7 @@
     d4 = diff HEAD~4
     d5 = diff HEAD~5
     dh = diff HEAD
-    dm = diff master
+    dm = diff main
     dt = difftool
     fall = fetch --all
     fixup = commit --fixup
@@ -47,14 +46,14 @@
     pall = pull --all
     patch = apply --reject --ignore-whitespace --ignore-space-change
     pod = push origin development
-    pom = push origin master --tags
-    pomfu = push origin master --tags --force --set-upstream
+    pom = push origin main --tags
+    pomfu = push origin main --tags --force --set-upstream
     purge = reset --hard HEAD
     ra = rebase --abort
     rao = remote add origin
     rc = rebase --continue
     rl = reflog --date=iso --decorate
-    rom = rebase origin/master
+    rom = rebase origin/main
     s = status -s
     sl = shortlog
     ss = status
