@@ -1,6 +1,7 @@
 " General
 set nocompatible
 
+set noautochdir
 set encoding=UTF-8
 set t_Co=256
 set number         "Line numbers me likey
@@ -179,7 +180,7 @@ set secure
 let _hostname = substitute(hostname(), ".lan", "", "")
 let _hostfile = expand("$HOME/.vim/"._hostname.".vim")
 
-if filereadable(_hostfile)
+if _hostfile != "" && filereadable(_hostfile)
   exec "source "._hostfile
 endif
 

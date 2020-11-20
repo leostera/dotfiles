@@ -13,18 +13,14 @@ alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
 
+alias vim="/usr/local/bin/vim -X"
 alias v="vim"
-alias vf="v \$(f)"
-alias v.="vim ."
+alias vf="vim \$(f)"
 alias ctags-here="ctags -o tags"
 
 alias k="kubectl"
-alias mk="minikube"
-alias d="docker"
 alias h="\history -i 0 | f"
 alias m="make"
-alias y="yarn"
-alias ym="y && m"
 
 alias f="fzf"
 alias tmux="TERM=xterm-256color tmux -2"
@@ -52,13 +48,4 @@ alias gitconf="vim ~/.gitconfig"
 alias reload="source ~/.zshrc"
 alias tmuxrc="vim ~/.tmux.conf"
 alias vimrc="vim ~/.vimrc"
-alias vundlerc="vim ~/.vim/vundle.vim"
 alias zshrc="vim ~/.zshrc ; reload"
-
-alias srv="python -m SimpleHTTPServer"
-
-for release in {18..21}; do
-  p="${HOME}/.kerl/erlang/r${release}";
-  eval "alias r${release}='. ${p}/activate'";
-  eval "export ERL${release}=${p}";
-done
