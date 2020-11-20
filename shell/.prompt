@@ -1,1 +1,4 @@
 export PROMPT="λ "
+
+bindkey -e
+bindkey '^ ' autosuggest-accept
