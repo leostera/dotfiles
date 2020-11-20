@@ -1,5 +1,5 @@
 # 💾 `~/.*`
-> Dotfiles! Muddafucka!
+> Just my dotfiles.
 
 ![In Action](https://github.com/ostera/dotfiles/raw/master/screenshots/Screen%20Shot%202017-03-14%20at%206.22.30%20PM.png)
 
