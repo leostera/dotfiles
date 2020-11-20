@@ -1,7 +1,7 @@
 " General
 set nocompatible
 
-set encoding=utf-8
+set encoding=UTF-8
 set t_Co=256
 set number         "Line numbers me likey
 set backspace=2    "Make backspace work like most other apps
@@ -136,7 +136,8 @@ colorscheme molokai
 set cursorline
 set background=dark
 
-set rtp+=/usr/local/opt/fzf
+
+set rtp+=/home/ostera/repos/github.com/junegunn/fzf
 map <leader>B :Buffers<cr>
 map <leader><tab> :FZF -x<cr>
 map <leader>f :Find<cr>
@@ -147,20 +148,30 @@ set colorcolumn=81
 highlight OverLength ctermbg=red ctermfg=white
 match OverLength /\%81v.\+/
 
-" Staturs line config
+" Status line config
 let g:lightline = {
   \ 'colorscheme': 'wombat',
   \ 'component': {
   \   'readonly': '%{&readonly?"RO":""}',
   \ },
-  \ 'separator': { 'left': "\ue0b0", 'right': "\ue0b2" },
-  \ 'subseparator': { 'left': "\ue0b1", 'right': "\ue0b3" }
+  \ 'component_function': {
+  \   'wordcount': 'WordCount'
+  \ },
+  \ 'active': {
+  \   'right': [
+  \      [ 'lineinfo' ],
+  \      [ 'fileformat', 'fileencoding', 'filetype' ],
+  \      [ 'percent' ]
+  \   ]
+  \ }
   \ }
 
-let g:markdown_fenced_languages = ['js=javascript']
+" LSP Config
+set hidden
 
-" JSON always nice looking
-autocmd FileType json :% ! jq .
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
 
 set exrc
 set secure
