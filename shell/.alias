@@ -5,6 +5,8 @@ repo() {
 alias q="exit"
 alias mmv="noglob zmv -W"
 
+alias ccat="highlight -O xterm256 -s navajo-night"
+
 alias g="git"
 alias status="g status"
 alias clone="g clone"
