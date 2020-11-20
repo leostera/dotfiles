@@ -7,6 +7,8 @@ node_modules
 *.swc
 *.swd
 *.swp
+*.swn
+*.swo
 TODO
 .TODO
 .sass-cache
