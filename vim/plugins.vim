@@ -17,6 +17,9 @@ if empty(glob('~/.vim/autoload/plug.vim'))
 endif
 call plug#begin('~/.vim/plugged')
 
+" Icons
+Plug 'ryanoasis/vim-devicons'
+
 " Search
 Plug 'junegunn/fzf.vim'
 
@@ -119,6 +122,33 @@ Plug 'lifepillar/vim-mucomplete'
 
   " Alloy
   Plug 'whybin/alloy.vim'
+
+  " EBNF
+  Plug 'vim-scripts/ebnf.vim'
+
+  " WASM
+  Plug 'rhysd/vim-wasm'
+
+  " LSP
+  Plug 'roxma/vim-hug-neovim-rpc'
+  Plug 'roxma/nvim-yarp'
+  Plug 'autozimu/LanguageClient-neovim', {
+    \ 'branch': 'next',
+    \ 'do': 'bash install.sh',
+    \ }
+
+  " Flutter
+  Plug 'dart-lang/dart-vim-plugin'
+  Plug 'thosakwe/vim-flutter'
+
+  " CSV
+  Plug 'chrisbra/csv.vim'
+
+  " SPARQL
+  Plug 'rvesse/vim-sparql'
+
+  " GLSL
+  Plug 'tikhomirov/vim-glsl'
 
 " }
 
