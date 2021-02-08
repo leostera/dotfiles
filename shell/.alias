@@ -33,8 +33,8 @@ alias ....="cd ../../.."
 alias ~="pushd ~"
 alias repos="pushd ~/repos"
 
-alias l="ls -lh --color"
-alias la="ls -lha --color"
+alias l="ls -hlH --color"
+alias la="ls -halH --color"
 
 for level in {1..9}; do
   tree="tree -C -L ${level} -h";
