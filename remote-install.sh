@@ -7,7 +7,7 @@ mkdir -p ${DOTFILES}
 cd ${DOTFILES}
 
 echo "Downloading dotfiles..."
-curl https://codeload.github.com/ostera/dotfiles/tar.gz/master > master.tar.gz
+curl https://codeload.github.com/ostera/dotfiles/tar.gz/main > main.tar.gz
 
 echo "Extracting..."
 tar -xf -C .
