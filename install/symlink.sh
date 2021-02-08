@@ -1,13 +1,20 @@
-#!/bin/sh
+#!/bin/zsh
 
-function symlink {
-  ln -sfv "`pwd`/$1" $HOME
+function symlink() {
+  ln -sfv "`pwd`/$1" $2
 }
 
 # Symlinking all dotfiles!
 for dotfile in */.*; do
   if [[ -f $dotfile ]]; then
-    symlink $dotfile;
+    symlink $dotfile $HOME;
+  fi
+done
+
+# Symlinking all binaries!
+for binary in bin/*; do
+  if [[ -f $binary ]]; then
+    symlink $binary $HOME/.bin/;
   fi
 done
 
