@@ -1,0 +1,11 @@
+Host bahnhof
+  HostName 10.1.46.43
+  Port 22
+  User ostera
+  ForwardAgent yes
+
+Host kivra
+  HostName 192.168.1.214
+  Port 22
+  User ostera
+  ForwardAgent yes
