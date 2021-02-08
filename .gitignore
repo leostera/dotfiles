@@ -4,6 +4,7 @@ vim/plugged
 vim/vim
 vim/.netrwhist
 vim/undos
+vim/views
 tmux/tmux
 tmux/.search_options
 stack

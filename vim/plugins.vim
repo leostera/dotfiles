@@ -18,7 +18,7 @@ endif
 call plug#begin('~/.vim/plugged')
 
 " Icons
-Plug 'ryanoasis/vim-devicons'
+" Plug 'ryanoasis/vim-devicons'
 
 " Search
 Plug 'junegunn/fzf.vim'
@@ -46,6 +46,8 @@ Plug 'Chiel92/vim-autoformat'
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'lifepillar/vim-mucomplete'
 
+" Plug 'nvim-treesitter/nvim-treesitter'
+" Plug 'nvim-treesitter/playground'
 
 " Languages {
 
@@ -73,9 +75,6 @@ Plug 'lifepillar/vim-mucomplete'
   " JS Dialects
   Plug 'leafgarland/typescript-vim'
   Plug 'kchmck/vim-coffee-script'
-
-  " ReasonML
-  Plug 'jordwalke/vim-reasonml'
 
   " Erlang
   Plug 'vim-erlang/vim-erlang-tags'
@@ -129,14 +128,6 @@ Plug 'lifepillar/vim-mucomplete'
   " WASM
   Plug 'rhysd/vim-wasm'
 
-  " LSP
-  Plug 'roxma/vim-hug-neovim-rpc'
-  Plug 'roxma/nvim-yarp'
-  Plug 'autozimu/LanguageClient-neovim', {
-    \ 'branch': 'next',
-    \ 'do': 'bash install.sh',
-    \ }
-
   " Flutter
   Plug 'dart-lang/dart-vim-plugin'
   Plug 'thosakwe/vim-flutter'
@@ -149,6 +140,9 @@ Plug 'lifepillar/vim-mucomplete'
 
   " GLSL
   Plug 'tikhomirov/vim-glsl'
+
+  " LSP
+  Plug 'prabirshrestha/vim-lsp'
 
 " }
 

@@ -1,4 +1,4 @@
-let g:markdown_fenced_languages = ['js=javascript', 'ttl=n3', 'sparql=sparql', 'haskell=haskell', 'rust=rust', 'erlang=erlang', 'elixir=elixir']
+let g:markdown_fenced_languages = ['js=javascript', 'ml=ocaml', 'ocaml=ocaml', 'ttl=n3', 'sparql=sparql', 'haskell=haskell', 'rust=rust', 'erlang=erlang', 'elixir=elixir']
 
 let g:word_count="<unknown>"
 function WordCount()
