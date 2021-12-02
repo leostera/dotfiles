@@ -16,7 +16,6 @@ alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
 
-alias vim="/opt/homebrew/bin/nvim -X"
 alias v="nvim"
 alias vf="nvim \$(f)"
 alias ctags-here="ctags -o tags"

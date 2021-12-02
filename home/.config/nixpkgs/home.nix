@@ -1,13 +1,15 @@
 { config, pkgs, ...}:
 
 {
+  nixpkgs.config.allowUnfree = true;
+
+  services.nix-daemon.enable = true;
+
   environment.systemPackages =
     with pkgs; [
-      chromiumWrapper
       cloc
       coreutils
       ctags
-      firefoxWrapper
       fnm
       fzf
       docker
@@ -17,10 +19,7 @@
       gist
       git
       git-extras
-      gnu-sed
-      gnu-tar
       gnupg
-      gpg
       htop
       jq
       ngrok
