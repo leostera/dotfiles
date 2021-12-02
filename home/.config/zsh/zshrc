@@ -1,4 +1,4 @@
-. "./env"
-. "./path"
-. "./alias"
-. "./prompt"
+. "~/.config/zsh/env"
+. "~/.config/zsh/path"
+. "~/.config/zsh/alias"
+. "~/.config/zsh/prompt"
