@@ -1,5 +1,6 @@
 #!/usr/bin/env sh
 
+BRANCH=hogar
 DOTFILES=~/repos/github.com/ostera/dotfiles
 
 echo "Creating dotfiles path..."
@@ -7,15 +8,15 @@ mkdir -p ${DOTFILES}
 cd ${DOTFILES}
 
 echo "Downloading dotfiles..."
-curl https://codeload.github.com/ostera/dotfiles/tar.gz/main > main.tar.gz
+curl https://codeload.github.com/ostera/dotfiles/tar.gz/${BRANCH} > ${BRANCH}.tar.gz
 
 echo "Extracting..."
-tar -xf main.tar.gz
-mv dotfiles-main/* .
+tar -xf ${BRANCH}.tar.gz
+mv dotfiles-${BRANCH}/* .
 
 echo "Bootstrapping..."
 ./bootstrap.sh
 
 echo "Cleaning..."
-rm -rf dotfiles-main main.tar.gz
+rm -rf dotfiles-${BRANCH} ${BRANCH}.tar.gz
 
