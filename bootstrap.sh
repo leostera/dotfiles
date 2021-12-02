@@ -1,4 +1,4 @@
 #!/bin/bash -e
 
-curl -L https://nixos.org/nix/install | sh -- --daemon
+sh <(curl -L https://nixos.org/nix/install) --daemon
 ./tools/symlink
