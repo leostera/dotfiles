@@ -1,6 +1,6 @@
 #!/usr/bin/env sh
 
-BRANCH=hogar
+BRANCH=main
 DOTFILES=~/repos/github.com/ostera/dotfiles
 
 echo "Creating dotfiles path..."
