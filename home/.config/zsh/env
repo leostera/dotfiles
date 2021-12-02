@@ -21,12 +21,13 @@ export FZF_DEFAULT_DIRECTORY_COMMAND="\
   | sort -u
   "
 
+export XDG_CONFIG_PATH="${XDG_CONFIG_PATH}:~/.config"
+export ANDROID_HOME=/home/ostera/Android/Sdk/
 export CLASS_PATH="$CLASS_PATH:${HOME}/.tla"
 export EDITOR=vim
 export GCLOUD_CONFIG=~/.config/gcloud
-export GOOGLE_APPLICATION_CREDENTIALS=${GCLOUD_CONFIG}/application_default_credentials.json
 export GCLOUD_CREDENTIALS=${GCLOUD_CONFIG}/credentials
-export GCLOUD_ACCOUNT=$(whoami)@spotify.com
+export GOOGLE_APPLICATION_CREDENTIALS=${GCLOUD_CONFIG}/application_default_credentials.json
 export GOPATH=~/.go
 export GPG_TTY=$(tty)
 export HISTFILE=~/.zhistory
@@ -39,5 +40,3 @@ export RBENV_ROOT=/usr/local/var/rbenv
 export SAVEHIST=1000000
 export TERM="xterm-256color"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-
-export ANDROID_HOME=/home/ostera/Android/Sdk/
