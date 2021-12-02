@@ -1,0 +1,43 @@
+export ENV=local
+export HOSTNAME=$(hostname)
+export LANG=en_us.utf-8
+export LC_CTYPE=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
+
+export FZF_DEFAULT_COMMAND="\
+  rg . \
+    --files \
+    --follow \
+    --glob '!*cache/*' \
+    --glob '!.git/*' \
+    --hidden \
+  "
+
+export FZF_DEFAULT_DIRECTORY_COMMAND="\
+  rg . \
+    --files \
+    --null \
+  | xargs -0 dirname \
+  | sort -u
+  "
+
+export CLASS_PATH="$CLASS_PATH:${HOME}/.tla"
+export EDITOR=vim
+export GCLOUD_CONFIG=~/.config/gcloud
+export GOOGLE_APPLICATION_CREDENTIALS=${GCLOUD_CONFIG}/application_default_credentials.json
+export GCLOUD_CREDENTIALS=${GCLOUD_CONFIG}/credentials
+export GCLOUD_ACCOUNT=$(whoami)@spotify.com
+export GOPATH=~/.go
+export GPG_TTY=$(tty)
+export HISTFILE=~/.zhistory
+export HISTSIZE=1000000
+export HOMEBREW_MAKE_JOBS=`nproc`
+export NODE_ENV=LOCAL
+export NODE_PATH=./lib/:./modules/
+export NVM_DIR=~/.nvm
+export RBENV_ROOT=/usr/local/var/rbenv
+export SAVEHIST=1000000
+export TERM="xterm-256color"
+export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+
+export ANDROID_HOME=/home/ostera/Android/Sdk/

@@ -1,0 +1,4 @@
+export PROMPT="; "
+
+bindkey -e
+bindkey '^ ' autosuggest-accept

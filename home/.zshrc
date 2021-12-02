@@ -1,4 +1,0 @@
-. "${HOME}/config/zsh/env"
-. "${HOME}/config/zsh/path"
-. "${HOME}/config/zsh/alias"
-. "${HOME}/config/zsh/prompt"

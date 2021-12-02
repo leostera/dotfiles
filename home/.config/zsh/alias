@@ -1,0 +1,54 @@
+repo() {
+  pushd $(github-clone $*)
+}
+
+alias oldbrew="/usr/local/bin/brew"
+alias brew="arch -arm64 /opt/homebrew/bin/brew"
+
+alias q="exit"
+alias mmv="noglob zmv -W"
+
+alias ccat="highlight -O xterm256 -s navajo-night"
+
+alias g="git"
+alias status="g status"
+alias clone="g clone"
+alias init="g init"
+alias shallow="clone --depth 1"
+
+alias vim="/opt/homebrew/bin/nvim -X"
+alias v="nvim"
+alias vf="nvim \$(f)"
+alias ctags-here="ctags -o tags"
+
+alias k="kubectl"
+alias h="\history -i 0 | f"
+alias m="make"
+
+alias f="fzf"
+alias tmux="TERM=xterm-256color /opt/homebrew/bin/tmux -2"
+alias tma="/opt/homebrew/bin/tmux attach"
+
+alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
+alias ..="cd .."
+alias ...="cd ../.."
+alias ....="cd ../../.."
+alias ~="pushd ~"
+alias repos="pushd ~/repos"
+
+alias l="ls -hlH --color"
+alias la="ls -halH --color"
+
+for level in {1..9}; do
+  tree="tree -C -L ${level} -h";
+  t=$(repeat ${level} echo -n "t");
+  eval "alias ${t}='${tree}'";
+  eval "alias t${level}='${tree}'";
+done
+
+alias dotfiles="pushd ~/repos/github.com/ostera/dotfiles"
+alias gitconf="vim ~/.gitconfig"
+alias reload="source ~/.zshrc"
+alias tmuxrc="vim ~/.tmux.conf"
+alias vimrc="vim ~/.vimrc"
+alias zshrc="vim ~/.zshrc ; reload"
