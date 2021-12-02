@@ -1,5 +1,0 @@
--o ~/.vim/tags
---recurse=yes
---exclude=.git
---exclude=dist
---append

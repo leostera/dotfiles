@@ -1,0 +1,18 @@
+#!/bin/zsh
+
+function symlink() {
+  echo -n "Symlinking $1 to $2..."
+  @ln -sfv "`pwd`/$1" $2
+  echo "OK"
+}
+
+for conf in ./home/.config/*; do
+  symlink $conf $HOME/.config/
+done
+
+for conf in ./home/.*; do
+  if [[ -f $conf ]]; then
+    symlink $conf $HOME/
+  end
+done
+

@@ -1,3 +1,0 @@
-CPPFLAGS="-march=native -mtune=native -O3 -g"
-KERL_CONFIGURE_OPTIONS="--disable-debug --without-javac --enable-shared-zlib --enable-dynamic-ssl-lib --enable-smp-support --enable-threads --enable-hipe --enable-kernel-poll --enable-darwin-64bit --with-wx"
-KERL_DEFAULT_INSTALL_DIR="$KERL_BASE_DIR/erlang"

@@ -10,6 +10,12 @@ echo "Downloading dotfiles..."
 curl https://codeload.github.com/ostera/dotfiles/tar.gz/main > main.tar.gz
 
 echo "Extracting..."
-tar -xf -C .
+tar -xf main.tar.gz
+mv dotfiles-main/* .
 
+echo "Bootstrapping..."
 ./bootstrap.sh
+
+echo "Cleaning..."
+rm -rf dotfiles-main main.tar.gz
+

@@ -1,2 +1,0 @@
-;; xrepl by default
-(require xrepl)
