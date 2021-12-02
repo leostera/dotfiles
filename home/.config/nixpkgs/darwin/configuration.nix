@@ -7,8 +7,6 @@
 
   environment.systemPackages =
     with pkgs; [
-      chromiumWrapper
-      firefoxWrapper
     ];
 
   system.keyboard.enableKeyMapping = true;
