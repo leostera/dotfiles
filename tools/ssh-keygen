@@ -1,18 +1,18 @@
 #!/bin/bash
 
-ID_RSA=~/.ssh/id_rsa
+KEY=~/.ssh/id_ed25519
 
 if [ -z ${EMAIL} ]; then
-  EMAIL=leandro@ostera.io
+  EMAIL=leandro@abstractmachines.dev
 fi
 
 if [ ! -f ${ID_RSA} ]; then
   echo "Missing default ssh keys at ${ID_RSA}!"
   echo "Creating pair..."
-  ssh-keygen -t rsa -b 4096 -C "${EMAIL}"
+  ssh-keygen -t ed25519 -C "${EMAIL}"
   echo "Done:"
 else
   echo "Using existing ssh keys found at ${ID_RSA}:"
 fi;
 
-cat ${ID_RSA}
+cat ${KEY}

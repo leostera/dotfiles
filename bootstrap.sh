@@ -4,10 +4,12 @@ if [[ ! `which nix-env` ]]; then
   sh <(curl -L https://nixos.org/nix/install) --daemon
 fi
 
+if [[ ! `which brew` ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+
 if [[ `uname` == "Darwin" ]]; then
-  nix-build https://github.com/LnL7/nix-darwin/archive/master.tar.gz -A installer
-  ./result/bin/darwin-installer
-  rm -rf ./result
+  ./tools/setup-nix-darwin
 fi
 
 sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable

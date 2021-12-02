@@ -1,17 +1,17 @@
 [user]
     name = Leandro Ostera
     email = leandro@ostera.io
-    signingkey = 3A5B8CA378AE473D83532AB5164AFF20E1035D1F
+    signingkey = 65FF00C0AB9F847A
 
 [github]
     user = ostera
 
 [gpg]
-    program = /usr/bin/gpg
+    program = gpg
 
 [core]
-    excludesfile = ~/.gitignore_global
-    editor = vim
+    excludesfile = ~/.config/git/ignore
+    editor = nvim
     filemode = false
     trustctime = false
 

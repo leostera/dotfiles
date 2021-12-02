@@ -2,26 +2,31 @@
 
 {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.allowUnsupportedSystem = true;
 
   services.nix-daemon.enable = true;
 
   environment.systemPackages =
     with pkgs; [
+      # bazel
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
       cloc
       coreutils
       ctags
+      direnv
+      docker
       fnm
       fzf
-      docker
-      gifsicle
-      mkcert
       gettext
+      gifsicle
       gist
       git
       git-extras
       gnupg
       htop
       jq
+      mkcert
+      neovim
       ngrok
       opam
       ripgrep

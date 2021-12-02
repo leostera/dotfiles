@@ -2,9 +2,6 @@ repo() {
   pushd $(github-clone $*)
 }
 
-alias oldbrew="/usr/local/bin/brew"
-alias brew="arch -arm64 /opt/homebrew/bin/brew"
-
 alias q="exit"
 alias mmv="noglob zmv -W"
 
@@ -25,8 +22,8 @@ alias h="\history -i 0 | f"
 alias m="make"
 
 alias f="fzf"
-alias tmux="TERM=xterm-256color /opt/homebrew/bin/tmux -2"
-alias tma="/opt/homebrew/bin/tmux attach"
+alias tmux="TERM=xterm-256color tmux -2 -f $HOME/.config/tmux/tmux.conf"
+alias tma="tmux attach"
 
 alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
 alias ..="cd .."
