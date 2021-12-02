@@ -33,6 +33,6 @@
       vim
       wget
       zsh
-    ]
+    ];
 }
 
