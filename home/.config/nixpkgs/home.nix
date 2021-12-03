@@ -29,6 +29,7 @@
       mkcert
       neovim
       ngrok
+      # nodejs
       opam
       ripgrep
       rustup
@@ -37,6 +38,7 @@
       tree
       vim
       wget
+      yarn
       zsh
     ];
 }

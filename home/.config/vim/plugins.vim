@@ -21,6 +21,7 @@ call plug#begin('~/.vim/plugged')
 " Plug 'ryanoasis/vim-devicons'
 
 " Search
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Tmux
@@ -46,8 +47,11 @@ Plug 'Chiel92/vim-autoformat'
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
 Plug 'lifepillar/vim-mucomplete'
 
-" Plug 'nvim-treesitter/nvim-treesitter'
-" Plug 'nvim-treesitter/playground'
+Plug 'neovim/nvim-lsp'
+Plug 'neovim/nvim-lspconfig'
+Plug 'williamboman/nvim-lsp-installer'
+Plug 'nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/playground'
 
 " Languages {
 

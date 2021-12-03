@@ -36,7 +36,12 @@
     NSGlobalDomain._HIHideMenuBar = false;
   };
 
-  fonts = { enableFontDir = true; };
+  fonts = {
+    enableFontDir = true;
+    fonts = with pkgs; [
+      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+    ];
+  };
 
   homebrew = {
     brewPrefix = "/opt/homebrew/bin";

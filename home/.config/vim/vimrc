@@ -137,8 +137,6 @@ colorscheme molokai
 set cursorline
 set background=dark
 
-
-set rtp+=/home/ostera/repos/github.com/junegunn/fzf
 map <leader>B :Buffers<cr>
 map <leader><tab> :FZF -x<cr>
 map <leader>f :Find<cr>
