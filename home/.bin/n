@@ -1,9 +1,0 @@
-#!/bin/bash
-
-ARG=$1
-REST=${@:2}
-
-case $ARG in
-  install | i) nix-env -i "$REST" ;;
-  search | s) nix-env -qa "$REST" ;;
-esac

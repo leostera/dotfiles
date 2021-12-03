@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/usr/bin/env zsh
 
 readonly HASH=$(git l | fzf --ansi | awk -F' ' '{ print $2 }')
 

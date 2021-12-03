@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
 # Add all keys to keychain silently
 ssh-add -q -K -A 2>/dev/null

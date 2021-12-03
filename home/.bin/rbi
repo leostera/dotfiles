@@ -1,4 +1,0 @@
-#!/bin/bash
-
-eval "$(rbenv init -)"
-rbenv rehash

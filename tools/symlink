@@ -8,4 +8,5 @@ for conf in ./home/.config/*; do
   symlink $conf $HOME/.config/
 done
 
+symlink ./home/.bin $HOME/.bin
 symlink ./home/.config/zsh/zshrc $HOME/.zshrc

@@ -11,6 +11,7 @@
       # bazel
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       cloc
+      colordiff
       coreutils
       ctags
       direnv
