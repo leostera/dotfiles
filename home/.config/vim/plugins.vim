@@ -148,6 +148,8 @@ Plug 'nvim-treesitter/playground'
   " LSP
   Plug 'prabirshrestha/vim-lsp'
 
+  Plug 'rescript-lang/vim-rescript'
+
 " }
 
 " Editing

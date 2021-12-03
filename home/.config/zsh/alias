@@ -32,8 +32,8 @@ alias ....="cd ../../.."
 alias ~="pushd ~"
 alias repos="pushd ~/repos"
 
-alias l="ls -hlH --color"
-alias la="ls -halH --color"
+alias l="exa -lg"
+alias la="exa -alH"
 
 for level in {1..9}; do
   tree="tree -C -L ${level} -h";

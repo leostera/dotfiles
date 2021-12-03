@@ -67,6 +67,23 @@ end
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities.textDocument.completion.completionItem.snippetSupport = true
 
+nvim_lsp.rescriptls.setup({
+    capabilities=capabilities,
+    on_attach = on_attach,
+    flags = {
+      debounce_text_changes = 150,
+    },
+    settings = {
+      ["rescriptls"] = {
+        cmd = {
+          'node',
+          '/Users/ostera/.local/share/nvim/lsp_servers/rescriptls/extension/server/out/server.js',
+          '--stdio'
+        }
+      }
+    }
+})
+
 -- Enable rust_analyzer
 nvim_lsp.rust_analyzer.setup({
     capabilities=capabilities,

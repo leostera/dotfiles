@@ -10,12 +10,18 @@
     with pkgs; [
       # bazel
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      autoconf
+      bat
       cloc
+      cmake
       colordiff
       coreutils
       ctags
       direnv
       docker
+      elixir
+      erlang
+      exa
       fnm
       fzf
       gettext
@@ -26,11 +32,13 @@
       gnupg
       htop
       jq
+      llvm
       mkcert
       neovim
       ngrok
-      # nodejs
       opam
+      python38
+      rebar3
       ripgrep
       rustup
       tldr
@@ -38,7 +46,6 @@
       tree
       vim
       wget
-      yarn
       zsh
     ];
 }

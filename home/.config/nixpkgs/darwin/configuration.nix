@@ -59,12 +59,17 @@
       "homebrew/cask-versions"
       "homebrew/core"
       "homebrew/services"
+      "ubuntu/microk8s"
     ];
 
     brews = [
+      "hevea"
+      "microk8s"
+      "yarn"
     ];
 
     casks = [
+      "basictex"
       "brave-browser"
       "kitty"
       "telegram"
