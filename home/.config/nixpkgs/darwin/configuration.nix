@@ -64,6 +64,7 @@
     casks = [
       "brave-browser"
       "kitty"
+      "multipass"
       "telegram"
     ];
   };
