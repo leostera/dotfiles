@@ -54,17 +54,14 @@
       "homebrew/cask-versions"
       "homebrew/core"
       "homebrew/services"
-      "ubuntu/microk8s"
     ];
 
     brews = [
-      "microk8s"
     ];
 
     casks = [
       "brave-browser"
       "kitty"
-      "multipass"
       "telegram"
     ];
   };
