@@ -72,6 +72,7 @@
       "basictex"
       "brave-browser"
       "kitty"
+      "linear-linear"
       "telegram"
     ];
   };
