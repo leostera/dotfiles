@@ -71,6 +71,7 @@
     casks = [
       "basictex"
       "brave-browser"
+      "discord"
       "kitty"
       "linear-linear"
       "telegram"
