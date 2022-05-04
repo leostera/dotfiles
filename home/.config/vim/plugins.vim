@@ -66,7 +66,7 @@ Plug 'nvim-treesitter/playground'
 
   " Rust
   Plug 'rust-lang/rust.vim'
-  Plug 'racer-rust/vim-racer'
+  Plug 'simrat39/rust-tools.nvim'
 
   " Lisps
   Plug 'wlangstroth/vim-racket'
@@ -150,13 +150,15 @@ Plug 'nvim-treesitter/playground'
 
   Plug 'rescript-lang/vim-rescript'
 
+  " Gleam
+  Plug 'gleam-lang/gleam.vim'
+
 " }
 
 " Editing
 Plug 'Raimondi/delimitMate'
 Plug 'ntpeters/vim-better-whitespace'
 Plug 'kien/rainbow_parentheses.vim'
-Plug 'ludovicchabant/vim-gutentags'
 Plug 'tpope/vim-surround'
 
 " Theme

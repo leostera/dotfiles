@@ -39,14 +39,17 @@
   fonts = {
     enableFontDir = true;
     fonts = with pkgs; [
-      (nerdfonts.override { fonts = [ "FiraCode" ]; })
+      (nerdfonts.override { fonts = [
+        "FiraCode"
+        "SourceCodePro"
+      ]; })
     ];
   };
 
   homebrew = {
     brewPrefix = "/opt/homebrew/bin";
     enable = true;
-    autoUpdate = false;
+    autoUpdate = true;
     global = {
       brewfile = true;
       noLock = true;
@@ -63,18 +66,34 @@
     ];
 
     brews = [
+      "cloudflared"
+      "deno"
       "hevea"
-      "microk8s"
+      "hyperfine"
+      "llvm"
+      "make"
+      "mmv"
+      "pulumi"
+      "tidy-html5"
+      "watchexec"
       "yarn"
     ];
 
     casks = [
+      "1password-cli"
       "basictex"
       "brave-browser"
       "discord"
+      "figma"
       "kitty"
       "linear-linear"
+      "miro"
+      "obs"
+      "pgadmin4"
+      "racket"
+      "steam"
       "telegram"
+      "visual-studio-code"
     ];
   };
 

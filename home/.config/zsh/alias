@@ -3,9 +3,10 @@ repo() {
 }
 
 alias q="exit"
-alias mmv="noglob zmv -W"
 
-alias ccat="highlight -O xterm256 -s navajo-night"
+alias x86="arch -x86_64 zsh"
+
+alias cat="bat"
 
 alias g="git"
 alias status="g status"
@@ -13,6 +14,7 @@ alias clone="g clone"
 alias init="g init"
 alias shallow="clone --depth 1"
 
+alias vim="nvim"
 alias v="nvim"
 alias vf="nvim \$(f)"
 alias ctags-here="ctags -o tags"
@@ -22,7 +24,7 @@ alias h="\history -i 0 | f"
 alias m="make"
 
 alias f="fzf"
-alias tmux="TERM=xterm-256color tmux -2 -f $HOME/.config/tmux/tmux.conf"
+alias tmux="tmux -2 -f $HOME/.config/tmux/tmux.conf"
 alias tma="tmux attach"
 
 alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
