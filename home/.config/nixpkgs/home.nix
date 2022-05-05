@@ -43,7 +43,6 @@ in
       minio
       mkcert
       neovim
-      ngrok
       opam
       python38
       rebar3
@@ -55,6 +54,7 @@ in
       tree
       unstable.elixir
       unstable.erlang
+      unstable.ngrok
       vim
       wget
       zsh
