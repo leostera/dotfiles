@@ -10,6 +10,7 @@ export FZF_DEFAULT_COMMAND="\
     --follow \
     --glob '!*cache/*' \
     --glob '!.git/*' \
+    --unrestricted \
     --hidden \
   "
 

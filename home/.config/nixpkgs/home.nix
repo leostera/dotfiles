@@ -2,7 +2,7 @@
 
 let
   unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/bb82344ca6925b1b4e4a7de9465016ba40904fc3)
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/19e187fbabcefa3f3e608b94ed809f91524501bb)
     { config = config.nixpkgs.config; };
 in
 {
@@ -27,7 +27,7 @@ in
       coreutils
       ctags
       direnv
-      docker
+      # docker
       exa
       fnm
       fzf
@@ -54,7 +54,7 @@ in
       tree
       unstable.elixir
       unstable.erlang
-      unstable.ngrok
+      # unstable.ngrok
       vim
       wget
       zsh

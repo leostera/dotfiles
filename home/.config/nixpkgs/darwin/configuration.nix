@@ -37,7 +37,7 @@
   };
 
   fonts = {
-    enableFontDir = true;
+    fontDir.enable = true;
     fonts = with pkgs; [
       (nerdfonts.override { fonts = [
         "FiraCode"
@@ -84,16 +84,18 @@
       "basictex"
       "brave-browser"
       "discord"
+      "docker"
       "figma"
       "kitty"
       "linear-linear"
       "miro"
+      "ngrok"
       "obs"
       "pgadmin4"
-      "racket"
       "steam"
       "telegram"
       "visual-studio-code"
+      # "racket"
     ];
   };
 
