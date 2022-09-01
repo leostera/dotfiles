@@ -1,2 +1,2 @@
 " JSON always nice looking
-autocmd FileType json :% ! jq .
+" autocmd FileType json :% ! jq .

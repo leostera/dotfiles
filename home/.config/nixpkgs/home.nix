@@ -16,6 +16,8 @@ in
   environment.systemPackages =
     with pkgs; [
       # bazel
+      # docker
+      # unstable.ngrok
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       autoconf
       awscli
@@ -27,7 +29,6 @@ in
       coreutils
       ctags
       direnv
-      # docker
       exa
       fnm
       fzf
@@ -39,22 +40,22 @@ in
       gnupg
       htop
       jq
+      unstable.elixir
+      unstable.erlang
+      unstable.libsodium
       llvm
       minio
       mkcert
-      neovim
       opam
       python38
-      rebar3
       ripgrep
+      openssl
       rustup
       telnet
       tldr
       tmux
       tree
-      unstable.elixir
-      unstable.erlang
-      # unstable.ngrok
+      unstable.neovim
       vim
       wget
       zsh

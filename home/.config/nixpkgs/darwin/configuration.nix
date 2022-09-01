@@ -67,7 +67,9 @@
 
     brews = [
       "cloudflared"
+      "coreutils"
       "deno"
+      "freetds"
       "hevea"
       "hyperfine"
       "llvm"
@@ -92,9 +94,11 @@
       "ngrok"
       "obs"
       "pgadmin4"
+      "postman"
       "steam"
       "telegram"
       "visual-studio-code"
+      "vlc"
       # "racket"
     ];
   };

@@ -25,8 +25,8 @@ Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
 " Tmux
-Plug 'benmills/vimux'
-Plug 'tmux-plugins/vim-tmux'
+" Plug 'benmills/vimux'
+" Plug 'tmux-plugins/vim-tmux'
 
 " Status line
 Plug 'itchyny/lightline.vim'
@@ -42,16 +42,15 @@ Plug 'airblade/vim-gitgutter'
 " Plug 'w0rp/ale'
 
 " Reformattter
-Plug 'Chiel92/vim-autoformat'
+" Plug 'Chiel92/vim-autoformat'
 
 " Plug 'neoclide/coc.nvim', {'tag': '*', 'do': { -> coc#util#install()}}
-Plug 'lifepillar/vim-mucomplete'
+" Plug 'lifepillar/vim-mucomplete'
 
 Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'nvim-treesitter/nvim-treesitter'
-Plug 'nvim-treesitter/playground'
+Plug 'nvim-lua/completion-nvim'
 
 " Languages {
 
@@ -156,10 +155,10 @@ Plug 'nvim-treesitter/playground'
 " }
 
 " Editing
-Plug 'Raimondi/delimitMate'
-Plug 'ntpeters/vim-better-whitespace'
-Plug 'kien/rainbow_parentheses.vim'
-Plug 'tpope/vim-surround'
+" Plug 'Raimondi/delimitMate'
+" Plug 'ntpeters/vim-better-whitespace'
+" Plug 'kien/rainbow_parentheses.vim'
+" Plug 'tpope/vim-surround'
 
 " Theme
 Plug 'flazz/vim-colorschemes'
