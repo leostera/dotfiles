@@ -11,7 +11,7 @@ in
 
   services.nix-daemon.enable = true;
 
-  networking.hostName = "cerritosh";
+  networking.hostName = "titantosh";
 
   environment.systemPackages =
     with pkgs; [
