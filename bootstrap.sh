@@ -8,14 +8,16 @@ if [[ ! `which brew` ]]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+./tools/symlink
+
+echo "Starting new shell..."
+exec zsh
+
 sudo nix-channel --add https://nixos.org/channels/nixpkgs-unstable unstable
 sudo nix-channel --update
-
-exec zsh
 
 if [[ `uname` == "Darwin" ]]; then
   ./tools/setup-nix-darwin
 fi
 
 ./tools/setup-upstream
-./tools/symlink

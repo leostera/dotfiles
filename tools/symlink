@@ -4,6 +4,7 @@ function symlink() {
   ln -sfv "`pwd`/$1" $2
 }
 
+mkdir -p $HOME/.config
 for conf in ./home/.config/*; do
   symlink $conf $HOME/.config/
 done
