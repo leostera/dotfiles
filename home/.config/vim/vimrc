@@ -149,7 +149,7 @@ match OverLength /\%81v.\+/
 
 " Status line config
 let g:lightline = {
-  \ 'colorscheme': 'darcula',
+  \ 'colorscheme': 'deus',
   \ 'component': {
   \   'readonly': '%{&readonly?"RO":""}',
   \ },
