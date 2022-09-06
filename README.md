@@ -1,6 +1,12 @@
 # 💾 `~/.*`
 > dotfiles.
 
+Install with:
+
+```sh
+; curl https://raw.githubusercontent.com/ostera/dotfiles/main/remote-install.sh | sh - 
+```
+
 Very no-nonsense stuff.
 
 1. Config files follow XDG conventions: `home/.config/*` symlinks to `$HOME/.config/*`
