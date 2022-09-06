@@ -12,8 +12,8 @@
   system.defaults = {
     dock = {
       autohide = true;
-      autohide-delay = "0.0";
-      autohide-time-modifier = "0.0";
+      autohide-delay = 0.0;
+      autohide-time-modifier = 0.0;
       minimize-to-application = true;
       mru-spaces = false;
       orientation = "bottom";
