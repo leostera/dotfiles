@@ -133,7 +133,7 @@ set smartcase
 
 set termguicolors
 syntax on
-colorscheme molokai
+colorscheme gruvbox
 set cursorline
 set background=dark
 
@@ -149,7 +149,7 @@ match OverLength /\%81v.\+/
 
 " Status line config
 let g:lightline = {
-  \ 'colorscheme': 'wombat',
+  \ 'colorscheme': 'darcula',
   \ 'component': {
   \   'readonly': '%{&readonly?"RO":""}',
   \ },

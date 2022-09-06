@@ -158,7 +158,7 @@ Plug 'nvim-lua/completion-nvim'
 " Plug 'Raimondi/delimitMate'
 " Plug 'ntpeters/vim-better-whitespace'
 " Plug 'kien/rainbow_parentheses.vim'
-" Plug 'tpope/vim-surround'
+Plug 'tpope/vim-surround'
 
 " Theme
 Plug 'flazz/vim-colorschemes'
