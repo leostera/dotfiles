@@ -51,7 +51,7 @@ in
       ripgrep
       openssl
       rustup
-      telnet
+      inetutils
       tldr
       tmux
       tree

@@ -92,6 +92,7 @@
       "linear-linear"
       "miro"
       "ngrok"
+      "notion"
       "obs"
       "pgadmin4"
       "postman"
