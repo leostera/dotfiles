@@ -17,6 +17,12 @@ in
     with pkgs; [
       # bazel
       # docker
+      # openssl
+      unstable.elixir
+      unstable.erlang
+      unstable.rebar3
+      automake
+      nodejs
       # unstable.ngrok
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       autoconf
@@ -39,22 +45,19 @@ in
       git-extras
       gnupg
       htop
+      inetutils
       jq
-      unstable.elixir
-      unstable.erlang
-      unstable.libsodium
       llvm
       minio
       mkcert
       opam
       python38
       ripgrep
-      openssl
       rustup
-      inetutils
       tldr
       tmux
       tree
+      unstable.libsodium
       unstable.neovim
       vim
       wget

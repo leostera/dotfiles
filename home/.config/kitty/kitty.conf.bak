@@ -345,7 +345,7 @@ disable_ligatures never
 #: visible. Negative values will cause the value of
 #: window_margin_width to be used instead.
 
-window_padding_width 1.0
+# window_padding_width 0.0
 
 #: The window padding (in pts) (blank area between the text and the
 #: window border)
@@ -1095,6 +1095,6 @@ include ./theme.conf
 
 
 # BEGIN_KITTY_THEME
-# Default
+# Argonaut
 include current-theme.conf
 # END_KITTY_THEME

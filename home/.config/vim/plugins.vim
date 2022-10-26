@@ -152,6 +152,9 @@ Plug 'nvim-lua/completion-nvim'
   " Gleam
   Plug 'gleam-lang/gleam.vim'
 
+  " Debug Adapter Protocol
+  Plug 'mfussenegger/nvim-dap'
+
 " }
 
 " Editing
@@ -163,6 +166,7 @@ Plug 'tpope/vim-surround'
 " Theme
 Plug 'flazz/vim-colorschemes'
 Plug 'felixhummel/setcolors.vim'
+Plug 'rebelot/kanagawa.nvim'
 
 call plug#end()
 

@@ -49,7 +49,7 @@
   homebrew = {
     brewPrefix = "/opt/homebrew/bin";
     enable = true;
-    autoUpdate = true;
+    autoUpdate = false;
     global = {
       brewfile = true;
       noLock = true;
@@ -79,6 +79,8 @@
       "tidy-html5"
       "watchexec"
       "yarn"
+      "zellij"
+      "libsodium"
     ];
 
     casks = [
@@ -88,6 +90,7 @@
       "discord"
       "docker"
       "figma"
+      "alacritty"
       "kitty"
       "linear-linear"
       "miro"
@@ -100,6 +103,7 @@
       "telegram"
       "visual-studio-code"
       "vlc"
+      "wezterm"
       # "racket"
     ];
   };

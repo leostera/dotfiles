@@ -2,6 +2,8 @@ repo() {
   pushd $(github-clone $*)
 }
 
+alias theme="kitty +kitten themes"
+
 alias q="exit"
 
 alias x86="arch -x86_64 zsh"
@@ -26,6 +28,8 @@ alias m="make"
 alias f="fzf"
 alias tmux="tmux -2 -f $HOME/.config/tmux/tmux.conf"
 alias tma="tmux attach"
+
+alias zellij="zellij --config $HOME/.config/zellij/config.yaml"
 
 alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
 alias ..="cd .."
