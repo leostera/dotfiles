@@ -69,6 +69,7 @@
       "cloudflared"
       "coreutils"
       "deno"
+      "valgrind"
       "freetds"
       "hevea"
       "hyperfine"
@@ -84,13 +85,15 @@
     ];
 
     casks = [
+      "1password"
       "1password-cli"
+      "alacritty"
       "basictex"
       "brave-browser"
+      "db-browser-for-sqlite"
       "discord"
       "docker"
       "figma"
-      "alacritty"
       "kitty"
       "linear-linear"
       "miro"
