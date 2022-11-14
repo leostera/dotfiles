@@ -1,114 +1,113 @@
 [user]
-    name = Leandro Ostera
-    email = leandro@abstractmachines.dev
-    signingkey = E4DBC0641157D54A
+  name = Leandro Ostera
+  email = leandro@abstractmachines.dev
+  signingkey = E4DBC0641157D54A
 
 [github]
-    user = ostera
+  user = ostera
 
 [gpg]
-    program = gpg
+  program = gpg
 
 [core]
-    excludesfile = ~/.config/git/ignore
-    editor = nvim
-    filemode = false
-    trustctime = false
+  excludesfile = ~/.config/git/ignore
+  editor = nvim
+  filemode = false
+  trustctime = false
 
 [alias]
-    A = add -A
-    amend = commit -S --amend
-    b = branch -rv
-    c = commit -S
-    cam = commit -S -am
-    cm = commit -S -m
-    co = checkout
-    cob = checkout -b
-    cod = checkout development
-    com = checkout main
-    cp = cherry-pick
-    cpa = cherry-pick --abort
-    cpc = cherry-pick --continue
-    d = diff
-    d1 = diff HEAD~1
-    d2 = diff HEAD~2
-    d3 = diff HEAD~3
-    d4 = diff HEAD~4
-    d5 = diff HEAD~5
-    dh = diff HEAD
-    dm = diff main
-    dt = difftool
-    fall = fetch --all
-    fixup = commit --fixup
-    l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an> (%G?)%Creset' --abbrev-commit
-    lo = log --color --stat
-    p = push
-    pall = pull --all
-    patch = apply --reject --ignore-whitespace --ignore-space-change
-    pod = push origin development
-    pom = push origin main --tags
-    pomfu = push origin main --tags --force --set-upstream
-    purge = reset --hard HEAD
-    ra = rebase --abort
-    rao = remote add origin
-    rc = rebase --continue
-    rl = reflog --date=iso --decorate
-    rom = rebase origin/main
-    s = status -s
-    sl = shortlog
-    ss = status
-    autosquash = rebase -i --autosquash
-    t = tag -s
-    tl = tag --sort "v:refname"
-    unstage = reset --soft HEAD
+  A = add -A
+  amend = commit -S --amend
+  b = branch -rv
+  c = commit -S
+  cam = commit -S -am
+  cm = commit -S -m
+  co = checkout
+  cob = checkout -b
+  cod = checkout development
+  com = checkout main
+  cp = cherry-pick
+  cpa = cherry-pick --abort
+  cpc = cherry-pick --continue
+  d = diff
+  d1 = diff HEAD~1
+  d2 = diff HEAD~2
+  d3 = diff HEAD~3
+  d4 = diff HEAD~4
+  d5 = diff HEAD~5
+  dh = diff HEAD
+  dm = diff main
+  dt = difftool
+  fall = fetch --all
+  fixup = commit --fixup
+  l = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)<%an> (%G?)%Creset' --abbrev-commit
+  lo = log --color --stat
+  p = push
+  pall = pull --all
+  patch = apply --reject --ignore-whitespace --ignore-space-change
+  pod = push origin development
+  pom = push origin main --tags
+  pomfu = push origin main --tags --force --set-upstream
+  purge = reset --hard HEAD
+  ra = rebase --abort
+  rao = remote add origin
+  rc = rebase --continue
+  rl = reflog --date=iso --decorate
+  rom = rebase origin/main
+  s = status -s
+  sl = shortlog
+  ss = status
+  autosquash = rebase -i --autosquash
+  t = tag -s
+  tl = tag --sort "v:refname"
+  unstage = reset --soft HEAD
 
 [commit]
-    gpgsign = true
+  gpgsign = true
 
 [color]
-    ui = auto
+  ui = auto
 
 [color "branch"]
-    current = green
-    local = blue
-    remote = yellow
+  current = green
+  local = blue
+  remote = yellow
 
 [color "diff"]
-    new = green
-    old = red
-    frag = magenta
-    meta = blue
+  new = green
+  old = red
+  frag = magenta
+  meta = blue
 
 [color "status"]
-    added = green bold
-    removed = red
-    changed = green
-    untracked = cyan
+  added = green bold
+  removed = red
+  changed = green
+  untracked = cyan
 
 [credential]
-    helper = osxkeychain
+  helper = osxkeychain
 
 [diff]
-    renames = copies
-    tool = vimdiff
+  renames = copies
+  tool = vimdiff
 
 [difftool]
-	prompt = false
+  prompt = false
 
 [mergetool]
-    prompt = false
-
-[push]
-    default = simple
+  prompt = false
 
 [diff]
-    renames = copies
+  renames = copies
 
 [help]
-	autocorrect = 1
+  autocorrect = 1
 
 [init]
-	defaultBranch = main
+  defaultBranch = main
 
 [push]
+  default = simple
   autoSetupRemote = true
+  rebase = true
