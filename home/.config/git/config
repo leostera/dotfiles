@@ -1,13 +1,16 @@
 [user]
   name = Leandro Ostera
   email = leandro@abstractmachines.dev
-  signingkey = E4DBC0641157D54A
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtw0I3+2bdzPl234KQTVhBqHXCnDvlOf/2xn+ATKyZj
 
 [github]
   user = ostera
 
 [gpg]
-  program = gpg
+	format = ssh
+
+[gpg "ssh"]
+	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
 
 [core]
   excludesfile = ~/.config/git/ignore
