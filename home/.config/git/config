@@ -1,7 +1,7 @@
 [user]
     name = Leandro Ostera
     email = leandro@abstractmachines.dev
-    signingkey = 1CA3FD95A1A59524
+    signingkey = E4DBC0641157D54A
 
 [github]
     user = ostera

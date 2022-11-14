@@ -21,35 +21,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, opts)
 
-local dap = require'dap'
-vim.keymap.set('n', '<leader>da', dap.toggle_breakpoint, opts)
-vim.keymap.set('n', '<leader>dr', dap.continue, opts)
-vim.keymap.set('n', '<leader>dsi', dap.step_into, opts)
-vim.keymap.set('n', '<leader>dso', dap.step_over, opts)
-
-dap.adapters.lldb = {
-  type = 'executable',
-  command = '/run/current-system/sw/bin/rust-lldb',
-  name = 'lldb'
-}
-
-dap.configurations.rust = {
-  {
-      name = 'Launch',
-      type = 'lldb',
-      request = 'launch',
-      program = function()
-        return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
-      end,
-      cwd = '${workspaceFolder}',
-      stopOnEntry = false,
-      args = {},
-  },
-}
-dap.configurations.c = dap.configurations.rust
-dap.configurations.cpp = dap.configurations.rust
-
-
 -- Use an on_attach function to only map the following keys
 -- after the language server attaches to the current buffer
 local on_attach = function(client, bufnr)
@@ -114,10 +85,6 @@ require('rust-tools').setup({
            }
         }
     },
-
-    dap = {
-      adapter = require('rust-tools.dap').get_codelldb_adapter(codelldb_path, liblldb_path)
-    }
         
 })
 
