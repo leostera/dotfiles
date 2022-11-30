@@ -83,6 +83,8 @@
       "watchexec"
       "yarn"
       "zellij"
+      "rbenv"
+      "swift"
       # "Cmake"
       # "llvm"
       # "pulumi"

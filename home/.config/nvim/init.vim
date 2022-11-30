@@ -45,6 +45,15 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, bufopts)
+
+	-- format on save
+	if client.server_capabilities.documentFormattingProvider then
+			vim.api.nvim_create_autocmd("BufWritePre", {
+					group = vim.api.nvim_create_augroup("Format", { clear = true }),
+					buffer = bufnr,
+					callback = function()  vim.lsp.buf.format { async = true } end
+			})
+	end
 end
 
 local lsp_flags = {
@@ -52,6 +61,10 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
+nvim_lsp["ocamllsp"].setup({
+  on_attach = on_attach,
+  lsp_flags = lsp_flags
+})
 
 -- codelldb variables
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/'
