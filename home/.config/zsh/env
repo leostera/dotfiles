@@ -45,3 +45,8 @@ export JAVA_HOME="/opt/homebrew/opt/openjdk"
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
 
 eval $(fnm env)
+eval $(opam env)
+
+if which rbenv > /dev/null; then
+  eval $(rbenv init - zsh)
+fi

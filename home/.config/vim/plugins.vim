@@ -51,6 +51,7 @@ Plug 'neovim/nvim-lsp'
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
 Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
 " Languages {
 
@@ -59,6 +60,9 @@ Plug 'nvim-lua/completion-nvim'
   Plug 'keith/swift.vim'
   Plug 'tpope/vim-markdown'
 
+  " Astro
+  Plug 'wuelnerdotexe/vim-astro'
+
   " Bazel
   Plug 'bazelbuild/vim-ft-bzl'
   Plug 'durandj/bazel.vim'
@@ -66,6 +70,7 @@ Plug 'nvim-lua/completion-nvim'
   " Rust
   Plug 'rust-lang/rust.vim'
   Plug 'simrat39/rust-tools.nvim'
+  Plug 'qnighy/lalrpop.vim'
 
   " Lisps
   Plug 'wlangstroth/vim-racket'
@@ -80,10 +85,10 @@ Plug 'nvim-lua/completion-nvim'
   Plug 'kchmck/vim-coffee-script'
 
   " Erlang
-  Plug 'vim-erlang/vim-erlang-tags'
-  Plug 'vim-erlang/vim-erlang-runtime'
-  Plug 'vim-erlang/vim-erlang-omnicomplete'
-  Plug 'vim-erlang/vim-erlang-compiler'
+  " Plug 'vim-erlang/vim-erlang-tags'
+  " Plug 'vim-erlang/vim-erlang-runtime'
+  " Plug 'vim-erlang/vim-erlang-omnicomplete'
+  " Plug 'vim-erlang/vim-erlang-compiler'
 
   " Elixir
   Plug 'elixir-editors/vim-elixir'

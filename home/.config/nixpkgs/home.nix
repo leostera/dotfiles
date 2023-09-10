@@ -2,7 +2,7 @@
 
 let
   unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/fd21e7cd7238f48b0d261798e30f186bcbd149e7)
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/5b0ed68c106c1cbe3b573f3d1ca8c73eb203e346)
     { config = config.nixpkgs.config; };
 in
 {
@@ -47,7 +47,7 @@ in
       llvm
       minio
       mkcert
-      nodejs
+      unstable.nodejs
       opam
       python38
       ripgrep
@@ -55,8 +55,8 @@ in
       tldr
       tmux
       tree
-      unstable.elixir
-      unstable.erlang
+      # unstable.elixir
+      # unstable.erlang
       unstable.libsodium
       unstable.neovim
       unstable.rebar3

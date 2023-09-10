@@ -36,15 +36,15 @@
     NSGlobalDomain._HIHideMenuBar = false;
   };
 
-  fonts = {
-    fontDir.enable = true;
-    fonts = with pkgs; [
-      (nerdfonts.override { fonts = [
-        "FiraCode"
-        "SourceCodePro"
-      ]; })
-    ];
-  };
+  # fonts = {
+  #   fontDir.enable = true;
+  #   fonts = with pkgs; [
+  #     (nerdfonts.override { fonts = [
+  #       "FiraCode"
+  #       "SourceCodePro"
+  #     ]; })
+  #   ];
+  # };
 
   homebrew = {
     brewPrefix = "/opt/homebrew/bin";
@@ -96,10 +96,8 @@
       "alacritty"
       "basictex"
       "brave-browser"
-      "db-browser-for-sqlite"
       "discord"
       "docker"
-      "figma"
       "kitty"
       "linear-linear"
       "miro"

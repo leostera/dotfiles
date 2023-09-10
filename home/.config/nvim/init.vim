@@ -45,13 +45,14 @@ local on_attach = function(client, bufnr)
   vim.keymap.set('n', '<leader>ca', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', 'gr', vim.lsp.buf.references, bufopts)
   vim.keymap.set('n', '<leader>F', vim.lsp.buf.formatting, bufopts)
+  vim.keymap.set("n", "<space>do", vim.diagnostic.open_float, bufopts)
 
 	-- format on save
 	if client.server_capabilities.documentFormattingProvider then
 			vim.api.nvim_create_autocmd("BufWritePre", {
 					group = vim.api.nvim_create_augroup("Format", { clear = true }),
 					buffer = bufnr,
-					callback = function()  vim.lsp.buf.format { async = true } end
+					callback = function() vim.lsp.buf.formatting_seq_sync() end
 			})
 	end
 end
@@ -61,10 +62,16 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-nvim_lsp["ocamllsp"].setup({
+=======
+nvim_lsp["ocamllsp"].setup{
   on_attach = on_attach,
-  lsp_flags = lsp_flags
-})
+  flags = lsp_flags,
+}
+
+nvim_lsp["denols"].setup {
+  on_attach = on_attach,
+  filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
+}
 
 -- codelldb variables
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/'
@@ -101,6 +108,20 @@ require('rust-tools').setup({
         
 })
 
+require("nvim-treesitter.configs").setup({
+        ensure_installed = {
+            "eex",
+            "elixir",
+            "erlang",
+            "heex",
+            "html",
+            "surface",
+            "rust",
+            "ocaml"
+        },
+        highlight = {enable = true},
+})
+
 EOF
 
 set signcolumn=yes
@@ -108,4 +129,3 @@ set nofoldenable
 
 autocmd BufNewFile,BufRead *.caramel set syntax=rust
 autocmd BufNewFile,BufRead *.core set syntax=erlang
-autocmd BufWritePre *.rs lua vim.lsp.buf.formatting_sync(nil, 200)
