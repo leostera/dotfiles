@@ -22,7 +22,7 @@ in
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       autoconf
       automake
-      awscli
+      # awscli
       bat
       cloc
       clojure
@@ -55,8 +55,8 @@ in
       tldr
       tmux
       tree
-      # unstable.elixir
-      # unstable.erlang
+      unstable.elixir_1_14
+      unstable.erlangR25
       unstable.libsodium
       unstable.neovim
       unstable.rebar3

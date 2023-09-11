@@ -96,6 +96,7 @@
       "alacritty"
       "basictex"
       "brave-browser"
+      # "db-browser-for-sqlite"
       "discord"
       "docker"
       "kitty"

@@ -11,6 +11,7 @@
 
 [gpg "ssh"]
 	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
+	allowedSignersFile = /Users/ostera/.config/git/allowed_signers
 
 [core]
   excludesfile = ~/.config/git/ignore
@@ -62,7 +63,7 @@
   ss = status
   autosquash = rebase -i --autosquash
   t = tag -s
-  tl = tag --sort "v:refname"
+  tags = tag --sort "v:refname"
   unstage = reset --soft HEAD
 
 [commit]

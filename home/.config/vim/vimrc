@@ -133,9 +133,18 @@ set smartcase
 
 set termguicolors
 syntax on
-colorscheme gruvbox
+
+let g:theme = exists('$OS_THEME') ? $OS_THEME : "dark"
+
+if g:theme =~ 'dark'
+  colorscheme gruvbox
+  set background=dark
+else
+  colorscheme Tomorrow
+  set background=light
+endif
+
 set cursorline
-set background=dark
 
 map <leader>B :Buffers<cr>
 map <leader><tab> :FZF -x<cr>
