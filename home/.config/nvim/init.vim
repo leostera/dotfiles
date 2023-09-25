@@ -62,7 +62,6 @@ local lsp_flags = {
   debounce_text_changes = 150,
 }
 
-=======
 nvim_lsp["ocamllsp"].setup{
   on_attach = on_attach,
   flags = lsp_flags,
