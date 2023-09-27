@@ -46,7 +46,3 @@ export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nix
 
 eval $(fnm env)
 eval $(opam env)
-
-if which rbenv > /dev/null; then
-  eval $(rbenv init - zsh)
-fi
