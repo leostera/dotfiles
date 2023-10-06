@@ -137,7 +137,7 @@ syntax on
 let g:theme = exists('$OS_THEME') ? $OS_THEME : "dark"
 
 if g:theme =~ 'dark'
-  colorscheme gruvbox
+  colorscheme deep-space
   set background=dark
 else
   colorscheme Tomorrow
