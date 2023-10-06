@@ -8,7 +8,7 @@ alias q="exit"
 
 alias x86="arch -x86_64 zsh"
 
-alias cat="bat"
+alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
 alias g="git"
 alias status="g status"
