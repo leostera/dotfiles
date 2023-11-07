@@ -2,7 +2,7 @@
 
 let
   unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/5b0ed68c106c1cbe3b573f3d1ca8c73eb203e346)
+    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/ea9c1ad0e77c89cddbd65907e4286d7d633b32d8)
     { config = config.nixpkgs.config; };
 in
 {
@@ -55,8 +55,8 @@ in
       tldr
       tmux
       tree
-      unstable.elixir_1_14
-      unstable.erlangR25
+      unstable.elixir_1_15
+      unstable.erlangR26
       unstable.libsodium
       unstable.neovim
       unstable.rebar3
