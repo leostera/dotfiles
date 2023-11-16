@@ -1,11 +1,8 @@
 { config, pkgs, ...}:
 
-let
-  unstable = import
-    (builtins.fetchTarball https://github.com/nixos/nixpkgs/tarball/ea9c1ad0e77c89cddbd65907e4286d7d633b32d8)
-    { config = config.nixpkgs.config; };
-in
 {
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
 
@@ -18,7 +15,7 @@ in
       # bazel
       # docker
       # openssl
-      # unstable.ngrok
+      # ngrok
       (nerdfonts.override { fonts = [ "FiraCode" ]; })
       autoconf
       automake
@@ -27,7 +24,7 @@ in
       cloc
       clojure
       cmake
-      unstable.go
+      go
       colordiff
       coreutils
       ctags
@@ -47,7 +44,7 @@ in
       llvm
       minio
       mkcert
-      unstable.nodejs
+      nodejs
       opam
       python38
       ripgrep
@@ -55,12 +52,12 @@ in
       tldr
       tmux
       tree
-      unstable.elixir_1_15
-      unstable.erlangR26
-      unstable.libsodium
-      unstable.neovim
-      unstable.rebar3
-      unstable.vhs
+      elixir_1_15
+      erlangR26
+      libsodium
+      neovim
+      rebar3
+      vhs
       vim
       wget
       zsh

@@ -41,8 +41,12 @@ export SAVEHIST=1000000
 export TERM="xterm-256color"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export JAVA_HOME="/opt/homebrew/opt/openjdk"
+export LIBRARY_PATH=/opt/homebrew/opt/mariadb-connector-c/lib/mariadb:$LIBRARY_PATH
 
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
 
+export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
 eval $(fnm env)
 eval $(opam env)
+eval "$(direnv hook zsh)"

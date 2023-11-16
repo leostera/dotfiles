@@ -5,6 +5,8 @@
     ../home.nix
   ];
 
+  nixpkgs.hostPlatform = "aarch64-darwin";
+
   environment.systemPackages =
     with pkgs; [
     ];
@@ -49,10 +51,10 @@
   homebrew = {
     brewPrefix = "/opt/homebrew/bin";
     enable = true;
-    autoUpdate = false;
+    onActivation.autoUpdate = false;
     global = {
       brewfile = true;
-      noLock = true;
+      lockfiles = false;
     };
 
     taps = [
@@ -68,6 +70,7 @@
     brews = [
       "cloudflared"
       "coreutils"
+      "direnv"
       "deno"
       "valgrind"
       "freetds"
