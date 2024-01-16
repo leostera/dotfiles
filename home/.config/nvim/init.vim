@@ -13,6 +13,17 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 lua<<EOF
+require('Comment').setup{
+  ignore = '^$',
+  toggler = {
+    line = '<leader>c',
+  },
+  opleader = {
+    line = '<leader>c',
+    block = '<leader>b',
+  },
+}
+
 local nvim_lsp = require'lspconfig'
 
 local opts = { noremap=true, silent=true }
@@ -57,20 +68,19 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
-
 nvim_lsp["ocamllsp"].setup{
   on_attach = on_attach,
-  flags = lsp_flags,
 }
 
 nvim_lsp["denols"].setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }
+
+nvim_lsp.elixirls.setup {
+  cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" }
+}
+
 
 -- codelldb variables
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/'
@@ -120,6 +130,8 @@ require("nvim-treesitter.configs").setup({
         },
         highlight = {enable = true},
 })
+
+vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
 
 EOF
 

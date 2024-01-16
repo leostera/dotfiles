@@ -20,6 +20,9 @@ call plug#begin('~/.vim/plugged')
 " Icons
 " Plug 'ryanoasis/vim-devicons'
 
+" Comments
+Plug 'numToStr/Comment.nvim'
+
 " Search
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
@@ -92,7 +95,6 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
   " Elixir
   Plug 'elixir-editors/vim-elixir'
-  Plug 'slashmili/alchemist.vim'
 
   " Idris
   Plug 'idris-hackers/idris-vim'
