@@ -47,6 +47,5 @@ export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nix
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
 
-eval $(fnm env)
-eval $(opam env)
-eval "$(direnv hook zsh)"
+# eval $(fnm env)
+# eval "$(direnv hook zsh)"

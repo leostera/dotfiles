@@ -13,7 +13,7 @@ if [ ! -f $TO/.git/HEAD ];
 then
   if [ -z "${USE_HTTP}" ];
   then
-    git clone git@github.com:$REPO.git $TO
+    git clone git@github.com:$REPO.git $TO $3
   else
     git clone https://github.com/$REPO $TO
   fi

@@ -59,10 +59,8 @@
 
     taps = [
       "homebrew/bundle"
-      "homebrew/cask"
       "homebrew/cask-fonts"
       "homebrew/cask-versions"
-      "homebrew/core"
       "homebrew/services"
       "ubuntu/microk8s"
     ];
@@ -72,6 +70,7 @@
       "coreutils"
       "direnv"
       "deno"
+      "elixir"
       "valgrind"
       "freetds"
       "golang"

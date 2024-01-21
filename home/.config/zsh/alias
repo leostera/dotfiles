@@ -11,6 +11,7 @@ alias x86="arch -x86_64 zsh"
 alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
 
 alias g="git"
+alias gg="git"
 alias status="g status"
 alias clone="g clone"
 alias init="g init"

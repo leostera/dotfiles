@@ -1,10 +1,12 @@
 { config, pkgs, ...}:
 
 {
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = [ "nix-command" "flakes" "repl-flake" ];
 
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.allowUnsupportedSystem = true;
+  nixpkgs.config.trustedUsers = ["root" "ostera" "leostera"];
+  nixpkgs.config.extraNixPath = ["nixpkgs=flake:nixpkgs"];
 
   services.nix-daemon.enable = true;
 
@@ -52,14 +54,13 @@
       tldr
       tmux
       tree
-      elixir_1_15
-      erlangR26
       libsodium
       neovim
       rebar3
       vhs
       vim
       wget
+      wireshark
       zsh
     ];
 }
