@@ -7,3 +7,4 @@ home/.config/vim/undos
 home/.config/vim/views
 home/.config/tmux/tmux
 home/.config/tmux/.search_options
+home/.config/ssh/id_*
