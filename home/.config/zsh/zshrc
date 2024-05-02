@@ -4,12 +4,17 @@
 . "$HOME/.config/zsh/alias"
 . "$HOME/.config/zsh/prompt"
 
+# Nix
+if [ -e '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh' ]; then
+    . '/nix/var/nix/profiles/default/etc/profile.d/nix-daemon.sh'
+fi
+# End Nix
+
 # Switch to Solarized Dark if we are currently in dark mode
 # if [[ "$(uname -s)" == "Darwin" ]]; then
 #   val=$(defaults read -g AppleInterfaceStyle 2>/dev/null)
 #   if [[ $val != "Dark" ]]; then
 #     export OS_THEME="light"
-#     ln -sf ~/.config/kitty/Tomorrow.conf ~/.config/kitty/light.theme.conf
 #   else
 #     export OS_THEME="dark"
 #     rm -f ~/.config/kitty/light.theme.conf
@@ -17,5 +22,14 @@
 #   tmux source-file ~/.config/tmux/tmux.${OS_THEME}.conf
 #   pkill -USR1 kitty
 # fi
+export OS_THEME="light"
+ln -sf ~/.config/kitty/Tomorrow.conf ~/.config/kitty/light.theme.conf
 
 #source /nix/store/6bm046jlxvqsbrcqzc9mlpvnr5wjqb56-fzf-0.32.1/share/fzf/key-bindings.zsh
+#
+# Don't execute this file when running in a pure nix-shell.
+if [ "$IN_NIX_SHELL" = "pure" ]; then return; fi
+
+if [ -z "$__NIX_DARWIN_SET_ENVIRONMENT_DONE" ]; then
+  . /nix/store/y2v3kh1v38ynwqcslp4d703jzbn82id5-set-environment
+fi
