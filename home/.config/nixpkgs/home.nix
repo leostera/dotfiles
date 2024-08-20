@@ -10,7 +10,7 @@
 
   services.nix-daemon.enable = true;
 
-  networking.hostName = "cerritosh";
+  networking.hostName = "starbase1";
 
   environment.systemPackages =
     with pkgs; [
@@ -31,7 +31,7 @@
       coreutils
       ctags
       direnv
-      exa
+      eza
       fnm
       fzf
       gettext
@@ -48,7 +48,7 @@
       mkcert
       nodejs
       opam
-      python38
+      python3
       ripgrep
       rustup
       tldr

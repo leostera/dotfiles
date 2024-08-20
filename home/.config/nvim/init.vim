@@ -81,6 +81,14 @@ nvim_lsp.elixirls.setup {
   cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" }
 }
 
+nvim_lsp.phpactor.setup{
+    on_attach = on_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+    }
+}
+
 
 -- codelldb variables
 local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/'
