@@ -25,5 +25,16 @@ fi
 # export OS_THEME="light"
 # ln -sf ~/.config/kitty/Tomorrow.conf ~/.config/kitty/light.theme.conf
 #
+
 export OS_THEME="dark"
-rm -f ~/.config/kitty/light.theme.conf
+# export OS_THEME="light"
+
+# bun completions
+[ -s "/Users/ostera/.bun/_bun" ] && source "/Users/ostera/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
+
+# dune
+export PATH="/Users/ostera/.dune/bin:$PATH"

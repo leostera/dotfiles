@@ -1,0 +1,13 @@
+# theme = tomorrow
+theme = catppuccin-mocha
+command = zsh
+working-directory = inherit
+shell-integration = zsh
+custom-shader-animation = always
+clipboard-read = allow
+clipboard-write = allow
+window-theme = system
+window-padding-x = 10
+window-padding-y = 10
+background-opacity = 0.80
+background-blur-radius = 19

@@ -70,6 +70,7 @@ end
 
 nvim_lsp["ocamllsp"].setup{
   on_attach = on_attach,
+  cmd = {"ocamllsp"}
 }
 
 nvim_lsp["denols"].setup {
