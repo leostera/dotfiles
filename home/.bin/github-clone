@@ -7,7 +7,7 @@ else
   REPO=$1/$2
 fi
 
-TO=$HOME/repos/github.com/$REPO
+TO=$HOME/Developer/github.com/$REPO
 
 if [ ! -f $TO/.git/HEAD ];
 then

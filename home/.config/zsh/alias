@@ -8,7 +8,7 @@ alias q="exit"
 
 alias x86="arch -x86_64 zsh"
 
-alias cat="bat --theme=\$(defaults read -globalDomain AppleInterfaceStyle &> /dev/null && echo default || echo GitHub)"
+alias cat="bat --theme gruvbox-dark"
 
 alias g="git"
 alias gg="git"
@@ -37,7 +37,7 @@ alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
 alias ~="pushd ~"
-alias repos="pushd ~/repos"
+alias repos="pushd ~/Developer"
 
 alias l="exa -lg"
 alias la="exa -alH"

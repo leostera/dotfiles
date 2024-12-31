@@ -24,7 +24,7 @@ require('Comment').setup{
   },
 }
 
-local nvim_lsp = require'lspconfig'
+local lsp = require'lspconfig'
 
 local opts = { noremap=true, silent=true }
 vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, opts)
@@ -68,21 +68,47 @@ local on_attach = function(client, bufnr)
 	end
 end
 
-nvim_lsp["ocamllsp"].setup{
+lsp.zls.setup{}
+vim.api.nvim_create_autocmd('BufWritePre',{
+  pattern = {"*.zig", "*.zon"},
+  callback = function(ev)
+    vim.lsp.buf.format()
+  end
+})
+vim.api.nvim_create_autocmd('BufWritePre',{
+  pattern = {"*.zig", "*.zon"},
+  callback = function(ev)
+    vim.lsp.buf.code_action({
+      context = { only = { "source.fixAll" } },
+      apply = true,
+    })
+  end
+})
+vim.api.nvim_create_autocmd('BufWritePre',{
+  pattern = {"*.zig", "*.zon"},
+  callback = function(ev)
+    vim.lsp.buf.code_action({
+      context = { only = { "source.organizeImports" } },
+      apply = true,
+    })
+  end
+})
+
+lsp["ocamllsp"].setup{
   on_attach = on_attach,
-  cmd = {"ocamllsp"}
+  cmd = { "ocamllsp" },
 }
 
-nvim_lsp["denols"].setup {
+lsp["denols"].setup {
   on_attach = on_attach,
   filetypes = { "typescript", "typescriptreact", "typescript.tsx" },
 }
 
-nvim_lsp.elixirls.setup {
+lsp.elixirls.setup {
   cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" }
 }
 
-nvim_lsp.phpactor.setup{
+lsp.phpactor.setup{
     on_attach = on_attach,
     init_options = {
         ["language_server_phpstan.enabled"] = false,
@@ -91,10 +117,6 @@ nvim_lsp.phpactor.setup{
 }
 
 
--- codelldb variables
-local extension_path = vim.env.HOME .. '/.vscode/extensions/vadimcn.vscode-lldb-1.6.7/'
-local codelldb_path = extension_path .. 'adapter/codelldb'
-local liblldb_path = extension_path .. 'lldb/lib/liblldb.so'
 require('rust-tools').setup({
     tools = { -- rust-tools options
         autoSetHints = true,

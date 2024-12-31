@@ -143,6 +143,7 @@ else
   colorscheme Tomorrow
   set background=light
 endif
+hi Normal guibg=NONE ctermbg=NONE
 
 set cursorline
 

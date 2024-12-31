@@ -34,11 +34,12 @@ export GOPATH=~/.go
 export GPG_TTY=$(tty)
 export HISTFILE=~/.zhistory
 export HISTSIZE=1000000
-export NODE_ENV=LOCAL
+export NODE_ENV=development
 export NODE_PATH=./lib/:./modules/
 export NVM_DIR=~/.nvm
 export RBENV_ROOT=~/.rbenv
 export SAVEHIST=1000000
+export BAT_THEME="gruvbox-dark"
 export TERM="xterm-256color"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
 export JAVA_HOME="/opt/homebrew/opt/openjdk"
@@ -47,6 +48,3 @@ export LIBRARY_PATH=/opt/homebrew/opt/mariadb-connector-c/lib/mariadb:$LIBRARY_P
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
-
-# eval $(fnm env)
-# eval "$(direnv hook zsh)"
