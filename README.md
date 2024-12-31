@@ -4,7 +4,7 @@
 Install with:
 
 ```sh
-; curl https://raw.githubusercontent.com/ostera/dotfiles/main/remote-install.sh | sh - 
+; curl https://raw.githubusercontent.com/leostera/dotfiles/main/remote-install.sh | sh - 
 ```
 
 Very no-nonsense stuff.
@@ -17,4 +17,4 @@ Nothing more. Keep it simple. Fork away!
 
 ## License
 
-See [LICENSE](https://github.com/ostera/zazen/blob/main/LICENSE).
+See [LICENSE](https://github.com/leostera/dotfiles/blob/main/LICENSE).
