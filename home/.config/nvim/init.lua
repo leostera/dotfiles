@@ -1,1 +1,2 @@
-require("config.lazy")
+require("base")
+require("deps")

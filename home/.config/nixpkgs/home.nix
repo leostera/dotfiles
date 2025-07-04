@@ -10,7 +10,7 @@
 
   services.nix-daemon.enable = true;
 
-  networking.hostName = "starbase1";
+  networking.hostName = "cerritosh";
 
   environment.systemPackages =
     with pkgs; [
@@ -55,7 +55,7 @@
       tmux
       tree
       libsodium
-      neovim
+      # neovim -- managed by brew
       rebar3
       vhs
       vim

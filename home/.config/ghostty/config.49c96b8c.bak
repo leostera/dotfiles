@@ -6,9 +6,8 @@ shell-integration = zsh
 custom-shader-animation = always
 clipboard-read = allow
 clipboard-write = allow
-window-theme = light
+window-theme = system
 window-padding-x = 0
 window-padding-y = 0
 background-opacity = 0.98
 background-blur-radius = 19
-keybind = shift+enter=text:\n

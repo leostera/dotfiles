@@ -2,6 +2,8 @@ repo() {
   pushd $(github-clone $*)
 }
 
+alias warpcore="play -c2 -n synth whitenoise band -n 100 25 band -n 300 100 gain +25"
+
 alias theme="kitty +kitten themes"
 
 alias q="exit"
