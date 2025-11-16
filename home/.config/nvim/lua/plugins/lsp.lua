@@ -52,6 +52,9 @@ return {
 
       vim.keymap.set('n', '<leader>F', vim.lsp.buf.format, bufopts)
 
+      vim.lsp.set_log_level 'trace'
+      require('vim.lsp.log').set_format_func(vim.inspect)
+
 
       lsp.lua_ls.setup({})
     end

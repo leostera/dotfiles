@@ -29,20 +29,20 @@ fi
 
 export OS_THEME="dark"
 
-# bun completions
-[ -s "/Users/ostera/.bun/_bun" ] && source "/Users/ostera/.bun/_bun"
-
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
 
-# dune
-export PATH="/Users/ostera/.dune/bin:$PATH"
-
-# dune
-source $HOME/.dune/env/env.zsh
-
-# dune
-source $HOME/.local/share/dune/env/env.zsh
-
 alias claude="/Users/ostera/.claude/local/claude"
+
+fpath+=~/.zfunc; autoload -Uz compinit; compinit
+
+zstyle ':completion:*' menu select
+
+# opencode
+export PATH=/Users/ostera/.opencode/bin:$PATH
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/ostera/.lmstudio/bin"
+# End of LM Studio CLI section
+

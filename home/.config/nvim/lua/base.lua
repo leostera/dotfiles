@@ -43,3 +43,4 @@ key("n", "<leader>h", ":split<CR>", keyopts)
 
 -- Key mappins for my own sanity
 key("n", "Q", "<NOP>", keyopts) --disable ex mode
+

@@ -1,5 +1,4 @@
-# theme = tomorrow
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 command = zsh
 working-directory = inherit
 shell-integration = zsh

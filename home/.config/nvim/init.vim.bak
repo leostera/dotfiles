@@ -96,7 +96,7 @@ vim.api.nvim_create_autocmd('BufWritePre',{
 
 lsp["ocamllsp"].setup{
   on_attach = on_attach,
-  cmd = { "ocamllsp" },
+  cmd = { "tusk", "lsp" },
 }
 
 lsp["denols"].setup {
