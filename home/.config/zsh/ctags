@@ -1,4 +1,4 @@
--o ~/.vim/tags
+-o ~/.config/nvim/tags
 --recurse=yes
 --exclude=.git
 --exclude=dist

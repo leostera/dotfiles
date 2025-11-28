@@ -50,8 +50,8 @@ for level in {1..9}; do
 done
 
 alias dotfiles="pushd ~/Developer/github.com/leostera/dotfiles"
-alias gitconf="vim ~/.gitconfig"
+alias gitconf="nvim ~/.config/git/config"
 alias reload="source ~/.zshrc"
-alias tmuxrc="vim ~/.tmux.conf"
-alias vimrc="vim ~/.vimrc"
-alias zshrc="vim ~/.zshrc ; reload"
+alias tmuxrc="nvim ~/.config/tmux/tmux.conf"
+alias nvimrc="nvim ~/.config/nvim/init.lua"
+alias zshrc="nvim ~/.zshrc ; reload"
