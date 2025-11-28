@@ -1,5 +1,5 @@
 # theme = tomorrow
-theme = catppuccin-mocha
+theme = Catppuccin Mocha
 command = zsh
 working-directory = inherit
 shell-integration = zsh
@@ -9,5 +9,5 @@ clipboard-write = allow
 window-theme = system
 window-padding-x = 0
 window-padding-y = 0
-background-opacity = 0.98
+background-opacity = 0.95
 background-blur-radius = 19

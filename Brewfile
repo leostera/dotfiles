@@ -30,6 +30,12 @@ brew "tmux"
 brew "tree"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Password manager that keeps all passwords secure behind one password
+cask "1password"
+# Command-line interface for 1Password
+cask "1password-cli"
+# Chromium based browser
+cask "arc"
 # Voice and text chat software
 cask "discord"
 # Terminal emulator that uses platform-native UI and GPU acceleration
