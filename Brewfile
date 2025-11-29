@@ -1,3 +1,7 @@
+tap "messense/macos-cross-toolchains"
+tap "rossmacarthur/tap"
+# Automatic configure script builder
+brew "autoconf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
 # GNU File, Shell, and Text utilities
@@ -10,6 +14,8 @@ brew "docker"
 brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GNU Pretty Good Privacy (PGP) package
+brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
 # Lightweight and flexible command-line JSON processor
@@ -18,6 +24,8 @@ brew "jq"
 brew "neovim"
 # AI coding agent, built for the terminal
 brew "opencode"
+# Shell command parallelization utility
+brew "parallel"
 # Parse HTML at the command-line
 brew "pup"
 # Search tool like grep and The Silver Searcher
@@ -28,8 +36,20 @@ brew "rustup"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Internet file retriever
+brew "wget"
 # UNIX shell (command interpreter)
 brew "zsh"
+# aarch64-unknown-linux-gnu Toolchain
+brew "messense/macos-cross-toolchains/aarch64-unknown-linux-gnu"
+# aarch64-unknown-linux-musl Toolchain
+brew "messense/macos-cross-toolchains/aarch64-unknown-linux-musl"
+# x86_64-unknown-linux-gnu Toolchain
+brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu"
+# x86_64-unknown-linux-musl Toolchain
+brew "messense/macos-cross-toolchains/x86_64-unknown-linux-musl"
+# Command-line tool to remap macOS keyboard keys
+brew "rossmacarthur/tap/kb-remap"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
@@ -46,6 +66,8 @@ cask "linear-linear"
 cask "ngrok"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Replacement for Docker Desktop
+cask "orbstack"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Video game digital distribution service
