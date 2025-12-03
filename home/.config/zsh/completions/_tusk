@@ -1,0 +1,148 @@
+#compdef tusk
+
+_tusk() {
+    local -a builtin_commands package_commands all_commands
+
+    builtin_commands=(
+        'build:Build packages'
+        'run:Run a binary'
+        'test:Run tests'
+        'bench:Run benchmarks'
+        'clean:Clean build artifacts'
+        'install:Install dependencies'
+        'new:Create new package'
+        'server:Manage tusk server'
+        'rpc:Send RPC commands'
+        'mcp:MCP server commands'
+        'completions:Generate shell completions'
+        'doc:Generate documentation'
+        'lsp:Start LSP server'
+        'version:Show version'
+    )
+
+    # Load package commands dynamically (format: "package:command\tdescription")
+    local -a raw_lines package_commands package_descs
+    raw_lines=(${(f)"$(tusk completions --commands 2>/dev/null)"})
+    
+    # Parse tab-separated name and description
+    package_commands=()
+    package_descs=()
+    for line in $raw_lines; do
+        local name="${line%%$'\t'*}"
+        local desc="${line#*$'\t'}"
+        package_commands+=("$name")
+        package_descs+=("$desc")
+    done
+
+    local context state state_descr line
+    typeset -A opt_args
+
+    # Check if we've passed -- separator, if so use default file completion
+    local i
+    for i in {2..$CURRENT}; do
+        if [[ "${words[$i]}" == "--" ]]; then
+            _files
+            return 0
+        fi
+    done
+
+    # If we're completing the first argument (the command), show all commands
+    if [[ $CURRENT -eq 2 ]]; then
+        # Combine builtin and package commands for _describe
+        local -a all_commands_with_descs
+        all_commands_with_descs=($builtin_commands)
+        
+        # Add package commands in "name:description" format
+        for i in {1..${#package_commands[@]}}; do
+            # Escape colons in the command name for _describe
+            local escaped_name="${package_commands[$i]//:/\\:}"
+            all_commands_with_descs+=("$escaped_name:${package_descs[$i]}")
+        done
+        
+        # Show all commands with descriptions, sorted by _describe
+        _describe -t commands 'command' all_commands_with_descs
+        return 0
+    fi
+
+    case "$words[2]" in
+        run)
+            # Check if we're completing the binary name (position 3)
+            if [[ $CURRENT -eq 3 ]]; then
+                local -a binaries
+                binaries=(${(f)"$(tusk completions --binaries 2>/dev/null)"})
+                compadd -a binaries
+            fi
+            ;;
+        build)
+            # Check if we're completing the package name (position 3)
+            if [[ $CURRENT -eq 3 ]]; then
+                local -a packages
+                packages=(${(f)"$(tusk completions --packages 2>/dev/null)"})
+                compadd -a packages
+            fi
+            ;;
+        test)
+            # Check if we're completing the test pattern (position 3)
+            if [[ $CURRENT -eq 3 ]]; then
+                local -a tests
+                tests=(${(f)"$(tusk completions --tests 2>/dev/null)"})
+                compadd -a tests
+            else
+                _arguments \
+                    '(-p --package)'{-p,--package}'[Run tests from package]:package:->packages' \
+                    '(-v --verbose)'{-v,--verbose}'[Verbose output]'
+                
+                case $state in
+                    packages)
+                        local -a packages
+                        packages=(${(f)"$(tusk completions --packages 2>/dev/null)"})
+                        _describe 'package' packages
+                        ;;
+                esac
+            fi
+            ;;
+        bench)
+            # Check if we're completing the benchmark pattern (position 3)
+            if [[ $CURRENT -eq 3 ]]; then
+                local -a benches
+                benches=(${(f)"$(tusk completions --benchmarks 2>/dev/null)"})
+                compadd -a benches
+            else
+                _arguments \
+                    '(-p --package)'{-p,--package}'[Run benchmarks from package]:package:->packages' \
+                    '(-v --verbose)'{-v,--verbose}'[Verbose output]'
+                
+                case $state in
+                    packages)
+                        local -a packages
+                        packages=(${(f)"$(tusk completions --packages 2>/dev/null)"})
+                        _describe 'package' packages
+                        ;;
+                esac
+            fi
+            ;;
+        completions)
+            _arguments \
+                '--shell[Shell type]:shell:(bash zsh fish)' \
+                '--packages[List packages]' \
+                '--binaries[List binaries]' \
+                '--tests[List tests]' \
+                '--benchmarks[List benchmarks]' \
+                '--commands[List commands]'
+            ;;
+        clean|install|new|server|rpc|mcp|doc|lsp|version)
+            # These commands have their own completion logic
+            # Can be extended later
+            ;;
+        *:*)
+            # Package command (format: package:command)
+            # Just complete files - users can use --help to learn about options
+            _files
+            ;;
+        *)
+            _describe 'command' all_commands
+            ;;
+    esac
+}
+
+_tusk "$@"

@@ -2,6 +2,7 @@
 . "$HOME/.config/zsh/path"
 . "$HOME/.config/zsh/alias"
 . "$HOME/.config/zsh/prompt"
+fpath=(~/.config/zsh/completions $fpath)
 
 # Switch to Solarized Dark if we are currently in dark mode
 # if [[ "$(uname -s)" == "Darwin" ]]; then
@@ -28,3 +29,8 @@ export OS_THEME="dark"
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+# Added by LM Studio CLI (lms)
+export PATH="$PATH:/Users/leostera/.lmstudio/bin"
+# End of LM Studio CLI section
+

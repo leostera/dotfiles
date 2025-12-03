@@ -1,4 +1,4 @@
-tap "messense/macos-cross-toolchains"
+tap "leostera/macos-cross-toolchains"
 tap "rossmacarthur/tap"
 # Automatic configure script builder
 brew "autoconf"
@@ -6,6 +6,10 @@ brew "autoconf"
 brew "bat"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
+# Fast Lexical Analyzer, generates Scanners (tokenizers)
+brew "flex"
+# Tool for building toolchains
+brew "crosstool-ng"
 # Load/unload environment variables based on $PWD
 brew "direnv"
 # Pack, ship and run any application as a lightweight container
@@ -14,12 +18,18 @@ brew "docker"
 brew "eza"
 # Command-line fuzzy finder written in Go
 brew "fzf"
+# GitHub command-line tool
+brew "gh"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Command-line benchmarking tool
+brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Minimalist GNU for Windows and GCC cross-compilers
+brew "mingw-w64"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
 # AI coding agent, built for the terminal
@@ -36,18 +46,16 @@ brew "rustup"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Extremely fast Python package installer and resolver, written in Rust
+brew "uv"
 # Internet file retriever
 brew "wget"
+# Programming language designed for robustness, optimality, and clarity
+brew "zig"
 # UNIX shell (command interpreter)
 brew "zsh"
 # aarch64-unknown-linux-gnu Toolchain
-brew "messense/macos-cross-toolchains/aarch64-unknown-linux-gnu"
-# aarch64-unknown-linux-musl Toolchain
-brew "messense/macos-cross-toolchains/aarch64-unknown-linux-musl"
-# x86_64-unknown-linux-gnu Toolchain
-brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu"
-# x86_64-unknown-linux-musl Toolchain
-brew "messense/macos-cross-toolchains/x86_64-unknown-linux-musl"
+brew "leostera/macos-cross-toolchains/aarch64-unknown-linux-gnu"
 # Command-line tool to remap macOS keyboard keys
 brew "rossmacarthur/tap/kb-remap"
 # Password manager that keeps all passwords secure behind one password
@@ -62,6 +70,8 @@ cask "discord"
 cask "ghostty"
 # App to manage software development and track bugs
 cask "linear-linear"
+# Discover, download, and run local LLMs
+cask "lm-studio"
 # Reverse proxy, secure introspectable tunnels to localhost
 cask "ngrok"
 # Open-source software for live streaming and screen recording
