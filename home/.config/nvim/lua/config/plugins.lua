@@ -1,20 +1,6 @@
 return {
   -- Comments
-  {
-    "numToStr/Comment.nvim",
-    config = function()
-      require("Comment").setup({
-        ignore = "^$",
-        toggler = {
-          line = "<leader>c",
-        },
-        opleader = {
-          line = "<leader>c",
-          block = "<leader>b",
-        },
-      })
-    end,
-  },
+  { "tpope/vim-commentary" },
 
   -- FZF fuzzy finder
   {
@@ -114,6 +100,7 @@ return {
           "elixir",
           "erlang",
           "ocaml",
+          "ocaml_interface",
           "typescript",
           "javascript",
           "html",
@@ -137,8 +124,6 @@ return {
   { "keith/swift.vim", ft = "swift" },
   { "tpope/vim-markdown", ft = "markdown" },
   { "wuelnerdotexe/vim-astro", ft = "astro" },
-  { "bazelbuild/vim-ft-bzl", ft = "bzl" },
-  { "durandj/bazel.vim", ft = "bzl" },
   { "rust-lang/rust.vim", ft = "rust" },
   { "qnighy/lalrpop.vim", ft = "lalrpop" },
   { "wlangstroth/vim-racket", ft = "racket" },
@@ -173,9 +158,14 @@ return {
   { "flazz/vim-colorschemes" },
   { "felixhummel/setcolors.vim" },
   {
-    "rebelot/kanagawa.nvim",
+    "catppuccin/nvim",
+    name = "catppuccin",
+    priority = 1000,
     config = function()
-      vim.cmd("colorscheme kanagawa")
+      require("catppuccin").setup({
+        flavour = "mocha", -- latte, frappe, macchiato, mocha
+      })
+      vim.cmd("colorscheme catppuccin")
     end,
   },
 }
