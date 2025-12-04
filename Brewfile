@@ -4,6 +4,8 @@ tap "rossmacarthur/tap"
 brew "autoconf"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Cross-platform make
+brew "cmake"
 # GNU File, Shell, and Text utilities
 brew "coreutils"
 # Fast Lexical Analyzer, generates Scanners (tokenizers)
@@ -56,6 +58,12 @@ brew "zig"
 brew "zsh"
 # aarch64-unknown-linux-gnu Toolchain
 brew "leostera/macos-cross-toolchains/aarch64-unknown-linux-gnu"
+# aarch64-unknown-linux-musl Toolchain
+brew "leostera/macos-cross-toolchains/aarch64-unknown-linux-musl"
+# x86_64-unknown-linux-gnu Toolchain
+brew "leostera/macos-cross-toolchains/x86_64-unknown-linux-gnu"
+# x86_64-unknown-linux-musl Toolchain
+brew "leostera/macos-cross-toolchains/x86_64-unknown-linux-musl"
 # Command-line tool to remap macOS keyboard keys
 brew "rossmacarthur/tap/kb-remap"
 # Password manager that keeps all passwords secure behind one password
@@ -66,6 +74,8 @@ cask "1password-cli"
 cask "arc"
 # Voice and text chat software
 cask "discord"
+# Set of tools to manage resources and applications hosted on Google Cloud
+cask "gcloud-cli"
 # Terminal emulator that uses platform-native UI and GPU acceleration
 cask "ghostty"
 # App to manage software development and track bugs
@@ -80,6 +90,8 @@ cask "obs"
 cask "orbstack"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
+# Music streaming service
+cask "spotify"
 # Video game digital distribution service
 cask "steam"
 # Messaging app with a focus on speed and security
