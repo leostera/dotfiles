@@ -1,9 +1,14 @@
 tap "leostera/macos-cross-toolchains"
+tap "oven-sh/bun"
 tap "rossmacarthur/tap"
 # Automatic configure script builder
 brew "autoconf"
+# Official Amazon AWS command-line interface
+brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# CLI tool for Cloudflare Workers
+brew "cloudflare-wrangler"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
@@ -22,10 +27,16 @@ brew "eza"
 brew "fzf"
 # GitHub command-line tool
 brew "gh"
+# Command-line utility for uploading Gists
+brew "gist"
 # GNU Pretty Good Privacy (PGP) package
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
+# Improved top (interactive process viewer)
+brew "htop"
+# Client library for huggingface.co hub
+brew "huggingface-cli"
 # Command-line benchmarking tool
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
@@ -44,6 +55,8 @@ brew "pup"
 brew "ripgrep"
 # Rust toolchain installer
 brew "rustup"
+# Command-line tool for the Amazon S3 service
+brew "s3cmd"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -52,6 +65,8 @@ brew "tree"
 brew "uv"
 # Internet file retriever
 brew "wget"
+# PDF viewer
+brew "xpdf"
 # Programming language designed for robustness, optimality, and clarity
 brew "zig"
 # UNIX shell (command interpreter)
@@ -64,12 +79,16 @@ brew "leostera/macos-cross-toolchains/aarch64-unknown-linux-musl"
 brew "leostera/macos-cross-toolchains/x86_64-unknown-linux-gnu"
 # x86_64-unknown-linux-musl Toolchain
 brew "leostera/macos-cross-toolchains/x86_64-unknown-linux-musl"
+# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
+brew "oven-sh/bun/bun"
 # Command-line tool to remap macOS keyboard keys
 brew "rossmacarthur/tap/kb-remap"
 # Password manager that keeps all passwords secure behind one password
 cask "1password"
 # Command-line interface for 1Password
 cask "1password-cli"
+# Collection of apps and services for photography, design, video, web, and UX
+cask "adobe-creative-cloud"
 # Chromium based browser
 cask "arc"
 # Voice and text chat software
@@ -88,6 +107,8 @@ cask "ngrok"
 cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Administration and development platform for PostgreSQL
+cask "pgadmin4"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Music streaming service
