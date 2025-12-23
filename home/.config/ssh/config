@@ -1,34 +1,5 @@
 Include ~/.orbstack/ssh/config
 
-Host macstadium-arm
-  User administrator
-  HostName 207.254.29.174
-  ServerAliveCountMax 300
-
-Host macstadium-intel
-  User administrator
-  HostName 208.52.189.22
-  ServerAliveCountMax 300
-
-Host github-actions-linux-x86_64-runner
-  User ubuntu
-  HostName 18.208.131.230	
-  ServerAliveCountMax 300
-  IdentityFile ~/.ssh/aws-github-actions-linux-x86_64-runner.pem
-  IdentitiesOnly yes
-
-Host github-actions-linux-aarch64-runner
-  User ubuntu
-  HostName 3.80.103.138
-  ServerAliveCountMax 300
-  IdentityFile ~/.ssh/aws-github-actions-linux-aarch64-runner.pem
-  IdentitiesOnly yes
-
-Host ds2.leostera.com
-  User leostera
-  HostName ds2.leostera.com
-  ProxyCommand cloudflared access ssh --hostname %h
-
-Host starbase1.leostera.com
-  HostName starbase1.leostera.com
+Host starbase1.fleet.leostera.com
+  HostName starbase1.fleet.leostera.com
   ProxyCommand cloudflared access ssh --hostname %h

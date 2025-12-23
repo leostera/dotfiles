@@ -1,7 +1,7 @@
 [user]
   name = Leandro Ostera
   email = leandro@abstractmachines.dev
-	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIHtw0I3+2bdzPl234KQTVhBqHXCnDvlOf/2xn+ATKyZj
+	signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIFq64NPwlNJ/6gimtnkljzHK9hMbby8haF5A1KRpWFZp
 
 [github]
   user = ostera

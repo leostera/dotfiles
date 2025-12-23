@@ -1,3 +1,5 @@
+tap "filosottile/musl-cross"
+tap "hashicorp/tap"
 tap "leostera/macos-cross-toolchains"
 tap "oven-sh/bun"
 tap "rossmacarthur/tap"
@@ -9,6 +11,8 @@ brew "awscli"
 brew "bat"
 # CLI tool for Cloudflare Workers
 brew "cloudflare-wrangler"
+# Cloudflare Tunnel client (formerly Argo Tunnel)
+brew "cloudflared"
 # Cross-platform make
 brew "cmake"
 # GNU File, Shell, and Text utilities
@@ -29,7 +33,7 @@ brew "fzf"
 brew "gh"
 # Command-line utility for uploading Gists
 brew "gist"
-# GNU Pretty Good Privacy (PGP) package
+# GNU Privacy Guard (OpenPGP)
 brew "gnupg"
 # Open source programming language to build simple/reliable/efficient software
 brew "go"
@@ -45,18 +49,20 @@ brew "jq"
 brew "mingw-w64"
 # Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
 # AI coding agent, built for the terminal
 brew "opencode"
 # Shell command parallelization utility
 brew "parallel"
 # Parse HTML at the command-line
 brew "pup"
-# Search tool like grep and The Silver Searcher
-brew "ripgrep"
 # Rust toolchain installer
 brew "rustup"
 # Command-line tool for the Amazon S3 service
 brew "s3cmd"
+# Tool to build, change, and version infrastructure
+brew "terraform"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -71,6 +77,10 @@ brew "xpdf"
 brew "zig"
 # UNIX shell (command interpreter)
 brew "zsh"
+# Linux cross compilers based on musl libc
+brew "filosottile/musl-cross/musl-cross", link: false
+# Nomad
+brew "hashicorp/tap/nomad"
 # aarch64-unknown-linux-gnu Toolchain
 brew "leostera/macos-cross-toolchains/aarch64-unknown-linux-gnu"
 # aarch64-unknown-linux-musl Toolchain
@@ -91,6 +101,8 @@ cask "1password-cli"
 cask "adobe-creative-cloud"
 # Chromium based browser
 cask "arc"
+# OpenAI's official ChatGPT desktop app
+cask "chatgpt"
 # Voice and text chat software
 cask "discord"
 # Set of tools to manage resources and applications hosted on Google Cloud
@@ -109,6 +121,10 @@ cask "obs"
 cask "orbstack"
 # Administration and development platform for PostgreSQL
 cask "pgadmin4"
+# Home media player
+cask "plex"
+# Home media server
+cask "plex-media-server"
 # Move and resize windows using keyboard shortcuts or snap areas
 cask "rectangle"
 # Music streaming service
@@ -117,5 +133,11 @@ cask "spotify"
 cask "steam"
 # Messaging app with a focus on speed and security
 cask "telegram"
+# Multimedia player
+cask "vlc"
 # Native desktop client for WhatsApp
 cask "whatsapp"
+cargo "cargo-generate"
+cargo "cross"
+cargo "sqlx-cli"
+cargo "worker-build"
