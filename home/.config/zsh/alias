@@ -2,6 +2,13 @@ repo() {
   pushd $(github-clone $*)
 }
 
+up() {
+  docker compose up -d
+}
+down() {
+  docker compose down
+}
+
 alias theme="kitty +kitten themes"
 
 alias q="exit"
