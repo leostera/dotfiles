@@ -45,6 +45,8 @@ brew "huggingface-cli"
 brew "hyperfine"
 # Lightweight and flexible command-line JSON processor
 brew "jq"
+# Next-gen compiler infrastructure
+brew "llvm"
 # Minimalist GNU for Windows and GCC cross-compilers
 brew "mingw-w64"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -55,6 +57,10 @@ brew "ripgrep"
 brew "opencode"
 # Shell command parallelization utility
 brew "parallel"
+# Package compiler and linker metadata toolkit
+brew "pkgconf"
+# Protocol buffers (Google's data interchange format)
+brew "protobuf"
 # Parse HTML at the command-line
 brew "pup"
 # Rust toolchain installer
@@ -63,6 +69,8 @@ brew "rustup"
 brew "s3cmd"
 # Tool to build, change, and version infrastructure
 brew "terraform"
+# Web-Scale Blockchain for decentralized apps and marketplaces
+brew "solana"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -119,6 +127,8 @@ cask "ngrok"
 cask "obs"
 # Replacement for Docker Desktop
 cask "orbstack"
+# Desktop virtualization software
+cask "parallels"
 # Administration and development platform for PostgreSQL
 cask "pgadmin4"
 # Home media player

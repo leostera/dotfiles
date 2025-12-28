@@ -34,3 +34,5 @@ export PATH="$BUN_INSTALL/bin:$PATH"
 export PATH="$PATH:/Users/leostera/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
