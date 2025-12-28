@@ -26,6 +26,7 @@ keymap("n", "<leader>b", ":Buffers<CR>", opts)
 
 -- Tab management
 keymap("n", "tt", ":tabnew<CR>", opts)
+keymap("n", "th", ":tabprevious<CR>", opts)
 keymap("n", "tl", ":tabnext<CR>", opts)
 keymap("n", "tr", ":tabprevious<CR>", opts)
 keymap("n", "t1", "1gt", opts)
