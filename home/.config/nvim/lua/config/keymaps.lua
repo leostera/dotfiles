@@ -15,8 +15,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Comments (vim-commentary)
-keymap("n", "<leader>c", "gcc", { remap = true })
-keymap("v", "<leader>c", "gc", { remap = true })
+keymap("n", "<leader><leader>c", "gcc", { remap = true })
+keymap("v", "<leader><leader>c", "gc", { remap = true })
 
 -- FZF
 keymap("n", "<leader><Tab>", ":FZF<CR>", opts)
