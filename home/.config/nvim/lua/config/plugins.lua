@@ -47,42 +47,64 @@ return {
     config = function()
       require("mason-lspconfig").setup({
         ensure_installed = {
-          "rust_analyzer",
+          -- rust_analyzer is managed by rustaceanvim
           "lua_ls",
           "elixirls",
           "denols",
           "zls",
         },
         automatic_installation = true,
+        handlers = {
+          -- Default handler for all servers
+          function(server_name)
+            require("lspconfig")[server_name].setup({})
+          end,
+          -- Disable rust_analyzer - managed by rustaceanvim
+          ["rust_analyzer"] = function() end,
+        },
       })
     end,
   },
 
   -- Rust tools
   {
-    "simrat39/rust-tools.nvim",
+    "mrcjkb/rustaceanvim",
+    version = "^5",
+    lazy = false,
     ft = "rust",
-    config = function()
-      require("rust-tools").setup({
-        tools = {
-          autoSetHints = true,
-          hover_with_actions = true,
-          inlay_hints = {
-            show_parameter_hints = false,
-            parameter_hints_prefix = "",
-            other_hints_prefix = "",
-          },
-        },
+    init = function()
+      -- Get the on_attach function from lsp config
+      local on_attach = function(client, bufnr)
+        local bufopts = { noremap = true, silent = true, buffer = bufnr }
+        
+        vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
+        vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
+        vim.keymap.set("n", "<leader>wr", vim.lsp.buf.remove_workspace_folder, bufopts)
+        vim.keymap.set("n", "<leader>D", vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set("n", "<leader>rn", vim.lsp.buf.rename, bufopts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set("n", "gr", vim.lsp.buf.references, bufopts)
+        vim.keymap.set("n", "<leader>F", function()
+          vim.lsp.buf.format({ async = true })
+        end, bufopts)
+      end
+
+      vim.g.rustaceanvim = {
         server = {
+          on_attach = on_attach,
           settings = {
             ["rust-analyzer"] = {
-              checkOnSave = {
+              check = {
                 command = "clippy",
               },
             },
           },
         },
-      })
+      }
     end,
   },
 

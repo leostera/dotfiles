@@ -41,6 +41,7 @@ if has_modern_lsp then
     on_attach = on_attach,
   })
   
+  -- rust_analyzer is managed by rustaceanvim
   vim.lsp.enable("zls")
   vim.lsp.enable("ocamllsp")
   vim.lsp.enable("denols")
@@ -51,6 +52,7 @@ else
   -- Legacy lspconfig approach (nvim < 0.11)
   local lspconfig = require("lspconfig")
   
+  -- rust_analyzer is managed by rustaceanvim
   lspconfig.zls.setup({ on_attach = on_attach })
   lspconfig.denolds.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
   lspconfig.elixirls.setup({ on_attach = on_attach, cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" } })
