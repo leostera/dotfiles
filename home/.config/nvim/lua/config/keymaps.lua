@@ -45,3 +45,11 @@ keymap("n", "<leader>h", ":split<CR>", opts)
 
 -- ESC alternative
 keymap("i", "jk", "<Esc>", opts)
+
+-- Insert current date/time (Ctrl+T in insert mode)
+keymap("i", "<C-t>", function()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  local date = vim.fn.strftime("%Y/%m/%d %H:%M:%S")
+  vim.api.nvim_put({date}, "c", true, true)
+  vim.api.nvim_win_set_cursor(0, {pos[1], pos[2] + #date})
+end, { noremap = true, silent = true })
