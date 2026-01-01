@@ -15,8 +15,8 @@ keymap("n", "<C-k>", "<C-w>k", opts)
 keymap("n", "<C-l>", "<C-w>l", opts)
 
 -- Comments (vim-commentary)
-keymap("n", "<leader><leader>c", "gcc", { remap = true })
-keymap("v", "<leader><leader>c", "gc", { remap = true })
+keymap("n", "<leader><leader>c", "gcc", { noremap = false })
+keymap("v", "<leader><leader>c", "gc", { noremap = false })
 
 -- FZF
 keymap("n", "<leader><Tab>", ":FZF<CR>", opts)
@@ -53,3 +53,8 @@ keymap("i", "<C-t>", function()
   vim.api.nvim_put({date}, "c", true, true)
   vim.api.nvim_win_set_cursor(0, {pos[1], pos[2] + #date})
 end, { noremap = true, silent = true })
+
+-- Toggle inlay hints
+keymap("n", "<leader>ih", function()
+  vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+end, { noremap = true, silent = true, desc = "Toggle inlay hints" })

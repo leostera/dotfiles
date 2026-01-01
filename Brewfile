@@ -9,6 +9,8 @@ brew "autoconf"
 brew "awscli"
 # Clone of cat(1) with syntax highlighting and Git integration
 brew "bat"
+# Powerful, enterprise-ready, open source web server with automatic HTTPS
+brew "caddy"
 # CLI tool for Cloudflare Workers
 brew "cloudflare-wrangler"
 # Cloudflare Tunnel client (formerly Argo Tunnel)
@@ -47,6 +49,8 @@ brew "hyperfine"
 brew "jq"
 # Next-gen compiler infrastructure
 brew "llvm"
+# LLVM Project Linker
+brew "lld"
 # Minimalist GNU for Windows and GCC cross-compilers
 brew "mingw-w64"
 # Ambitious Vim-fork focused on extensibility and agility
@@ -55,10 +59,10 @@ brew "neovim"
 brew "ripgrep"
 # AI coding agent, built for the terminal
 brew "opencode"
+# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
+brew "openvpn"
 # Shell command parallelization utility
 brew "parallel"
-# Package compiler and linker metadata toolkit
-brew "pkgconf"
 # Protocol buffers (Google's data interchange format)
 brew "protobuf"
 # Parse HTML at the command-line
@@ -69,8 +73,6 @@ brew "rustup"
 brew "s3cmd"
 # Tool to build, change, and version infrastructure
 brew "terraform"
-# Web-Scale Blockchain for decentralized apps and marketplaces
-brew "solana"
 # Terminal multiplexer
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
@@ -79,6 +81,8 @@ brew "tree"
 brew "uv"
 # Internet file retriever
 brew "wget"
+# Tools for the WireGuard secure network tunnel
+brew "wireguard-tools"
 # PDF viewer
 brew "xpdf"
 # Programming language designed for robustness, optimality, and clarity
@@ -125,10 +129,10 @@ cask "lm-studio"
 cask "ngrok"
 # Open-source software for live streaming and screen recording
 cask "obs"
+# Client program for the OpenVPN Access Server
+cask "openvpn-connect"
 # Replacement for Docker Desktop
 cask "orbstack"
-# Desktop virtualization software
-cask "parallels"
 # Administration and development platform for PostgreSQL
 cask "pgadmin4"
 # Home media player

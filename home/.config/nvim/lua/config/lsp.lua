@@ -30,6 +30,11 @@ local on_attach = function(client, bufnr)
       end,
     })
   end
+
+  -- Enable inlay hints
+  if client.server_capabilities.inlayHintProvider then
+    vim.lsp.inlay_hint.enable(true, { bufnr = bufnr })
+  end
 end
 
 -- Use the modern vim.lsp.config API if available (nvim 0.11+), otherwise fall back to lspconfig
@@ -41,7 +46,32 @@ if has_modern_lsp then
     on_attach = on_attach,
   })
   
-  -- rust_analyzer is managed by rustaceanvim
+  -- Configure rust_analyzer with inlay hints
+  vim.lsp.config("rust_analyzer", {
+    on_attach = on_attach,
+    settings = {
+      ["rust-analyzer"] = {
+        inlayHints = {
+          bindingModeHints = { enable = false },
+          chainingHints = { enable = true },
+          closingBraceHints = { enable = true, minLines = 25 },
+          closureReturnTypeHints = { enable = "never" },
+          lifetimeElisionHints = { enable = "never", useParameterNames = false },
+          maxLength = 25,
+          parameterHints = { enable = true },
+          reborrowHints = { enable = "never" },
+          renderColons = true,
+          typeHints = {
+            enable = true,
+            hideClosureInitialization = false,
+            hideNamedConstructor = false,
+          },
+        },
+      },
+    },
+  })
+  
+  vim.lsp.enable("rust_analyzer")
   vim.lsp.enable("zls")
   vim.lsp.enable("ocamllsp")
   vim.lsp.enable("denols")
@@ -52,7 +82,29 @@ else
   -- Legacy lspconfig approach (nvim < 0.11)
   local lspconfig = require("lspconfig")
   
-  -- rust_analyzer is managed by rustaceanvim
+  lspconfig.rust_analyzer.setup({
+    on_attach = on_attach,
+    settings = {
+      ["rust-analyzer"] = {
+        inlayHints = {
+          bindingModeHints = { enable = false },
+          chainingHints = { enable = true },
+          closingBraceHints = { enable = true, minLines = 25 },
+          closureReturnTypeHints = { enable = "never" },
+          lifetimeElisionHints = { enable = "never", useParameterNames = false },
+          maxLength = 25,
+          parameterHints = { enable = true },
+          reborrowHints = { enable = "never" },
+          renderColons = true,
+          typeHints = {
+            enable = true,
+            hideClosureInitialization = false,
+            hideNamedConstructor = false,
+          },
+        },
+      },
+    },
+  })
   lspconfig.zls.setup({ on_attach = on_attach })
   lspconfig.denolds.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
   lspconfig.elixirls.setup({ on_attach = on_attach, cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" } })
@@ -68,6 +120,16 @@ else
     },
   })
 end
+
+-- Enable inlay hints for Rust files
+vim.api.nvim_create_autocmd("LspAttach", {
+  callback = function(args)
+    local client = vim.lsp.get_client_by_id(args.data.client_id)
+    if client and client.name == "rust_analyzer" then
+      vim.lsp.inlay_hint.enable(true, { bufnr = args.buf })
+    end
+  end,
+})
 
 -- Zig-specific formatting and code actions
 vim.api.nvim_create_autocmd("BufWritePre", {
