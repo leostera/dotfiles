@@ -27,6 +27,8 @@ brew "crosstool-ng"
 brew "direnv"
 # Pack, ship and run any application as a lightweight container
 brew "docker"
+# More intuitive version of du in rust
+brew "dust"
 # Modern, maintained replacement for ls
 brew "eza"
 # Command-line fuzzy finder written in Go
@@ -115,6 +117,8 @@ cask "adobe-creative-cloud"
 cask "arc"
 # OpenAI's official ChatGPT desktop app
 cask "chatgpt"
+# OpenAI's coding agent that runs in your terminal
+cask "codex"
 # Voice and text chat software
 cask "discord"
 # Set of tools to manage resources and applications hosted on Google Cloud
@@ -152,6 +156,8 @@ cask "vlc"
 # Native desktop client for WhatsApp
 cask "whatsapp"
 cargo "cargo-generate"
+cargo "cargo-instruments"
 cargo "cross"
+cargo "flamegraph"
 cargo "sqlx-cli"
 cargo "worker-build"

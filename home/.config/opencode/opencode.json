@@ -1,0 +1,23 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "server": {
+    "port": 4096,
+    "hostname": "0.0.0.0",
+    "mdns": true,
+    "cors": ["http://localhost:5173"]
+  },
+  "autoupdate": true,
+  "provider": {
+    "lmstudio": {
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://starbase1:1234/v1"
+      },
+      "models": {
+        "mistralai/devstral-small-2507": {
+          "name": "Devstral Small 2507",
+        },
+      }
+    }
+  }
+}

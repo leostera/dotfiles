@@ -70,6 +70,19 @@ if has_modern_lsp then
       },
     },
   })
+
+  -- Ruff LSP (formatter/linter)
+  vim.lsp.config("ruff", {
+    cmd = { "uv", "tool", "run", "ruff", "server" },
+  })
+
+  -- Ty LSP (type checker)
+  vim.lsp.config("ty", {
+    cmd = { "uv", "tool", "run", "ty", "server" },
+    settings = {
+      ty = {},
+    },
+  })
   
   vim.lsp.enable("rust_analyzer")
   vim.lsp.enable("zls")
@@ -78,6 +91,9 @@ if has_modern_lsp then
   vim.lsp.enable("elixirls")
   vim.lsp.enable("phpactor")
   vim.lsp.enable("lua_ls")
+  vim.lsp.enable("ruff")
+  vim.lsp.enable("ty")
+  vim.lsp.enable("pyright")
 else
   -- Legacy lspconfig approach (nvim < 0.11)
   local lspconfig = require("lspconfig")
@@ -108,6 +124,16 @@ else
   lspconfig.zls.setup({ on_attach = on_attach })
   lspconfig.denolds.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
   lspconfig.elixirls.setup({ on_attach = on_attach, cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" } })
+  lspconfig.ruff.setup({
+    on_attach = on_attach,
+    cmd = { "uv", "tool", "run", "ruff", "server" },
+  })
+  lspconfig.ty.setup({
+    on_attach = on_attach,
+    cmd = { "uv", "tool", "run", "ty", "server" },
+    settings = { ty = {} },
+  })
+  lspconfig.pyright.setup({ on_attach = on_attach })
   
   lspconfig.lua_ls.setup({
     on_attach = on_attach,
