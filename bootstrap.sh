@@ -1,15 +1,15 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+set -euo pipefail
 
-if [[ ! `which brew` ]]; then
-  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-fi
-brew bundle
-
-kb-remap --map capslock:lcontrol
-
-./tools/symlink
-
-echo "Starting new shell..."
-exec zsh
-
-./tools/setup-upstream
+case "$(uname -s)" in
+  Darwin)
+    exec ./bootstrap.macos.sh
+    ;;
+  Linux)
+    exec ./bootstrap.linux.sh
+    ;;
+  *)
+    echo "Unsupported OS: $(uname -s)"
+    exit 1
+    ;;
+esac

@@ -1,22 +1,24 @@
 #!/usr/bin/env sh
+set -e
 
 BRANCH=main
-DOTFILES=~/repos/github.com/ostera/dotfiles
+OWNER=leostera
+REPO=dotfiles
+DOTFILES=~/Developer/github.com/${OWNER}/${REPO}
 
 echo "Creating dotfiles path..."
 mkdir -p ${DOTFILES}
 cd ${DOTFILES}
 
 echo "Downloading dotfiles..."
-curl https://codeload.github.com/ostera/dotfiles/tar.gz/${BRANCH} > ${BRANCH}.tar.gz
+curl -fsSL https://codeload.github.com/${OWNER}/${REPO}/tar.gz/${BRANCH} > ${BRANCH}.tar.gz
 
 echo "Extracting..."
 tar -xf ${BRANCH}.tar.gz
-mv dotfiles-${BRANCH}/* .
+mv ${REPO}-${BRANCH}/* .
 
 echo "Bootstrapping..."
 ./bootstrap.sh
 
 echo "Cleaning..."
-rm -rf dotfiles-${BRANCH} ${BRANCH}.tar.gz
-
+rm -rf ${REPO}-${BRANCH} ${BRANCH}.tar.gz

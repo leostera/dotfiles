@@ -1,14 +1,15 @@
-#!/bin/zsh
+#!/usr/bin/env bash
+set -euo pipefail
 
 function symlink() {
-  ln -sfv "`pwd`/$1" $2
+  ln -sfv "$(pwd)/$1" "$2"
 }
 
-mkdir -p $HOME/.config
+mkdir -p "$HOME/.config"
 for conf in ./home/.config/*; do
-  symlink $conf $HOME/.config/
+  symlink "$conf" "$HOME/.config/"
 done
 
-symlink ./home/.config/ssh/      $HOME/.ssh
-symlink ./home/.bin              $HOME/.bin
-symlink ./home/.config/zsh/zshrc $HOME/.zshrc
+symlink ./home/.config/ssh/ "$HOME/.ssh"
+symlink ./home/.bin "$HOME/.bin"
+symlink ./home/.config/zsh/zshrc "$HOME/.zshrc"
