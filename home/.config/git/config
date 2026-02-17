@@ -6,13 +6,6 @@
 [github]
   user = leostera
 
-[gpg]
-  format = ssh
-
-[gpg "ssh"]
-	program = /Applications/1Password.app/Contents/MacOS/op-ssh-sign
-	allowedSignersFile = /Users/ostera/.config/git/allowed_signers
-
 [core]
   excludesfile = ~/.config/git/ignore
   editor = nvim
@@ -21,11 +14,11 @@
 
 [alias]
   A = add -A
-  amend = commit -S --amend
+  amend = commit --amend
   b = branch -rv
-  c = commit -S
-  cam = commit -S -am
-  cm = commit -S -m
+  c = commit 
+  cam = commit  -am
+  cm = commit  -m
   co = checkout
   cob = checkout -b
   cod = checkout development
@@ -65,9 +58,6 @@
   t = tag -s
   tags = tag --sort "v:refname"
   unstage = reset --soft HEAD
-
-[commit]
-  gpgsign = true
 
 [color]
   ui = auto

@@ -48,3 +48,16 @@ export LIBRARY_PATH=/opt/homebrew/opt/mariadb-connector-c/lib/mariadb:$LIBRARY_P
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # Linux-only environment variables
+  export HOMEBREW_PREFIX="/home/linuxbrew/.linuxbrew";
+  export HOMEBREW_CELLAR="/home/linuxbrew/.linuxbrew/Cellar";
+  export HOMEBREW_REPOSITORY="/home/linuxbrew/.linuxbrew/Homebrew";
+  fpath[1,0]="/home/linuxbrew/.linuxbrew/share/zsh/site-functions";
+  export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin${PATH+:$PATH}";
+  [ -z "${MANPATH-}" ] || export MANPATH=":${MANPATH#:}";
+  export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:${INFOPATH:-}";
+  export SSL_CERT_FILE=/etc/ssl/certs/ca-certificates.crt
+  export CURL_CA_BUNDLE=/etc/ssl/certs/ca-certificates.crt
+fi
