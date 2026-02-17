@@ -48,3 +48,8 @@ export LIBRARY_PATH=/opt/homebrew/opt/mariadb-connector-c/lib/mariadb:$LIBRARY_P
 export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
 
 export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+
+if [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  # Linux-only environment variables
+  :
+fi
