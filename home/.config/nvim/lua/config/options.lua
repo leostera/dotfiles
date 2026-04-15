@@ -1,3 +1,6 @@
+-- Load .nvim.lua files
+vim.o.exrc = true
+
 -- Leader key
 vim.g.mapleader = ","
 vim.g.maplocalleader = ","

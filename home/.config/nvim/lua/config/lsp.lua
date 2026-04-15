@@ -1,7 +1,7 @@
 -- LSP keybindings on attach
 local on_attach = function(client, bufnr)
   local bufopts = { noremap = true, silent = true, buffer = bufnr }
-  
+
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
   vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
@@ -45,7 +45,7 @@ if has_modern_lsp then
   vim.lsp.config("*", {
     on_attach = on_attach,
   })
-  
+
   -- Configure rust_analyzer with inlay hints
   vim.lsp.config("rust_analyzer", {
     on_attach = on_attach,
@@ -83,10 +83,9 @@ if has_modern_lsp then
       ty = {},
     },
   })
-  
+
   vim.lsp.enable("rust_analyzer")
   vim.lsp.enable("zls")
-  vim.lsp.enable("ocamllsp")
   vim.lsp.enable("denols")
   vim.lsp.enable("elixirls")
   vim.lsp.enable("phpactor")
@@ -97,7 +96,7 @@ if has_modern_lsp then
 else
   -- Legacy lspconfig approach (nvim < 0.11)
   local lspconfig = require("lspconfig")
-  
+
   lspconfig.rust_analyzer.setup({
     on_attach = on_attach,
     settings = {
@@ -134,7 +133,7 @@ else
     settings = { ty = {} },
   })
   lspconfig.pyright.setup({ on_attach = on_attach })
-  
+
   lspconfig.lua_ls.setup({
     on_attach = on_attach,
     settings = {

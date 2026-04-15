@@ -50,11 +50,23 @@ keymap("i", "jk", "<Esc>", opts)
 keymap("i", "<C-t>", function()
   local pos = vim.api.nvim_win_get_cursor(0)
   local date = vim.fn.strftime("%Y/%m/%d %H:%M:%S")
-  vim.api.nvim_put({date}, "c", true, true)
-  vim.api.nvim_win_set_cursor(0, {pos[1], pos[2] + #date})
+  vim.api.nvim_put({ date }, "c", true, true)
+  vim.api.nvim_win_set_cursor(0, { pos[1], pos[2] + #date })
+end, { noremap = true, silent = true })
+
+-- Insert current date/time (Ctrl+T in insert mode)
+keymap("i", "<C-d>", function()
+  local pos = vim.api.nvim_win_get_cursor(0)
+  local date = vim.fn.strftime("%Y/%m/%d")
+  vim.api.nvim_put({ date }, "c", true, true)
+  vim.api.nvim_win_set_cursor(0, { pos[1], pos[2] + #date })
 end, { noremap = true, silent = true })
 
 -- Toggle inlay hints
 keymap("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { noremap = true, silent = true, desc = "Toggle inlay hints" })
+
+-- Cycle through files with Ctrl+n and Ctrl+p
+vim.keymap.set('n', '<C-n>', ':next<CR>')
+vim.keymap.set('n', '<C-p>', ':prev<CR>')
