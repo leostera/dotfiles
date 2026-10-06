@@ -1,71 +1,56 @@
-# Dotfiles
+# 💾 `~/.*`
+> dotfiles.
 
-A small macOS and Ubuntu/Debian developer setup built from shell scripts,
-Homebrew Bundle files, and symlinks. The shared configuration is intended to be
-portable; machine-specific values and credentials belong in ignored local
-files.
-
-## Install
-
-Clone the repository and run the platform bootstrap:
-
-```sh
-git clone https://github.com/ostera/dotfiles.git ~/Developer/dotfiles
-cd ~/Developer/dotfiles
-./bootstrap.sh
-```
-
-The bootstrap installs the shared packages, links configuration into `$HOME`,
-configures the repository's pre-commit safety hook, and starts Zsh when it is
-available. It does not configure personal credentials, Git identity, SSH keys,
-password managers, or third-party accounts.
-
-For a remote install, you can also run:
+Install with one command:
 
 ```sh
 curl -fsSL https://raw.githubusercontent.com/ostera/dotfiles/main/remote-install.sh | sh
 ```
 
-Set `DOTFILES_URL` to use a fork, or `DOTFILES_DIR` to choose another install
-location.
+Very no-nonsense stuff.
 
-## Platform support
+1. Config files follow XDG conventions: `home/.config/*` symlinks to `$HOME/.config/*`
+2. `home/.*` files symlink to `$HOME/.*`
+3. Package installs are OS-specific:
+   - macOS: `bootstrap.macos.sh` + `brew bundle` via `Brewfile`
+   - Ubuntu: `bootstrap.linux.sh` + `brew bundle` via `Brewfile.linux`
 
-- macOS: `bootstrap.macos.sh` and `Brewfile`
-- Ubuntu/Debian Linux: `bootstrap.linux.sh` and `Brewfile.linux`
+The shared package lists are a general development baseline. Keep personal
+settings, credentials, SSH keys, and machine-specific packages local.
 
-The package lists are a general development baseline. Add personal or
-machine-specific packages locally instead of committing account-specific
-configuration to the shared setup.
+Nothing more. Keep it simple. Fork away!
 
-## Local configuration
+## Ubuntu Notes
 
-Use ignored local overrides for identity and machine-specific values. Supported
-locations include:
+`bootstrap.sh` dispatches to `bootstrap.linux.sh` or `bootstrap.macos.sh`.
 
-- `~/.env.local`
-- `~/.config/zsh/env.local`
-- `~/.config/git/config.local`
-- `~/.config/direnv/*.local`
+Linux installs Homebrew if needed, then installs packages from `Brewfile.linux`:
 
-SSH configuration and keys are not managed by this repository. Keep them in
-`~/.ssh` and never add private keys, known-hosts data, access tokens, or
-credentials to the tracked tree.
+```sh
+brew bundle --file=./Brewfile.linux
+```
 
-## Public-safety checks
+## Local Configuration
 
-The pre-commit hook audits staged changes. Install it manually with:
+Keep identity and machine-specific settings in ignored local files like
+`~/.env.local`, `~/.config/zsh/env.local`, and
+`~/.config/git/config.local`. SSH config and keys stay in `~/.ssh`—not here.
+
+The pre-commit hook checks staged changes. Install it with:
 
 ```sh
 ./tools/install-hooks
 ```
 
-To check the repository's reachable history for suspicious paths or
-secret-shaped values, run:
+You can also check the repo's history for suspicious paths or secret-shaped
+values:
 
 ```sh
 ./tools/audit-public.sh --history
 ```
 
-The audit is defense in depth; review changes and history manually before
-publishing.
+The audit's a backstop, not magic. Give things a look before publishing.
+
+## License
+
+See [LICENSE](LICENSE).
