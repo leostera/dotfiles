@@ -1,22 +1,69 @@
 #!/usr/bin/env zsh
 
-if [ -z "$2" ];
-then
-  REPO=$1
-else
-  REPO=$1/$2
+if [[ -z "$1" ]]; then
+  echo "usage: repo [gh:]owner/repo [--new [--public|--private]]" >&2
+  exit 1
 fi
 
-TO=$HOME/Developer/github.com/$REPO
+NEW=false
+VISIBILITY=private
+ARGS=()
+for arg in "$@"; do
+  case "$arg" in
+    --new) NEW=true ;;
+    --public) VISIBILITY=public ;;
+    --private) VISIBILITY=private ;;
+    *) ARGS+=("$arg") ;;
+  esac
+done
 
-if [ ! -f $TO/.git/HEAD ];
-then
-  if [ -z "${USE_HTTP}" ];
-  then
-    git clone git@github.com:$REPO.git $TO $3
-  else
-    git clone https://github.com/$REPO $TO
+# Keep the old two-argument form (`github-clone owner repo`) working.
+if [[ -n "${ARGS[2]}" ]]; then
+  HOST=github.com
+  REPO="${ARGS[1]}/${ARGS[2]}"
+  CLONE_ARGS=("${ARGS[@]:3}")
+elif [[ "${ARGS[1]}" == gh:* ]]; then
+  HOST=github.com
+  REPO="${ARGS[1]#gh:}"
+  CLONE_ARGS=("${ARGS[@]:2}")
+else
+  # Public default; work installations can set GITHUB_CLONE_HOST locally.
+  HOST="${GITHUB_CLONE_HOST:-github.com}"
+  REPO="${ARGS[1]}"
+  CLONE_ARGS=("${ARGS[@]:2}")
+fi
+
+TO="$HOME/Developer/$HOST/$REPO"
+
+if $NEW; then
+  if [[ "$HOST" != github.com ]]; then
+    echo "--new currently supports GitHub repositories only (use gh:owner/repo)." >&2
+    exit 1
   fi
-fi;
+  if ! command -v gh >/dev/null 2>&1; then
+    echo "--new requires the GitHub CLI (gh)." >&2
+    exit 1
+  fi
+  if [[ -e "$TO" ]]; then
+    echo "Refusing to create repository over existing path: $TO" >&2
+    exit 1
+  fi
 
-echo $TO;
+  mkdir -p "${TO:h}"
+  git init -b main "$TO" >&2
+  if ! gh repo create "$REPO" "--$VISIBILITY" --source "$TO" --remote origin >&2; then
+    rm -rf "$TO"
+    exit 1
+  fi
+else
+  if [[ ! -f "$TO/.git/HEAD" ]]; then
+    mkdir -p "${TO:h}"
+    if [[ -n "${USE_HTTP}" ]]; then
+      git clone "https://$HOST/$REPO.git" "$TO" "${CLONE_ARGS[@]}"
+    else
+      git clone "git@$HOST:$REPO.git" "$TO" "${CLONE_ARGS[@]}"
+    fi
+  fi
+fi
+
+echo "$TO"

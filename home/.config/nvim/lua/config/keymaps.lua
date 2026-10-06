@@ -18,14 +18,36 @@ keymap("n", "<C-l>", "<C-w>l", opts)
 keymap("n", "<leader><leader>c", "gcc", { noremap = false })
 keymap("v", "<leader><leader>c", "gc", { noremap = false })
 
--- FZF
-keymap("n", "<leader><Tab>", ":FZF<CR>", opts)
-keymap("n", "<C-p>", ":Files<CR>", opts)
-keymap("n", "<leader>f", ":Rg<CR>", opts)
-keymap("n", "<leader>b", ":Buffers<CR>", opts)
+-- FFF search
+keymap("n", "<leader><Tab>", function()
+  require("fff").find_files()
+end, { desc = "Find files" })
+keymap("n", "<C-p>", function()
+  require("fff").find_files()
+end, { desc = "Find files" })
+keymap("n", "<leader>f", function()
+  require("fff").live_grep()
+end, { desc = "Search file contents" })
+keymap("n", "<leader>b", function()
+  local buffers = vim.tbl_filter(function(buf)
+    return vim.api.nvim_buf_is_loaded(buf)
+      and vim.bo[buf].buflisted
+      and vim.api.nvim_buf_get_name(buf) ~= ""
+  end, vim.api.nvim_list_bufs())
+  vim.ui.select(buffers, {
+    prompt = "Buffers",
+    format_item = function(buf)
+      return vim.fn.fnamemodify(vim.api.nvim_buf_get_name(buf), ":~:.")
+    end,
+  }, function(buf)
+    if buf then
+      vim.api.nvim_set_current_buf(buf)
+    end
+  end)
+end, { desc = "Choose buffer" })
 
 -- Tab management
-keymap("n", "tt", ":tabnew<CR>", opts)
+keymap("n", "tt", ":tab split<CR>", opts)
 keymap("n", "th", ":tabprevious<CR>", opts)
 keymap("n", "tl", ":tabnext<CR>", opts)
 keymap("n", "t1", "1gt", opts)
@@ -67,6 +89,5 @@ keymap("n", "<leader>ih", function()
   vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
 end, { noremap = true, silent = true, desc = "Toggle inlay hints" })
 
--- Cycle through files with Ctrl+n and Ctrl+p
+-- Move forward through the argument list with Ctrl+n; Ctrl+p opens FFF.
 vim.keymap.set('n', '<C-n>', ':next<CR>')
-vim.keymap.set('n', '<C-p>', ':prev<CR>')

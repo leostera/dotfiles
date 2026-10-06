@@ -23,31 +23,35 @@ export FZF_DEFAULT_DIRECTORY_COMMAND="\
   | sort -u
   "
 
-export XDG_CONFIG_PATH="${XDG_CONFIG_PATH}:~/.config"
-export ANDROID_HOME=/home/ostera/Android/Sdk/
-export CLASS_PATH="$CLASS_PATH:${HOME}/.tla"
+export XDG_CONFIG_HOME="${XDG_CONFIG_HOME:-$HOME/.config}"
+export CLASS_PATH="${CLASS_PATH:+$CLASS_PATH:}${HOME}/.tla"
 export EDITOR=vim
-export GCLOUD_CONFIG=~/.config/gcloud
-export GCLOUD_CREDENTIALS=${GCLOUD_CONFIG}/credentials
-export GOOGLE_APPLICATION_CREDENTIALS=${GCLOUD_CONFIG}/application_default_credentials.json
-export GOPATH=~/.go
-export GPG_TTY=$(tty)
-export HISTFILE=~/.zhistory
+export GCLOUD_CONFIG="$HOME/.config/gcloud"
+export GCLOUD_CREDENTIALS="$GCLOUD_CONFIG/credentials"
+export GOOGLE_APPLICATION_CREDENTIALS="$GCLOUD_CONFIG/application_default_credentials.json"
+export GOPATH="$HOME/.go"
+export GPG_TTY="$(tty 2>/dev/null || true)"
+export HISTFILE="$HOME/.zhistory"
 export HISTSIZE=1000000
 export NODE_ENV=development
 export NODE_PATH=./lib/:./modules/
-export NVM_DIR=~/.nvm
-export RBENV_ROOT=~/.rbenv
+export NVM_DIR="$HOME/.nvm"
+export RBENV_ROOT="$HOME/.rbenv"
 export SAVEHIST=1000000
 export BAT_THEME="gruvbox-dark"
-export TERM="xterm-256color"
 export ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
-export JAVA_HOME="/opt/homebrew/opt/openjdk"
-export LIBRARY_PATH=/opt/homebrew/opt/mariadb-connector-c/lib/mariadb:$LIBRARY_PATH
 
-export NIX_PATH=darwin=$HOME/.nix-defexpr/darwin:darwin-config=$HOME/.config/nixpkgs/darwin/configuration.nix:$NIX_PATH
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  export JAVA_HOME="${JAVA_HOME:-/opt/homebrew/opt/openjdk}"
+  export LIBRARY_PATH="/opt/homebrew/opt/mariadb-connector-c/lib/mariadb${LIBRARY_PATH:+:$LIBRARY_PATH}"
+  export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig${PKG_CONFIG_PATH:+:$PKG_CONFIG_PATH}"
+fi
 
-export PKG_CONFIG_PATH="/opt/homebrew/opt/openssl@3/lib/pkgconfig:$PKG_CONFIG_PATH"
+# Keep machine- and account-specific values out of the public configuration.
+# ~/.env.local is also loaded so tools that use ${VAR} configuration
+# placeholders always see a defined value, even when the optional credential is absent.
+[[ -r "$HOME/.env.local" ]] && source "$HOME/.env.local"
+[[ -r "$HOME/.config/zsh/env.local" ]] && source "$HOME/.config/zsh/env.local"
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
   # Linux-only environment variables

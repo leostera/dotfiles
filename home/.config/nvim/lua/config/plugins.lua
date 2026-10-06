@@ -2,12 +2,15 @@ return {
   -- Comments
   { "tpope/vim-commentary" },
 
-  -- FZF fuzzy finder
+  -- Fast file and content search
   {
-    "junegunn/fzf",
-    build = "./install --all",
+    "dmtrKovalenko/fff",
+    build = function()
+      require("fff.download").download_or_build_binary()
+    end,
+    opts = {},
+    lazy = false,
   },
-  { "junegunn/fzf.vim" },
 
   -- Status line
   { "itchyny/lightline.vim" },
@@ -51,9 +54,12 @@ return {
           "lua_ls",
           "elixirls",
           "denols",
+          "vtsls",
           "zls",
         },
         automatic_installation = true,
+        -- Only enable the servers explicitly configured in config.lsp.
+        automatic_enable = false,
       })
     end,
   },
@@ -63,31 +69,40 @@ return {
   -- Treesitter for syntax highlighting
   {
     "nvim-treesitter/nvim-treesitter",
+    branch = "main",
+    lazy = false,
     build = ":TSUpdate",
     config = function()
-      require("nvim-treesitter.configs").setup({
-        ensure_installed = {
-          "lua",
-          "vim",
-          "vimdoc",
-          "rust",
-          "elixir",
-          "erlang",
-          "ocaml",
-          "ocaml_interface",
-          "typescript",
-          "javascript",
-          "html",
-          "css",
-          "json",
-          "yaml",
-          "toml",
-          "markdown",
-          "bash",
-        },
-        highlight = { enable = true },
-        indent = { enable = true },
-        auto_install = true,
+      local treesitter = require("nvim-treesitter")
+      local languages = {
+        "lua",
+        "vim",
+        "vimdoc",
+        "rust",
+        "elixir",
+        "erlang",
+        "ocaml",
+        "typescript",
+        "javascript",
+        "html",
+        "css",
+        "json",
+        "yaml",
+        "toml",
+        "markdown",
+        "bash",
+      }
+
+      treesitter.setup({
+        install_dir = vim.fn.stdpath("data") .. "/site",
+      })
+      treesitter.install(languages)
+
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = languages,
+        callback = function(args)
+          vim.treesitter.start(args.buf)
+        end,
       })
     end,
   },

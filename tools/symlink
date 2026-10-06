@@ -1,15 +1,20 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-function symlink() {
-  ln -sfv "$(pwd)/$1" "$2"
-}
-
+repo_root=$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)
 mkdir -p "$HOME/.config"
-for conf in ./home/.config/*; do
-  symlink "$conf" "$HOME/.config/"
+
+for conf in "$repo_root"/home/.config/*; do
+  [ -d "$conf" ] || continue
+  case "${conf##*/}" in
+    # SSH keys and host configuration are local and must never be linked from
+    # the repository checkout into the active SSH configuration.
+    ssh|opencode) continue ;;
+  esac
+  ln -sfn "$conf" "$HOME/.config/"
 done
 
-symlink ./home/.config/ssh/ "$HOME/.ssh"
-symlink ./home/.bin "$HOME/.bin"
-symlink ./home/.config/zsh/zshrc "$HOME/.zshrc"
+ln -sfn "$repo_root/home/.pi" "$HOME/.pi"
+ln -sfn "$repo_root/home/.agents" "$HOME/.agents"
+ln -sfn "$repo_root/home/.bin" "$HOME/.bin"
+ln -sfn "$repo_root/home/.config/zsh/zshrc" "$HOME/.zshrc"

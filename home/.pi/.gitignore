@@ -1,0 +1,5 @@
+# Pi state is local and may contain credentials, sessions, caches, and installed packages.
+*
+!.gitignore
+!agent/
+agent/*

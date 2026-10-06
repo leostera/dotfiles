@@ -22,9 +22,12 @@ vim.opt.smartindent = true
 
 -- Visual
 vim.opt.termguicolors = true
-vim.opt.signcolumn = "yes"
+vim.opt.signcolumn = "yes:2"
 vim.opt.cursorline = false
 vim.opt.scrolloff = 8
+
+-- Add branch-diff signs alongside GitGutter's normal working-tree signs.
+require("config.branch_signs")
 
 -- Folding
 vim.opt.foldenable = false

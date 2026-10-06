@@ -1,64 +1,36 @@
 repo() {
-  pushd $(github-clone $*)
+  pushd "$(github-clone "$@")"
 }
-
-up() {
-  docker compose up -d
-}
-down() {
-  docker compose down
-}
-
-alias theme="kitty +kitten themes"
 
 alias q="exit"
-
-alias x86="arch -x86_64 zsh"
-
 alias cat="bat --theme gruvbox-dark"
-
 alias g="git"
 alias gg="git"
-alias status="g status"
-alias clone="g clone"
-alias init="g init"
-alias shallow="clone --depth 1"
-
+alias status="git status"
+alias clone="git clone"
+alias init="git init"
 alias vim="nvim"
 alias v="nvim"
-alias vf="nvim \$(f)"
-alias ctags-here="ctags -o tags"
-
-alias k="kubectl"
-alias h="\history -i 0 | f"
-alias m="make"
-
 alias f="fzf"
+alias vf="nvim \$(f)"
 alias tmux="tmux -2 -f $HOME/.config/tmux/tmux.conf"
 alias tma="tmux attach"
-
-alias zellij="zellij --config $HOME/.config/zellij/config.yaml"
-
-alias c=" pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
+alias c="pushd \$(FZF_DEFAULT_COMMAND=\${FZF_DEFAULT_DIRECTORY_COMMAND} f)"
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
-alias ~="pushd ~"
 alias repos="pushd ~/Developer"
-
 alias l="eza -lg"
 alias la="eza -alH"
-
-for level in {1..9}; do
-  tree="tree -C -L ${level} -h";
-  t=$(repeat ${level} echo -n "t");
-  eval "alias ${t}='${tree}'";
-  eval "alias t${level}='${tree}'";
-done
-
-alias dotfiles="pushd ~/Developer/github.com/leostera/dotfiles"
 alias gitconf="nvim ~/.config/git/config"
 alias reload="source ~/.zshrc"
 alias tmuxrc="nvim ~/.config/tmux/tmux.conf"
 alias nvimrc="nvim ~/.config/nvim/init.lua"
-alias zshrc="nvim ~/.zshrc ; reload"
+alias zshrc="nvim ~/.zshrc; reload"
+
+for level in {1..9}; do
+  tree_cmd="tree -C -L ${level} -h"
+  t=$(repeat ${level} echo -n "t")
+  eval "alias ${t}='${tree_cmd}'"
+  eval "alias t${level}='${tree_cmd}'"
+done

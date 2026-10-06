@@ -4,7 +4,19 @@ local on_attach = function(client, bufnr)
 
   vim.keymap.set("n", "gD", vim.lsp.buf.declaration, bufopts)
   vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
-  vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+  vim.keymap.set("n", "K", function()
+    vim.lsp.buf.hover({
+      border = "rounded",
+      max_width = 100,
+      max_height = 24,
+      title = " Type ",
+      title_pos = "center",
+      focusable = true,
+      winhighlight = "Normal:NormalFloat,FloatBorder:FloatBorder",
+    })
+  end, vim.tbl_extend("force", bufopts, {
+    desc = "Show type and documentation",
+  }))
   vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
   vim.keymap.set("n", "<C-k>", vim.lsp.buf.signature_help, bufopts)
   vim.keymap.set("n", "<leader>wa", vim.lsp.buf.add_workspace_folder, bufopts)
@@ -20,13 +32,21 @@ local on_attach = function(client, bufnr)
     vim.lsp.buf.format({ async = true })
   end, bufopts)
 
-  -- Format on save
+  -- Format with the attached LSP immediately before saving.
   if client.server_capabilities.documentFormattingProvider then
+    local format_group = vim.api.nvim_create_augroup("LspFormatOnSave", { clear = true })
     vim.api.nvim_create_autocmd("BufWritePre", {
-      group = vim.api.nvim_create_augroup("LspFormat", { clear = true }),
+      group = format_group,
       buffer = bufnr,
       callback = function()
-        vim.lsp.buf.format({ async = false })
+        vim.lsp.buf.format({
+          async = false,
+          bufnr = bufnr,
+          timeout_ms = 2000,
+          filter = function(format_client)
+            return format_client.id == client.id
+          end,
+        })
       end,
     })
   end
@@ -71,6 +91,32 @@ if has_modern_lsp then
     },
   })
 
+  -- TypeScript/JavaScript LSP with inline type hints.
+  vim.lsp.config("vtsls", {
+    settings = {
+      typescript = {
+        inlayHints = {
+          parameterNames = { enabled = "all" },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
+        },
+      },
+      javascript = {
+        inlayHints = {
+          parameterNames = { enabled = "all" },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
+        },
+      },
+    },
+  })
+
   -- Ruff LSP (formatter/linter)
   vim.lsp.config("ruff", {
     cmd = { "uv", "tool", "run", "ruff", "server" },
@@ -87,6 +133,7 @@ if has_modern_lsp then
   vim.lsp.enable("rust_analyzer")
   vim.lsp.enable("zls")
   vim.lsp.enable("denols")
+  vim.lsp.enable("vtsls")
   vim.lsp.enable("elixirls")
   vim.lsp.enable("phpactor")
   vim.lsp.enable("lua_ls")
@@ -122,6 +169,31 @@ else
   })
   lspconfig.zls.setup({ on_attach = on_attach })
   lspconfig.denolds.setup({ on_attach = on_attach, filetypes = { "typescript", "typescriptreact", "typescript.tsx" } })
+  lspconfig.vtsls.setup({
+    on_attach = on_attach,
+    settings = {
+      typescript = {
+        inlayHints = {
+          parameterNames = { enabled = "all" },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
+        },
+      },
+      javascript = {
+        inlayHints = {
+          parameterNames = { enabled = "all" },
+          parameterTypes = { enabled = true },
+          variableTypes = { enabled = true, suppressWhenTypeMatchesName = true },
+          propertyDeclarationTypes = { enabled = true },
+          functionLikeReturnTypes = { enabled = true },
+          enumMemberValues = { enabled = true },
+        },
+      },
+    },
+  })
   lspconfig.elixirls.setup({ on_attach = on_attach, cmd = { vim.fn.system("brew --prefix elixir-ls"):gsub("%s+$", "") .. "/bin/elixir-ls" } })
   lspconfig.ruff.setup({
     on_attach = on_attach,

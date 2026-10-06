@@ -1,220 +1,30 @@
-tap "filosottile/musl-cross"
-tap "hashicorp/tap"
-tap "messense/macos-cross-toolchains"
-tap "oven-sh/bun"
-tap "rossmacarthur/tap"
-tap "steipete/tap"
-# Record and share terminal sessions
-brew "asciinema"
-# Automatic configure script builder
-brew "autoconf"
-# Official Amazon AWS command-line interface
-brew "awscli"
-# Clone of cat(1) with syntax highlighting and Git integration
+# Cross-platform development baseline.
+
 brew "bat"
-# Powerful, enterprise-ready, open source web server with automatic HTTPS
-brew "caddy"
-# Statistics utility to count lines of code
-brew "cloc"
-# CLI tool for Cloudflare Workers
-brew "cloudflare-wrangler"
-# Cloudflare Tunnel client (formerly Argo Tunnel)
-brew "cloudflared"
-# Cross-platform make
-brew "cmake"
-# GNU File, Shell, and Text utilities
-brew "coreutils"
-# Fast Lexical Analyzer, generates Scanners (tokenizers)
-brew "flex"
-# Tool for building toolchains
-brew "crosstool-ng"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
-# Load/unload environment variables based on $PWD
 brew "direnv"
-# Pack, ship and run any application as a lightweight container
-brew "docker"
-# More intuitive version of du in rust
-brew "dust"
-# Functional metaprogramming aware language built on Erlang VM
-brew "elixir"
-# Modern, maintained replacement for ls
 brew "eza"
-# Command-line fuzzy finder written in Go
 brew "fzf"
-# GitHub command-line tool
 brew "gh"
-# Command-line utility for uploading Gists
-brew "gist"
-# GNU Privacy Guard (OpenPGP)
-brew "gnupg"
-# Open source programming language to build simple/reliable/efficient software
-brew "go"
-# Client library for huggingface.co hub
-brew "hf"
-# Improved top (interactive process viewer)
-brew "htop"
-# Command-line benchmarking tool
-brew "hyperfine"
-# Lightweight and flexible command-line JSON processor
+brew "git"
 brew "jq"
-# Next-gen compiler infrastructure
-brew "llvm"
-# LLVM Project Linker
-brew "lld"
-# Minimalist GNU for Windows and GCC cross-compilers
-brew "mingw-w64"
-# Replacement for ls, cp and other commands for object storage
-brew "minio-mc"
-# Ambitious Vim-fork focused on extensibility and agility
 brew "neovim"
-# Open-source, cross-platform JavaScript runtime environment
-brew "node@24", link: true
-# Create, run, and share large language models (LLMs)
-brew "ollama"
-# Search tool like grep and The Silver Searcher
+brew "node"
 brew "ripgrep"
-# AI coding agent, built for the terminal
-brew "opencode"
-# Development kit for the Java programming language
-brew "openjdk"
-# SSL/TLS VPN implementing OSI layer 2 or 3 secure network extension
-brew "openvpn"
-# Shell command parallelization utility
-brew "parallel"
-# Protocol buffers (Google's data interchange format)
-brew "protobuf"
-# Parse HTML at the command-line
-brew "pup"
-# Rust toolchain installer
-brew "rustup"
-# Command-line tool for the Amazon S3 service
-brew "s3cmd"
-# Used as a compiler wrapper and avoids compilation when possible
-brew "sccache"
-# Terminal multiplexer
 brew "tmux"
-# Program that allows you to count code, quickly
-brew "tokei"
-# Display directories as trees (with optional color/HTML output)
 brew "tree"
-# Extremely fast Python package installer and resolver, written in Rust
+brew "tree-sitter-cli"
 brew "uv"
-# Internet file retriever
 brew "wget"
-# Tools for the WireGuard secure network tunnel
-brew "wireguard-tools"
-# PDF viewer
-brew "xpdf"
-# Programming language designed for robustness, optimality, and clarity
-brew "zig"
-# UNIX shell (command interpreter)
 brew "zsh"
-# Linux cross compilers based on musl libc
-brew "filosottile/musl-cross/musl-cross", link: false
-# Nomad
-brew "hashicorp/tap/nomad"
-# Terraform
-brew "hashicorp/tap/terraform"
-# aarch64-unknown-linux-gnu Toolchain
-brew "messense/macos-cross-toolchains/aarch64-unknown-linux-gnu"
-# aarch64-unknown-linux-musl Toolchain
-brew "messense/macos-cross-toolchains/aarch64-unknown-linux-musl"
-# x86_64-unknown-linux-gnu Toolchain
-brew "messense/macos-cross-toolchains/x86_64-unknown-linux-gnu"
-# x86_64-unknown-linux-musl Toolchain
-brew "messense/macos-cross-toolchains/x86_64-unknown-linux-musl"
-# Incredibly fast JavaScript runtime, bundler, transpiler and package manager - all in one.
-brew "oven-sh/bun/bun"
-# Command-line tool to remap macOS keyboard keys
-brew "rossmacarthur/tap/kb-remap"
-# Fast CLI for Apple Reminders
-brew "steipete/tap/remindctl"
-# Password manager that keeps all passwords secure behind one password
-cask "1password"
-# Command-line interface for 1Password
-cask "1password-cli"
-# Collection of apps and services for photography, design, video, web, and UX
-cask "adobe-creative-cloud"
-# Chromium based browser
-cask "arc"
-# OpenAI's official ChatGPT desktop app
-cask "chatgpt"
-# OpenAI's coding agent that runs in your terminal
-cask "codex"
-# Browser for SQLite databases
-cask "db-browser-for-sqlite"
-# Voice and text chat software
-cask "discord"
-# Set of tools to manage resources and applications hosted on Google Cloud
-cask "gcloud-cli"
-# Terminal emulator that uses platform-native UI and GPU acceleration
+
+# macOS applications
 cask "ghostty"
-# Web browser
-cask "google-chrome"
-# Voice-to-text transcription and paste tool
-cask "kitlangton-hex"
-# App to manage software development and track bugs
-cask "linear-linear"
-# Discover, download, and run local LLMs
-cask "lm-studio"
-# Reverse proxy, secure introspectable tunnels to localhost
-cask "ngrok"
-# Open-source software for live streaming and screen recording
-cask "obs"
-# Client program for the OpenVPN Access Server
-cask "openvpn-connect"
-# Replacement for Docker Desktop
 cask "orbstack"
-# Administration and development platform for PostgreSQL
-cask "pgadmin4"
-# Home media player
-cask "plex"
-# Home media server
-cask "plex-media-server"
-# Move and resize windows using keyboard shortcuts or snap areas
-cask "rectangle"
-# Music streaming service
-cask "spotify"
-# Video game digital distribution service
-cask "steam"
-# Messaging app with a focus on speed and security
-cask "telegram"
-# IDE for TLA+
-cask "tla+-toolbox"
-# Open-source code editor
 cask "visual-studio-code"
-# Multimedia player
-cask "vlc"
-# Native desktop client for WhatsApp
-cask "whatsapp"
-vscode "connor4312.esbuild-problem-matchers"
-vscode "davidanson.vscode-markdownlint"
+
+# General web-development extensions.
 vscode "dbaeumer.vscode-eslint"
 vscode "esbenp.prettier-vscode"
-vscode "github.copilot-chat"
-vscode "ms-azuretools.vscode-containers"
 vscode "ms-vscode-remote.remote-containers"
-vscode "ms-vscode.extension-test-runner"
-vscode "openai.chatgpt"
-vscode "oven.bun-vscode"
 vscode "tamasfe.even-better-toml"
 vscode "vscodevim.vim"
-vscode "yzhang.markdown-all-in-one"
-cargo "borg-cli"
-cargo "cargo-evals"
-cargo "cargo-generate"
-cargo "cargo-insta"
-cargo "cargo-instruments"
-cargo "cargo-nextest"
-cargo "cargo-release"
-cargo "cargo-swift"
-cargo "cargo-watch"
-cargo "cross"
-cargo "cubic"
-cargo "flamegraph"
-cargo "glogg"
-cargo "poneglyphd"
-cargo "sccache"
-cargo "sqlx-cli"
-cargo "worker-build"

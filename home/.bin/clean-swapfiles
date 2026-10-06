@@ -1,3 +1,0 @@
-#!/usr/bin/env zsh
-
-find . -name ".*.sw*" | xargs rm

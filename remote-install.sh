@@ -1,24 +1,15 @@
 #!/usr/bin/env sh
-set -e
+set -eu
 
-BRANCH=main
-OWNER=leostera
-REPO=dotfiles
-DOTFILES=~/Developer/github.com/${OWNER}/${REPO}
+DOTFILES_URL="${DOTFILES_URL:-https://github.com/ostera/dotfiles.git}"
+DOTFILES_DIR="${DOTFILES_DIR:-$HOME/Developer/dotfiles}"
 
-echo "Creating dotfiles path..."
-mkdir -p ${DOTFILES}
-cd ${DOTFILES}
+if [ -e "$DOTFILES_DIR" ]; then
+  echo "Refusing to overwrite existing directory: $DOTFILES_DIR" >&2
+  exit 1
+fi
 
-echo "Downloading dotfiles..."
-curl -fsSL https://codeload.github.com/${OWNER}/${REPO}/tar.gz/${BRANCH} > ${BRANCH}.tar.gz
-
-echo "Extracting..."
-tar -xf ${BRANCH}.tar.gz
-mv ${REPO}-${BRANCH}/* .
-
-echo "Bootstrapping..."
+echo "Cloning dotfiles..."
+git clone "$DOTFILES_URL" "$DOTFILES_DIR"
+cd "$DOTFILES_DIR"
 ./bootstrap.sh
-
-echo "Cleaning..."
-rm -rf ${REPO}-${BRANCH} ${BRANCH}.tar.gz

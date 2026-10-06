@@ -1,3 +1,64 @@
+# Machine-local values and credentials
+.env
+.env.*
+!.env.example
+.envrc
+.npmrc
+**/*secret*
+**/*secrets*
+**/*credential*
+**/*credentials*
+**/*token*
+**/*password*
+
+# Local overrides and account-specific configuration
+Brewfile.work
+home/.config/git/*.local
+home/.config/ssh/
+home/.config/zsh/*.local
+home/.config/direnv/*.local
+home/.config/opencode/
+home/.config/zsh/zsh
+home/.agents/.skill-lock.json
+
+# Local archive/checkouts kept beside the repository
+main.tar.gz
+dotfiles-main/
+
+# Runtime state, logs, caches, and backups
+.DS_Store
+*.log
+*.pid
+*.sock
+*.tmp
+*.swp
+backups/
+tmp/
+node_modules/
+**/node_modules/
+.npm/
+__pycache__/
+*.pyc
+
+# Pi local state and credentials
+home/.config/nvim/.pi/
+home/.pi/agent/*
+!home/.pi/agent/extensions/
+!home/.pi/agent/extensions/**
+!home/.pi/agent/themes/
+!home/.pi/agent/themes/*.json
+home/.pi/agent/mcp-oauth/
+home/.pi/agent/mcp-cache.json
+home/.pi/agent/mcp-npx-cache.json
+home/.pi/agent/mcp-auth.json
+home/.pi/agent/auth.json
+home/.pi/agent/models-store.json
+home/.pi/agent/npm/
+home/.local/share/pi/mcp-auth.json
+.pi/todos/
+home/.pi/todos/
+
+# Editor and terminal runtime state
 .sw*
 home/.config/vim/bundle
 home/.config/vim/plugged
@@ -7,5 +68,3 @@ home/.config/vim/undos
 home/.config/vim/views
 home/.config/tmux/tmux
 home/.config/tmux/.search_options
-home/.config/ssh/id_*
-node_modules
