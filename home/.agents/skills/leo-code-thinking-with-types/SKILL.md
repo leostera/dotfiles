@@ -88,6 +88,8 @@ Keep `Date`'s fields private (or otherwise restrict unchecked construction) when
 
 This is the type-design companion to `leo-code-review-invariants`: use a type guarantee when it is real and maintainable; otherwise establish the invariant with a constructor/runtime check and test it.
 
+For end-to-end workflows that turn untrusted external representations into trusted domain values, also use [`leo-code-parse-dont-validate`](../leo-code-parse-dont-validate/SKILL.md). It expands on this boundary-design guidance with parsing, error handling, and propagation of refined types through a program.
+
 ## Match the type to the language's guarantees
 
 Adapt the design to the type system in use:
