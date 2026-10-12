@@ -1,6 +1,16 @@
 [include]
   path = ~/.config/git/config.local
 
+[user]
+  name = Leandro Ostera
+	email = leandro@ostera.io
+
+[github]
+  user = leostera
+
+[gpg]
+  format = ssh
+
 [core]
   excludesfile = ~/.config/git/ignore
   editor = nvim
@@ -9,7 +19,7 @@
   A = add -A
   amend = commit --amend
   b = branch -rv
-  c = commit
+  c = commit 
   cam = commit -am
   cm = commit -m
   co = checkout
