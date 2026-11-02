@@ -16,5 +16,11 @@ done
 
 ln -sfn "$repo_root/home/.pi" "$HOME/.pi"
 ln -sfn "$repo_root/home/.agents" "$HOME/.agents"
+
+# Pi reads global instructions only from its agent directory; keep
+# ~/.agents/AGENTS.md as the single source.
+mkdir -p "$HOME/.pi/agent"
+ln -sfn "$HOME/.agents/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"
+
 ln -sfn "$repo_root/home/.bin" "$HOME/.bin"
 ln -sfn "$repo_root/home/.config/zsh/zshrc" "$HOME/.zshrc"

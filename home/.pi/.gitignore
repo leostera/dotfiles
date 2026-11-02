@@ -3,3 +3,4 @@
 !.gitignore
 !agent/
 agent/*
+!agent/AGENTS.md
