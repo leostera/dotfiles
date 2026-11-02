@@ -1,0 +1,17 @@
+{
+  "name": "loadgen-worker",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "cf dev",
+    "deploy": "cf deploy --secrets-file .dev.vars",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@cloudflare/vite-plugin": "beta",
+    "@cloudflare/workers-types": "5.20261027.1",
+    "cf": "1.0.0-beta.25",
+    "typescript": "^7.0.2",
+    "vite": "8.3.5"
+  }
+}

@@ -75,7 +75,7 @@ Use this skill to benchmark the way @leostera does. A benchmark exists to answer
   - the full configuration;
   - `notes` that describe the method, such as how latency was estimated or where generators ran.
 - **Version the schema.** When the format changes, bump `schemaVersion` and make the plotting code read the old versions or migrate them.
-- **Commit the results that back published claims,** next to the script that produced them. Store large raw data in object storage and keep a pointer.
+- **Commit the results that back published claims,** next to the script that produced them. When raw runs are large or numerous, gitignore `bench/results/` and commit a snapshot instead: a small file collected from the specific runs your RFDs and README cite, naming each run and when it ran, so charts can be redrawn without the raw data. Store large raw data in object storage and keep a pointer.
 - **Data, not prose.** Never write markdown files that say what a benchmark showed. The results file, the plot, the commit, and the RFD are the record.
 
 ## 8. Report from the data
@@ -93,6 +93,24 @@ Use this skill to benchmark the way @leostera does. A benchmark exists to answer
 - Look at production observability too (request counts, CPU time, queueing, overload errors) to find where the system actually spends its time.
 - Fuzz alongside benchmarking. The inputs that stress performance often expose correctness gaps too.
 - When you find the bottleneck, write the change down (an RFD if it's a design change), make one change, measure it, and repeat.
+
+## Bundled examples
+
+`examples/` holds a working starting point. Copy it into the project's `bench/` directory and adapt it; don't depend on it in place.
+
+- **`examples/loadgen-worker/`:** a distributed load generator on Durable Objects.
+  - `src/index.ts`: the entry Worker. `POST /measure` takes one point (target origin, operation, distribution, concurrency, duration), parses it at the boundary, splits the concurrency over drivers with at most 16 calls in flight each, groups drivers into fleets, seeds data for reads, starts every driver at the same instant, and merges their histograms into one point.
+  - `src/driver.ts`: `BenchDriver`, a closed-loop generator created with a `locationHint` under a fresh name per run. It seeds its stripe of keys before reads, records the latency of successes, and counts failures by message.
+  - `src/fleet.ts`: `BenchFleet`, which starts and gathers a group of drivers, so one point can use thousands of them.
+  - `src/operations.ts`: the operations under test, as user-level HTTP requests, plus key distributions (uniform, hot, few-keys). Replace these with your system's real operations.
+  - `src/histogram.ts`: a sparse 1 ms histogram that merges across drivers and gives p50, p95, p99, and max.
+  - `cloudflare.config.ts`: deploys only to an Access-protected custom domain (`BENCH_HOSTNAME`), with `workersDev` and `previewUrls` off, and `BENCH_TOKEN` declared as a secret.
+- **`examples/harness/`:** the runner and its data.
+  - `run.ts`: the staged runner. Targets are given as `label=origin`, and flags select operations, distributions, concurrency, and duration. It warms up, ramps until a level breaks (error rate over a threshold), retries a failed request once, prints a progress line per point, and saves after every point.
+  - `results.ts`: the versioned results schema, with provenance (commit, dirty tree, target versions, load generator, runner platform but not the hostname), the full config, method notes, and atomic saves.
+  - `plot.ts`: dependency-free SVG charts, throughput and p99 against concurrency with one line per target, on linear axes from zero and evenly spaced levels. Points where a system broke are drawn hollow.
+
+To try it locally: add `BENCH_TOKEN=…` to `.dev.vars`, run `BENCH_HOSTNAME=bench.example.com cf dev` in `loadgen-worker/`, start a local target, and run `BENCH_TOKEN=… bun run harness/run.ts --loadgen http://localhost:<port> --target local=http://localhost:<target-port>`. Local numbers measure the laptop. Make claims only from a deployment.
 
 ## Checklist
 
