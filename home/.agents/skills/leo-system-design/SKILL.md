@@ -24,6 +24,7 @@ Never take a primitive's limits or behaviour on faith. "This database allows X w
 - **Dig until you find the mechanism** behind each limit or guarantee: the constant, the queue, the lock, the timeout, the code path. Cite file and line.
 - **Measure what the source can't tell you,** such as costs added by production layers that aren't in the open-source code, and keep measured facts separate from inferred ones.
 - **Design from the mechanism, not the number.** Once you know why a limit exists, you know whether to work within it, around it, or with the team that owns it.
+- **Actually read it.** A search hit or a title isn't reading. Fetch the document or file and read it in full before relying on it, and say so if you couldn't.
 
 Use the leo-research skill to keep what you find, and launch a parallel research session when the dig is deep.
 
@@ -33,6 +34,8 @@ Use the leo-research skill to keep what you find, and launch a parallel research
 
 - **Understand it down to the bytes.** Before designing anything, explain how the current system or the prior art works internally, with a minimal concrete example: what the client sends, what the server receives, what it stores, and what it sends back. "I'm going to need an example" is the most common request in a design conversation. Satisfy it before anyone has to ask.
   > *Ask:* "Walk me through the smallest case end to end: one user, one write, one read. What exactly goes over the wire and into storage?"
+- **Get the domain model right first.** Name the entities, their hierarchy, and their invariants before anything else, such as "a factory has projects, a project has stories" or "there is always at least one open session". Collapse entities that don't earn their keep: if a run only ever holds one trial, the trial is the run.
+  > *Ask:* "What are the nouns, how do they nest, and what must always be true about them?"
 - **Separate the easy part from the hard part.** Split the system into primitives, and say which ones are already solved. Immutable data, static assets, append-only logs, and idempotent jobs are usually easy: put them in durable storage and cache them. What's left is the small, mutable core that needs coordination, and that's where the design conversation belongs.
   > *Ask:* "Which part never changes once written? Which part is the small, mutable core?"
 - **Find where the real work happens.** Every interesting design does its clever work at one moment, at write time, read time, or in the background, and that work creates an invariant everything downstream relies on. Examples: sorting events at ingest so queries become range scans, building a feed at post time so reads are one lookup.
@@ -41,12 +44,14 @@ Use the leo-research skill to keep what you find, and launch a parallel research
   > *Ask:* "What's the smallest thing that must be serialized?"
 - **Push it to the extremes.** Test the design against the largest realistic input (the biggest customer, the oldest account) and the pathological cases: a client offline for a year, every writer on one hot key, a request a thousand times the median, a tenant a hundred times bigger than the rest.
   > *Ask:* "What's the pathological version of this, and is the simple answer still correct there?"
+- **Build a simulator when behaviour is hard to see.** For a protocol or flow with several actors, make an interactive simulator or playground. Its state should live in the URL so a replay can be shared. It shows how the whole system behaves, not only the happy paths someone thought to draw.
 
 ### How to find connections to other domains
 
 - **Name the shape of the problem, then find who solved it.** A self-splitting partition is a B-tree whose nodes are servers. A cache of immutable blobs is a build cache or a CDN. A single writer feeding read copies is database replication with leases. A set-membership question is a bitmap or a filter from search engines.
   > *Ask:* "What is this, really, in another field? Who has solved that version?"
 - **Read their source, not just their blog.** Study public write-ups from competitors, then the source code of systems with the same problem, and teams who already made it work. Write down what they actually do, with references.
+- **Steal battle-tested implementations.** When a mature project already does the hard part well (terminal rendering, input handling, a CLI's output, a UI's gestures), vendor its source next to yours and match its behaviour closely. Departing from proven code needs a reason.
 - **Borrow targets as well as techniques.** Use real-world numbers from others to set ambitious targets ("they claim N writes per second per tenant; how fast are we?").
 - **Extract the primitive.** When a pattern solves a general problem (a self-splitting partition, a replicated read set, a rate limiter, a content-addressed store), make it a small reusable package with its own tests and benchmarks, and use it from the app.
   > *Ask:* "Is this a library hiding inside the app?"
@@ -75,7 +80,8 @@ Build the dumbest thing that does the right thing.
 - Defer internal optimizations such as precomputation, compaction, denormalization, and extra caches. They can change later; external contracts can't.
 - If the system replaces something, behave exactly like the reference: same protocol or API, same client experience, no invented extensions.
 - Keep the consistency semantics explicit. A user who just wrote something and then reads must see their write.
-- Isolate tenants by default: one customer must never be able to read, write, or slow down another's data.
+- Isolate tenants by default: one customer must never be able to read, write, or slow down another's data. Respect data residency in everything that creates or moves data.
+- Survive restarts. Durable state is the source of truth; on boot, reconcile what's running (processes, sockets, connections) against it and repair the difference.
 - Correctness gates everything else. A lost acknowledged write, corruption, or an unexplained anomaly stops all other work until it's reproduced and explained.
 
 > *Ask:* "What's the dumbest thing that's also correct? Would an unmodified client notice a difference?"
@@ -84,10 +90,15 @@ Build the dumbest thing that does the right thing.
 
 Make the design clean, clear, and elegant.
 
-- Use few concepts with clear names, and explain the whole design in one paragraph.
+- Use few concepts with clear names, and explain the whole design in one paragraph. Spend time on vocabulary: the right word for an entity removes confusion everywhere downstream.
+- Question every part. "Why do we need this?" Remove tokens, layers, aliases, options, and entities that don't serve a requirement. Check whether a new concept is just a combination of existing ones.
+- Prefer mechanism over policy. Keep the core small and give users primitives to compose. For example, a crash can be a transition the user defines, instead of a feature the core forces on everyone. Allow people to build safety; don't stop them from skipping it.
 - Keep the mutable, coordinated core small, and keep everything else simple and stateless.
-- Use the platform. Don't rebuild anything the runtime already provides, and avoid dependencies that can't run on the target.
-- Pull general patterns out into primitives. Replace old designs with clean cutovers, not layers of compatibility.
+- Keep deployment units thin. Logic lives in small, focused packages or crates with their own tests; a deployable is a shim plus configuration. Each binary owns one job, such as a daemon that only manages its lifecycle.
+- Make options orthogonal. Express configuration as independent axes (static or dynamic, eager or lazy) rather than a list of special modes.
+- Use the platform and the ecosystem. Don't rebuild anything the runtime or a proven library already provides, and avoid dependencies that can't run on the target.
+- Pull general patterns out into primitives. Replace old designs with clean cutovers, not layers of compatibility. While there are no users, break freely. Once there are, ship an upgrade command and a migration guide with the breaking release.
+- Never leak private information into public artifacts: code, docs, RFDs, commits, and history. If it happens, rewrite the history.
 - Steelman the case against the design: if it needs model checking just to be believed, ask whether a simpler shape exists.
 
 > *Ask:* "Can a newcomer understand this in an afternoon? What could we remove?"
@@ -105,31 +116,38 @@ A beautiful design is often already fast. Optimize only when measurements agains
 
 ## 3. Process
 
-1. **Start from user impact.** Before designing, understand who uses the system, what they will feel, and what would surprise them: latency, consistency, failure modes, limits.
-2. **Bring metrics.** Pin requirements as numbers: the published limits and contracts, the headroom (meet limits at about 25% of capacity), the read:write ratio (assume 10× reads unless measured), the per-unit budget, and stretch goals labelled as such. If the numbers don't exist, work out how to get them. Do back-of-envelope arithmetic, check platform limits in the docs and then in the source, and correct wrong estimates plainly. When a target moves, record the old and new numbers and which decisions depended on them.
+1. **Start from user impact.** Before designing, understand who uses the system, what they will feel, and what would surprise them: latency, consistency, failure modes, limits. Write down the concrete use cases, such as "a platform releases a template and a thousand customers fork it at once". Agents count as users too: design commands, tools, and errors they can use reliably.
+2. **Bring metrics.** Pin requirements as numbers: the published limits and contracts, the headroom (meet limits at about 25% of capacity), the read:write ratio (assume 10× reads unless measured), the per-unit budget, and stretch goals labelled as such. If the numbers don't exist, work out how to get them. Do back-of-envelope arithmetic, check platform limits in the docs and then in the source, and correct wrong estimates plainly. When a target moves, record the old and new numbers and which decisions depended on them. Bring production data (incidents, observability, measured limits) into the RFD to justify the change. If the data shows the problem isn't the one assumed, such as "no scaling problem, but a correctness and maintainability one", say so and redirect.
 3. **Start with an RFD to clear your thinking.** Use the rfds skill. Raise open questions one at a time, with options labelled a, b, c and a recommendation. Never edit an accepted RFD. A change gets a new RFD that explains the move from A to B and why.
 4. **Specify interacting parts with Feynman.** When a system has several interacting components, model its flows as Feynman specs with properties before building, and check the properties. Use the project's equivalent if Feynman isn't available.
-5. **Test at the layer each component needs:**
+5. **Build in small vertical slices.** Build the thinnest end-to-end slice that a user can try, then grow it slice by slice. When a start goes sideways, start over smaller.
+6. **Test at the layer each component needs:**
    - **Unit tests** for small, ad-hoc state machines and pure logic with many cases.
    - **Property tests** for bidirectional data transforms, such as `decode(encode(x)) = x`, and complex state machines.
    - **Fuzzing** for parsers and anything taking raw system or user input.
-   - **End-to-end tests** for almost everything, mirroring the behaviours in the specs so the specs and the system can't drift apart.
-6. **Validate as much as possible locally:** emulators, a reference implementation run side by side, deterministic simulation, fast loops.
-7. **Also validate as close to production as possible.** Deploy to a real environment and run the real operations users run, on both read and write paths, against named, fair baselines. Ramp load until either side fails, and report where and why. A system that scales with more clients is the main signal. Drive benchmarks with scripts that produce a report. Tear down temporary resources afterwards.
-8. **Follow the leo-code-\* skills often:** leo-code-readability, leo-code-thinking-with-types, leo-code-parse-dont-validate, leo-code-review-invariants, leo-code-legacy, and leo-code-observability. Do clean-up passes with them as the code grows, not only at the end.
-9. **Log the trade-offs.** When working autonomously, record each trade-off with its alternatives and what would change it. When the user returns, summarize the decisions made without them, most consequential first.
+   - **End-to-end tests** for almost everything, mirroring the behaviours in the specs so the specs and the system can't drift apart. For user interfaces, drive the real app the way a user would and check what they see, for example with a self-test mode or visual snapshots.
+
+   Evidence is executable. Don't write markdown files that record "validation" or "evidence". If something needs proving, write a test that proves it. Document decisions in RFDs, not in ad-hoc notes.
+7. **Validate as much as possible locally:** emulators, a reference implementation run side by side, deterministic simulation, fast loops. Look at the real thing yourself (logs, screenshots, traces) before asking the user what happened.
+8. **Also validate as close to production as possible.** Deploy to a real environment and run the real operations users run, on both read and write paths, against named, fair baselines. Ramp load until either side fails, and report where and why. A system that scales with more clients is the main signal. Drive benchmarks with scripts that produce a report. Tear down temporary resources afterwards.
+9. **Dogfood, and learn from real usage.** Use the system to build the system where possible. Read the transcripts, logs, and feedback of people actually using it, and turn what trips them up into fixes and documentation.
+10. **Communicate value.** The README and website say what the user gets, not how it works inside. Be able to explain why someone wants it in one or two sentences. Show benchmark charts where they make the case.
+11. **Follow the leo-code-\* skills often:** leo-code-readability, leo-code-thinking-with-types, leo-code-parse-dont-validate, leo-code-review-invariants, leo-code-legacy, and leo-code-observability. Do clean-up passes with them as the code grows, not only at the end.
+12. **Log the trade-offs.** When working autonomously, record each trade-off with its alternatives and what would change it. When the user returns, summarize the decisions made without them, most consequential first.
 
 ## Checklist
 
 - Has the source of every primitive the design depends on been read, down to the mechanisms behind its limits?
-- Has the system been explained with a concrete, end-to-end example?
+- Are the domain entities, their hierarchy, and their invariants named, with no entity that doesn't earn its keep?
+- Has the system been explained with a concrete, end-to-end example, or a simulator where the behaviour is hard to see?
 - Are the easy parts named, and is the mutable core isolated and small?
 - Was the design tested against its largest input and its pathological cases?
 - Were connections to other domains and prior art explored, with sources?
 - Which properties of the domain does the design exploit?
-- Is it correct first: reference behaviour, explicit consistency, tenant isolation, no unexplained anomalies?
-- Is it beautiful: few concepts, one-paragraph explanation, platform-native, nothing to remove?
+- Is it correct first: reference behaviour, explicit consistency, tenant isolation, recovery after restarts, no unexplained anomalies?
+- Is it beautiful: few well-named concepts, a small core of mechanisms, thin deployables, nothing to remove, nothing private leaked?
 - Is any optimization justified by measurements against the requirements?
 - Do the RFDs, metrics, and Feynman specs exist, and do tests at each layer mirror the specs?
-- Has it been validated locally and close to production?
+- Is all evidence executable, and has it been validated locally and close to production?
+- Has the system been dogfooded, and does its documentation lead with user value?
 - Have the leo-code-\* passes been done, and are the trade-offs logged and summarized?
