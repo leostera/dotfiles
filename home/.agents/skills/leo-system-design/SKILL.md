@@ -16,6 +16,19 @@ The examples come from different kinds of systems. Translate each one into the d
 
 ## 1. Thinking from first principles
 
+### Always read the source of what you consume
+
+Never take a primitive's limits or behaviour on faith. "This database allows X writes per second" or "this queue guarantees Y" is a claim, not a first principle. For every platform, library, service, or protocol the design depends on:
+
+- **Get its source code** if it's at all possible: open-source runtimes, client libraries, reference servers, internal repositories, design docs and wikis.
+- **Dig until you find the mechanism** behind each limit or guarantee: the constant, the queue, the lock, the timeout, the code path. Cite file and line.
+- **Measure what the source can't tell you,** such as costs added by production layers that aren't in the open-source code, and keep measured facts separate from inferred ones.
+- **Design from the mechanism, not the number.** Once you know why a limit exists, you know whether to work within it, around it, or with the team that owns it.
+
+Use the leo-research skill to keep what you find, and launch a parallel research session when the dig is deep.
+
+> *Ask:* "Why is that the limit? Show me the code that enforces it."
+
 ### How @leostera breaks down problems
 
 - **Understand it down to the bytes.** Before designing anything, explain how the current system or the prior art works internally, with a minimal concrete example: what the client sends, what the server receives, what it stores, and what it sends back. "I'm going to need an example" is @leostera's most common request. Satisfy it before anyone has to ask.
@@ -33,7 +46,7 @@ The examples come from different kinds of systems. Translate each one into the d
 
 - **Name the shape of the problem, then find who solved it.** A self-splitting partition is a B-tree whose nodes are servers. A cache of immutable blobs is a build cache or a CDN. A single writer feeding read copies is database replication with leases. A set-membership question is a bitmap or a filter from search engines.
   > *Ask:* "What is this, really, in another field? Who has solved that version?"
-- **Read the source, not just the blog.** Study public write-ups from competitors, then the source code of systems with the same problem, and teams who already made it work. Write down what they actually do, with references.
+- **Read their source, not just their blog.** Study public write-ups from competitors, then the source code of systems with the same problem, and teams who already made it work. Write down what they actually do, with references.
 - **Borrow targets as well as techniques.** Use real-world numbers from others to set ambitious targets ("they claim N writes per second per tenant; how fast are we?").
 - **Extract the primitive.** When a pattern solves a general problem (a self-splitting partition, a replicated read set, a rate limiter, a content-addressed store), make it a small reusable package with its own tests and benchmarks, and use it from the app.
   > *Ask:* "Is this a library hiding inside the app?"
@@ -93,7 +106,7 @@ A beautiful design is often already fast. Optimize only when measurements agains
 ## 3. Process
 
 1. **Start from user impact.** Before designing, understand who uses the system, what they will feel, and what would surprise them: latency, consistency, failure modes, limits.
-2. **Bring metrics.** Pin requirements as numbers: the published limits and contracts, the headroom (meet limits at about 25% of capacity), the read:write ratio (assume 10× reads unless measured), the per-unit budget, and stretch goals labelled as such. If the numbers don't exist, work out how to get them. Do back-of-envelope arithmetic, check platform limits in the docs, and correct wrong estimates plainly. When a target moves, record the old and new numbers and which decisions depended on them.
+2. **Bring metrics.** Pin requirements as numbers: the published limits and contracts, the headroom (meet limits at about 25% of capacity), the read:write ratio (assume 10× reads unless measured), the per-unit budget, and stretch goals labelled as such. If the numbers don't exist, work out how to get them. Do back-of-envelope arithmetic, check platform limits in the docs and then in the source, and correct wrong estimates plainly. When a target moves, record the old and new numbers and which decisions depended on them.
 3. **Start with an RFD to clear your thinking.** Use the rfds skill. Raise open questions one at a time, with options labelled a, b, c and a recommendation. Never edit an accepted RFD. A change gets a new RFD that explains the move from A to B and why.
 4. **Specify interacting parts with Feynman.** When a system has several interacting components, model its flows as Feynman specs with properties before building, and check the properties. Use the project's equivalent if Feynman isn't available.
 5. **Test at the layer each component needs:**
@@ -108,6 +121,7 @@ A beautiful design is often already fast. Optimize only when measurements agains
 
 ## Checklist
 
+- Has the source of every primitive the design depends on been read, down to the mechanisms behind its limits?
 - Has the system been explained with a concrete, end-to-end example?
 - Are the easy parts named, and is the mutable core isolated and small?
 - Was the design tested against its largest input and its pathological cases?
