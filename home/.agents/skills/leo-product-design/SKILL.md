@@ -1,6 +1,6 @@
 ---
 name: leo-product-design
-description: Shape product UX, UI, copy, and developer experience the way @leostera would. Make interfaces dense, keyboard-first, instant, and stable, steal from proven apps, keep information architecture and URLs clean, lead copy with user value, and make CLIs and dev tools feel fast and legible. Use when designing, reviewing, or polishing apps, dashboards, mobile screens, websites, CLIs, or developer tools.
+description: Shape product UX, UI, copy, and developer experience. Make interfaces dense, keyboard-first, instant, and stable, steal from proven apps, keep information architecture and URLs clean, lead copy with user value, and make CLIs and dev tools feel fast and legible. Use when designing, reviewing, or polishing apps, dashboards, mobile screens, websites, CLIs, or developer tools.
 ---
 
 # Leo Product Design
