@@ -1,39 +1,69 @@
 #!/usr/bin/env zsh
+#
+# Clone (or create) a repository into ~/Developer/<host>/<owner>/<repo>/main,
+# optionally add a worktree beside it, and print the resulting path.
+#
+#   <repo>/
+#   ├── main/            main clone, on the default branch
+#   └── <worktree>/      one directory per branch, `/` replaced by `-`
+#
+# `repo` in zsh/alias wraps this and pushd's into the printed path.
 
-if [[ -z "$1" ]]; then
-  echo "usage: repo [gh:]owner/repo [--new [--public|--private]]" >&2
+usage() {
+  echo "usage: repo [gh:]owner/repo [--worktree|-w <branch>] [--new [--public|--private]] [-- git-clone-args...]" >&2
   exit 1
-fi
+}
+
+[[ -z "$1" ]] && usage
 
 NEW=false
 VISIBILITY=private
+WORKTREE=
 ARGS=()
-for arg in "$@"; do
-  case "$arg" in
+while (( $# )); do
+  case "$1" in
     --new) NEW=true ;;
     --public) VISIBILITY=public ;;
     --private) VISIBILITY=private ;;
-    *) ARGS+=("$arg") ;;
+    -w|--worktree)
+      [[ -z "$2" ]] && usage
+      WORKTREE="$2"
+      shift
+      ;;
+    --worktree=*) WORKTREE="${1#--worktree=}" ;;
+    *) ARGS+=("$1") ;;
   esac
+  shift
 done
 
 # Keep the old two-argument form (`github-clone owner repo`) working.
-if [[ -n "${ARGS[2]}" ]]; then
+if [[ -n "${ARGS[2]}" && "${ARGS[1]}" != */* ]]; then
   HOST=github.com
   REPO="${ARGS[1]}/${ARGS[2]}"
-  CLONE_ARGS=("${ARGS[@]:3}")
+  CLONE_ARGS=("${ARGS[@]:2}")
 elif [[ "${ARGS[1]}" == gh:* ]]; then
   HOST=github.com
   REPO="${ARGS[1]#gh:}"
-  CLONE_ARGS=("${ARGS[@]:2}")
+  CLONE_ARGS=("${ARGS[@]:1}")
 else
   # Public default; work installations can set GITHUB_CLONE_HOST locally.
   HOST="${GITHUB_CLONE_HOST:-github.com}"
   REPO="${ARGS[1]}"
-  CLONE_ARGS=("${ARGS[@]:2}")
+  CLONE_ARGS=("${ARGS[@]:1}")
 fi
 
-TO="$HOME/Developer/$HOST/$REPO"
+REPO_DIR="$HOME/Developer/$HOST/$REPO"
+MAIN="$REPO_DIR/main"
+
+if [[ -e "$REPO_DIR/.git" ]]; then
+  # Legacy layout: the clone sits directly in $REPO_DIR. Use it as-is rather
+  # than cloning a second copy; migrating it is a manual, deliberate step.
+  echo "note: $REPO_DIR uses the legacy layout (no main/); worktrees go beside it in ${REPO_DIR:t}-worktrees/" >&2
+  MAIN="$REPO_DIR"
+  WORKTREE_ROOT="${REPO_DIR}-worktrees"
+else
+  WORKTREE_ROOT="$REPO_DIR"
+fi
 
 if $NEW; then
   if [[ "$HOST" != github.com ]]; then
@@ -44,26 +74,81 @@ if $NEW; then
     echo "--new requires the GitHub CLI (gh)." >&2
     exit 1
   fi
-  if [[ -e "$TO" ]]; then
-    echo "Refusing to create repository over existing path: $TO" >&2
+  if [[ -e "$REPO_DIR" ]]; then
+    echo "Refusing to create repository over existing path: $REPO_DIR" >&2
     exit 1
   fi
 
-  mkdir -p "${TO:h}"
-  git init -b main "$TO" >&2
-  if ! gh repo create "$REPO" "--$VISIBILITY" --source "$TO" --remote origin >&2; then
-    rm -rf "$TO"
+  mkdir -p "$REPO_DIR"
+  git init -b main "$MAIN" >&2
+  if ! gh repo create "$REPO" "--$VISIBILITY" --source "$MAIN" --remote origin >&2; then
+    rm -rf "$REPO_DIR"
     exit 1
   fi
+elif [[ ! -e "$MAIN/.git" ]]; then
+  if [[ -e "$MAIN" ]]; then
+    echo "Refusing to clone over existing non-repository path: $MAIN" >&2
+    exit 1
+  fi
+  mkdir -p "$REPO_DIR"
+  if [[ -n "${USE_HTTP}" ]]; then
+    URL="https://$HOST/$REPO.git"
+  else
+    URL="git@$HOST:$REPO.git"
+  fi
+  git clone "$URL" "$MAIN" "${CLONE_ARGS[@]}" >&2 || exit 1
+fi
+
+if [[ -z "$WORKTREE" ]]; then
+  echo "$MAIN"
+  exit 0
+fi
+
+# --- worktree -----------------------------------------------------------------
+
+WT_NAME="${WORKTREE//\//-}"
+if [[ "$WT_NAME" == main ]]; then
+  echo "A worktree cannot be named 'main'; that directory is the main clone." >&2
+  exit 1
+fi
+WT="$WORKTREE_ROOT/$WT_NAME"
+
+git -C "$MAIN" fetch --quiet origin >&2 || echo "warning: git fetch failed; using local refs" >&2
+
+DEFAULT_REF=$(git -C "$MAIN" symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)
+if [[ -z "$DEFAULT_REF" ]]; then
+  git -C "$MAIN" remote set-head origin --auto >/dev/null 2>&1
+  DEFAULT_REF=$(git -C "$MAIN" symbolic-ref --quiet --short refs/remotes/origin/HEAD 2>/dev/null)
+fi
+DEFAULT_REF="${DEFAULT_REF:-origin/main}"
+
+if [[ -e "$WT" ]]; then
+  if ! git -C "$WT" rev-parse --is-inside-work-tree >/dev/null 2>&1; then
+    echo "Refusing to use existing non-worktree path: $WT" >&2
+    exit 1
+  fi
+elif git -C "$MAIN" show-ref --verify --quiet "refs/heads/$WORKTREE"; then
+  mkdir -p "$WORKTREE_ROOT"
+  git -C "$MAIN" worktree add "$WT" "$WORKTREE" >&2 || exit 1
+elif git -C "$MAIN" show-ref --verify --quiet "refs/remotes/origin/$WORKTREE"; then
+  mkdir -p "$WORKTREE_ROOT"
+  git -C "$MAIN" worktree add -b "$WORKTREE" "$WT" "origin/$WORKTREE" >&2 || exit 1
 else
-  if [[ ! -f "$TO/.git/HEAD" ]]; then
-    mkdir -p "${TO:h}"
-    if [[ -n "${USE_HTTP}" ]]; then
-      git clone "https://$HOST/$REPO.git" "$TO" "${CLONE_ARGS[@]}"
-    else
-      git clone "git@$HOST:$REPO.git" "$TO" "${CLONE_ARGS[@]}"
-    fi
+  mkdir -p "$WORKTREE_ROOT"
+  git -C "$MAIN" worktree add --no-track -b "$WORKTREE" "$WT" "$DEFAULT_REF" >&2 || exit 1
+fi
+
+# Keep the worktree on top of the latest default branch. Only rebase a clean
+# tree, and back out on conflict so nothing is left half-done.
+if [[ -n "$(git -C "$WT" status --porcelain)" ]]; then
+  echo "warning: $WT has uncommitted changes; not rebasing onto $DEFAULT_REF" >&2
+elif ! git -C "$WT" merge-base --is-ancestor "$DEFAULT_REF" HEAD 2>/dev/null; then
+  if git -C "$WT" rebase --quiet "$DEFAULT_REF" >&2; then
+    echo "rebased $WT_NAME onto $DEFAULT_REF" >&2
+  else
+    git -C "$WT" rebase --abort >&2
+    echo "warning: rebasing $WT_NAME onto $DEFAULT_REF conflicts; left as it was, rebase manually" >&2
   fi
 fi
 
-echo "$TO"
+echo "$WT"
