@@ -68,3 +68,24 @@ home/.config/vim/undos
 home/.config/vim/views
 home/.config/tmux/tmux
 home/.config/tmux/.search_options
+
+# Third-party skills installed by `npx skills` (tracked in .skill-lock.json)
+# and work-local skills; kept on disk, never published.
+home/.agents/skills/agents-sdk/
+home/.agents/skills/cloudflare/
+home/.agents/skills/cloudflare-access-ai-gateway/
+home/.agents/skills/cloudflare-email-service/
+home/.agents/skills/cloudflare-one/
+home/.agents/skills/cloudflare-one-migrations/
+home/.agents/skills/durable-objects/
+home/.agents/skills/find-skills/
+home/.agents/skills/impeccable/
+home/.agents/skills/merge-request-review-loop/
+home/.agents/skills/nextjs-on-cloudflare/
+home/.agents/skills/sandbox-migrate-to-next/
+home/.agents/skills/sandbox-next/
+home/.agents/skills/sandbox-stable/
+home/.agents/skills/turnstile-spin/
+home/.agents/skills/web-perf/
+home/.agents/skills/workers-best-practices/
+home/.agents/skills/wrangler/

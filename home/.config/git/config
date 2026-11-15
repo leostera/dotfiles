@@ -1,6 +1,3 @@
-[include]
-  path = ~/.config/git/config.local
-
 [user]
   name = Leandro Ostera
 	email = leandro@ostera.io
@@ -19,7 +16,7 @@
   A = add -A
   amend = commit --amend
   b = branch -rv
-  c = commit 
+  c = commit
   cam = commit -am
   cm = commit -m
   co = checkout
@@ -81,3 +78,7 @@
 
 [user]
   useConfigOnly = true
+
+# Machine-local overrides (identity, credentials) win because they come last.
+[include]
+  path = ~/.config/git/config.local
