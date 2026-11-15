@@ -5,3 +5,9 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   export PATH="/home/linuxbrew/.linuxbrew/bin:/home/linuxbrew/.linuxbrew/sbin:$PATH"
 fi
+
+# Prefer the source-built Elixir main branch over the Homebrew release.
+if [ -d "$HOME/.local/opt/elixir-main/bin" ]; then export PATH="$HOME/.local/opt/elixir-main/bin:$PATH"; fi
+
+# Riot toolchain, when installed.
+if [ -d "$HOME/.riot/bin" ]; then export PATH="$HOME/.riot/bin:$PATH"; fi
