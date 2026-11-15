@@ -131,7 +131,6 @@ return {
   { "hashivim/vim-terraform",          ft = "terraform" },
   { "martinda/Jenkinsfile-vim-syntax", ft = "Jenkinsfile" },
   { "lervag/vimtex",                   ft = "tex" },
-  { "LnL7/vim-nix",                    ft = "nix" },
   { "vim-scripts/n3.vim",              ft = "n3" },
   { "whybin/alloy.vim",                ft = "alloy" },
   { "vim-scripts/ebnf.vim",            ft = "ebnf" },
