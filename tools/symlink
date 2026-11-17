@@ -14,13 +14,24 @@ for conf in "$repo_root"/home/.config/*; do
   ln -sfn "$conf" "$HOME/.config/"
 done
 
+# Pi state lives beside the checkout but is ignored, so create it on fresh
+# clones before linking.
+mkdir -p "$repo_root/home/.pi/agent"
 ln -sfn "$repo_root/home/.pi" "$HOME/.pi"
 ln -sfn "$repo_root/home/.agents" "$HOME/.agents"
 
-# Pi reads global instructions only from its agent directory; keep
-# ~/.agents/AGENTS.md as the single source.
-mkdir -p "$HOME/.pi/agent"
-ln -sfn "$HOME/.agents/AGENTS.md" "$HOME/.pi/agent/AGENTS.md"
+# Pi reads global instructions only from its agent directory. Write a local
+# pointer there so ~/.agents/AGENTS.md stays the single source.
+pi_agents="$HOME/.pi/agent/AGENTS.md"
+if [ -L "$pi_agents" ] || [ ! -e "$pi_agents" ]; then
+  rm -f "$pi_agents"
+  cat >"$pi_agents" <<'POINTER'
+# Global Agent Instructions
+
+Read `~/.agents/AGENTS.md` before starting any task and follow it. It holds
+the global agent instructions; this file only points to it.
+POINTER
+fi
 
 ln -sfn "$repo_root/home/.bin" "$HOME/.bin"
 ln -sfn "$repo_root/home/.config/zsh/zshrc" "$HOME/.zshrc"

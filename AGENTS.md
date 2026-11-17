@@ -9,8 +9,10 @@ machine-specific absolute paths.
 
 - `home/.bin/` — user scripts
 - `home/.config/` — XDG application configuration
+- `home/.agents/AGENTS.md` — global agent instructions
 - `home/.agents/skills/` — reusable agent skills
-- `home/.pi/` — Pi support files; runtime state is local and ignored
+- `home/.pi/` — Pi state; local only and ignored. `tools/symlink` writes
+  `agent/AGENTS.md` there as a pointer to `~/.agents/AGENTS.md`
 - `Brewfile` — shared macOS packages
 - `Brewfile.linux` — shared Linux packages
 - `tools/symlink` — installs configuration symlinks

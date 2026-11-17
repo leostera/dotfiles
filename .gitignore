@@ -40,23 +40,12 @@ node_modules/
 __pycache__/
 *.pyc
 
-# Pi local state and credentials
+# Pi state is local: credentials, sessions, caches, packages, and the
+# AGENTS.md pointer written by tools/symlink. Never published.
+home/.pi/
 home/.config/nvim/.pi/
-home/.pi/agent/*
-!home/.pi/agent/extensions/
-!home/.pi/agent/extensions/**
-!home/.pi/agent/themes/
-!home/.pi/agent/themes/*.json
-home/.pi/agent/mcp-oauth/
-home/.pi/agent/mcp-cache.json
-home/.pi/agent/mcp-npx-cache.json
-home/.pi/agent/mcp-auth.json
-home/.pi/agent/auth.json
-home/.pi/agent/models-store.json
-home/.pi/agent/npm/
 home/.local/share/pi/mcp-auth.json
-.pi/todos/
-home/.pi/todos/
+.pi/
 
 # Editor and terminal runtime state
 .sw*
